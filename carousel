@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Découvrir les ressources</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        search-carousel {
+            display: block;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Découvrir les ressources</h1>
+
+    <!-- Carousel de recherche -->
+    <search-carousel 
+        titleText="Découvrir les ressources" 
+        titleLink="https://mon-psb.primo.exlibrisgroup.com/primaws/rest/external/delivery?citationTrailFilterByAvailability=true&limit=10&newspapersActive=false&newspapersSearch=false&offset=0&pcAvailability=false&scope=MyInst_and_CI&searchInFulltextUserSelection=false&disableCache=false&skipDelivery=Y&sort=rank&tab=Everything&inst=33MON_INST&rapido=false&refEntryActive=false&rtaLinks=true&qInclude=&qExclude=&multiFacets=&q=any%2Ccontains%2Cia+education%2CAND%3Brtype%2Cexact%2Cbooks&isCDSearch=false&featuredNewspapersIssnList=&lang=fr&explain=&otbRanking=&vid=33MON_INST:33UM_NDE_VU1" 
+        defaultThumbnailUrl="https://mon-site.com/images/thumbnail.jpg" 
+        searchUrl="https://mon-site.com/search?q=default_search"> 
+    </search-carousel>
+
+    <!-- Inclusion du script -->
+    <script type="module" src="https://olivierscdum.github.io/maquette/discovery-showcase.bundled.js"></script>
+
+    <footer>
+        © 2025 - Bibliothèques universitaires de Montpellier
+    </footer>
+
+</body>
+</html>
