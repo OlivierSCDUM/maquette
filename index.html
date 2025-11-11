@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header avec Méga Menu</title>
+    <!-- 
+        Le CSS est dans le fichier 'menu_de_navigation.css'.
+    -->
+</head>
+<body>
+    
+    <header id="custom-main-header">
+      <a class="logo-link" href="https://mon-psb.primo.exlibrisgroup.com/nde/home?lang=fr&vid=33MON_INST%3A33UM_NDE_VU1">
+        <img src="custom/33MON_INST-33UM_NDE_VU1/assets/images/library-logo2.png" alt="Logo de la bibliothèque">
+      </a>
+      <button class="burger-menu" id="burger-menu-trigger" aria-label="Ouvrir le menu">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+      <nav id="main-nav">
+        <ul>
+          <li class="mega-menu-item">
+            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-bu">
+              Vos BU
+            </button>
+            <div class="mega-menu-content" id="mega-menu-panel-bu">
+                <div class="mega-menu-grid">
+                    <div class="mega-menu-column">
+                        <h4>Les bibliothèques</h4>
+                    </div>
+                    <div class="mega-menu-column">
+                        <h4>Les Services</h4>
+                        <ul>
+                            <li><a href="#">Imprimer</a></li>
+                            <li><a href="#">Prêt entre bibliothèques</a></li>
+                            <li><a href="#">Tous les services</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-column">
+                        <h4>Besoin d'aide ?</h4>
+                    </div>
+                    <div class="mega-menu-column"></div>
+                    <div class="mega-menu-column"></div>
+                    <div class="mega-menu-column"></div>
+                </div>
+            </div>
+          </li>
+          <li><a href="#">Etudiants</a></li>
+          
+          <!-- NOUVEAU MÉGA MENU "DOCTORANTS" AJOUTÉ ICI -->
+          <li class="mega-menu-item">
+            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-doctorants">
+              Doctorants
+            </button>
+            <div class="mega-menu-content" id="mega-menu-panel-doctorants">
+                <div class="mega-menu-grid">
+                    <div class="mega-menu-column">
+                        <h4>Trouver des documents</h4>
+                        <ul>
+                            <li><a href="#">Bases de données</a></li>
+                            <li><a href="#">Trouver des thèses</a></li>
+                            <li><a href="#">Thèses d'exercices</a></li>
+                            <li><a href="#">The metanews</a></li>
+                            <li><a href="#">Vous ne trouvez pas ?</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-column">
+                        <h4>Préparer ma thèse</h4>
+                        <ul>
+                            <li><a href="#">Thèse de doctorat</a></li>
+                            <li><a href="#">Thèse d'exercice</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-column">
+                        <h4>Gérer mes activités de chercheur</h4>
+                        <ul>
+                            <li><a href="#">Identité numéirque</a></li>
+                            <li><a href="#">Publier</a></li>
+                            <li><a href="#">Gérer mes données</a></li>
+                            <li><a href="#">Droit d'auteur / Plagiat</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-column">
+                        <h4>Mes outils</h4>
+                        <ul>
+                            <li><a href="#">Click & read</a></li>
+                            <li><a href="#">Google scholar</a></li>
+                            <li><a href="#">Revue de littérature</a></li>
+                            <li><a href="#">Zotero</a></li>
+                            <li><a href="#">ia académiques</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-column">
+                        <h4>Assistance / Nous contacter</h4>
+                        <ul>
+                            <li><a href="#">Une question ?</a></li>
+                            <li><a href="#">Suggérer un achat</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-column"></div> <!-- Colonne vide pour remplir la grille de 6 -->
+                </div>
+            </div>
+          </li>
+          
+          <li><a href="#">Pour l'enseignement</a></li>
+          <li class="mega-menu-item">
+            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-recherche">
+              Pour la recherche
+            </button>
+            <div class="mega-menu-content" id="mega-menu-panel-recherche">
+                <div class="mega-menu-grid">
+                    <div class="mega-menu-column">
+                        <h4>Publier en accès ouvert</h4>
+                        <ul>
+                            <li><a href="#">Voies de publication</a></li>
+                            <li><a href="#">Déposer dans Hal</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-column">
+                        <h4>Valoriser</h4>
+                        <ul>
+                            <li><a href="#">Identité Numérique</a></li>
+                            <li><a href="#">Production scientifiques de l'UM</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-column">
+                        <h4>Gérer mes données</h4>
+                        <ul>
+                            <li><a href="#">Ecodor</a></li>
+                            <li><a href="#">Gérer ses données à l'UM</a></li>
+                            <li><a href="#">Cahiers de laboratoire électroniques</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-column">
+                        <h4>Trouver des documents</h4>
+                        <ul>
+                            <li><a href="#">Bases de données par discipline</a></li>
+                            <li><a href="#">Revue de littérature</a></li>
+                            <li><a href="#">Construire une veille</a></li>
+_                            <li><a href="#">Patrimoine écrit</a></li>
+                            <li><a href="#">Vous ne trouvez pas ?</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-column">
+                        <h4>Vos outils</h4>
+                        <ul>
+                            <li><a href="#">Zotero</a></li>
+                            <li><a href="#">TDM avec nos abonnements</a></li>
+                            <li><a href="#">IA avec nos abonnements</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-column">
+                        <h4>Assistance / accompagnement</h4>
+                        <ul>
+                            <li><a href="#">Contactez-nous</a></li>
+                            <li><a href="#">Suggérer un achat/un don</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 
+        Le JavaScript est dans le fichier 'menu_de_navigation.js'.
+    -->
+
+</body>
+</html>
