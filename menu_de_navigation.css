@@ -1,0 +1,239 @@
+/* Test de modification de Header = création d'un menu de navigation */
+  /* Styles de base et migration de vos styles en ligne */
+       body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        /* Styles du Header (MODIFIÉ: Cible l'ID unique) */
+        #custom-main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 2em; 
+            background-color: #f5f2ef; /* MODIFIÉ: Fond gris-beige plus clair */
+            color: #ff5c5c; /* MODIFIÉ: Texte rouge par défaut */
+            position: relative; 
+            border-bottom: 1px solid #ff5c5c; /* Liseré rouge fin */
+            box-sizing: border-box; 
+        }
+
+        /* Ne s'applique qu'aux liens directs de la nav, pas au méga menu */
+        #custom-main-header nav > ul > li > a {
+            text-decoration: none;
+            color: #ff5c5c; /* MODIFIÉ: Texte rouge */
+            font-size: 1em;
+            font-weight: bold;
+        }
+        
+        /* Style spécifique pour le logo, qui est aussi un lien */
+         #custom-main-header a.logo-link {
+             font-weight: normal; /* Le logo n'a pas besoin d'être en gras */
+         }
+
+
+        .logo-link img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            display: block; 
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center; 
+        }
+
+        nav ul li {
+            margin-left: 1.5em; 
+        }
+
+        /* ----- Styles du Méga Menu ----- */
+
+        .mega-menu-item {
+            position: static; 
+        }
+
+        .mega-menu-trigger {
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #ff5c5c; /* MODIFIÉ: Texte rouge */
+            font-size: 1em;
+            font-weight: bold;
+            font-family: inherit;
+            padding: 0;
+        }
+
+        /* Panneau du méga menu (Fond gris clair d'origine) */
+        .mega-menu-content {
+            display: none; 
+            position: absolute;
+            top: 100%; 
+            left: 0;
+            right: 0;
+            width: 100%; 
+            background-color: #f9f9f9; /* Fond gris clair */
+            color: #333; /* Police par défaut (sombre) */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            padding: 2em;
+            box-sizing: border-box; 
+            z-index: 100;
+        }
+        
+        /* CORRECTIF : Règle manquante pour que le JS ouvre le menu */
+        .mega-menu-content.menu-panel-open {
+            display: block;
+        }
+
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5em;
+            max-width: 1400px; 
+            margin: 0 auto;
+        }
+
+        .mega-menu-column h4 {
+            font-size: 1em;
+            font-weight: bold; /* MODIFIÉ: en gras */
+            color: #111; /* Police sombre */
+            margin-top: 0;
+            margin-bottom: 0.75em;
+            border-bottom: 2px solid #ff5c5c; /* Liseré rouge */
+            padding-bottom: 0.5em;
+        }
+
+        .mega-menu-column ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: block; 
+        }
+
+        .mega-menu-column li {
+            margin: 0 0 0.5em 0; 
+        }
+
+        /* MODIFIÉ: Sélecteur rendu plus spécifique pour écraser la règle du header */
+        #custom-main-header .mega-menu-column li a {
+            color: #333; /* Police sombre */
+            font-weight: normal; /* VÉRIFIÉ: non-gras */
+            font-size: 0.9em;
+            text-decoration: none;
+        }
+
+        /* MODIFIÉ: Sélecteur rendu plus spécifique */
+        #custom-main-header .mega-menu-column li a:hover {
+            text-decoration: underline; 
+            color: #333; /* S'assure que la couleur ne change pas au survol */
+        }
+
+        /* ----- Styles du Burger et Responsive ----- */
+
+        .burger-menu {
+            display: none; 
+            flex-direction: column;
+            justify-content: space-around;
+            width: 2rem;
+            height: 2rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101; 
+        }
+
+        .burger-menu .burger-bar {
+            width: 2rem;
+            height: 0.25rem;
+            background-color: #ff5c5c; /* MODIFIÉ: Barres rouges */
+            border-radius: 10px;
+            transition: all 0.3s linear;
+        }
+        
+        /* Styles pour le survol et le clic (PC UNIQUEMENT) */
+        @media (min-width: 901px) {
+            nav#main-nav > ul > li > a:hover,
+            nav#main-nav > ul > li > .mega-menu-trigger:hover {
+                text-decoration: underline;
+                text-underline-offset: 4px;
+            }
+
+            nav#main-nav > ul > li.menu-item-active > a,
+            nav#main-nav > ul > li.menu-item-active > .mega-menu-trigger {
+                text-decoration: underline;
+                text-underline-offset: 4px;
+            }
+        }
+
+
+        /* Styles pour la "Media Query" (petit écran) */
+        @media (max-width: 900px) {
+
+            .burger-menu {
+                display: flex;
+            }
+
+            nav#main-nav {
+                display: none; 
+                position: absolute;
+                top: 100%; 
+                left: 0;
+                right: 0;
+                width: 100%;
+                background-color: #f5f2ef; /* MODIFIÉ: Fond gris-beige plus clair */
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                 z-index: 100;
+            }
+
+            nav#main-nav.nav-open {
+                display: block;
+            }
+
+            nav#main-nav ul {
+                flex-direction: column; 
+                width: 100%;
+            }
+
+            nav#main-nav ul li {
+                margin: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Style des liens dans le menu mobile */
+            nav#main-nav ul li a,
+            nav#main-nav ul li .mega-menu-trigger {
+                display: block;
+                padding: 0.8em; 
+                width: 100%;
+                box-sizing: border-box;
+                border-bottom: 1px solid rgba(255, 92, 92, 0.2); /* MODIFIÉ: Séparateur rouge léger */
+                font-size: 0.9em; 
+                color: #ff5c5c; /* MODIFIÉ: Texte rouge */
+            }
+            
+            .mega-menu-item {
+                position: relative; 
+            }
+
+            /* Méga menu mobile (Fond gris clair) */
+            .mega-menu-content {
+                position: static; 
+                width: 100%;
+                box-shadow: none;
+                background-color: #f0f0f0; /* Fond gris clair (plus clair que le header) */
+                padding: 1em;
+            }
+
+            .mega-menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Pas besoin de surcharger .mega-menu-column li a ici, il hérite déjà du style sombre */
+        }
+/* Fin de test du header */
