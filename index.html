@@ -168,28 +168,213 @@ _                            <li><a href="#">Patrimoine écrit</a></li>
   
   <form name="almaSearchForm" method="get" target="_self" action="https://mon-psb.primo.exlibrisgroup.com/nde/search" enctype="application/x-www-form-urlencoded; charset=utf-8">
     
-    <!-- 
-      Ceci est le champ de recherche visible par l'utilisateur.
-      Le 'name' est "query", ce qui correspond à l'URL.
-    -->
-    <input type="text" name="query" size="35" placeholder="Rechercher dans Alma..." style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; margin-right: 5px;">
-    
-    <!-- 
-      Ceci est le bouton de soumission.
-      'type="submit"' est crucial car le JS est bloqué.
-    -->
-    <input type="submit" value="Rechercher" style="padding: 8px 12px; background: #DE6E17; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">
+    <!--
+  Formulaire de recherche pour Alma (Style "Bandeau" basé sur l'image)
+  
+  Ce code est en HTML pur, SANS JavaScript.
+  Il est conçu pour être collé dans un bloc "HTML Personnalisé" de WordPress.
+  
+  Action: https://mon-psb.primo.exlibrisgroup.com/nde/search
+  Methode: GET
+-->
 
-    <!-- 
-      Paramètres cachés (hidden) qui doivent être envoyés
-      avec chaque recherche, conformément à l'URL.
-    -->
-    <input type="hidden" name="tab" value="Everything">
-    <input type="hidden" name="search_scope" value="MyInst_and_CI">
-    <input type="hidden" name="searchInFulltext" value="false">
-    <input type="hidden" name="vid" value="33MON_INST:33UM_NDE_VU1">
+<style>
+  /* Police de base */
+  .alma-search-font {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  /* Le conteneur principal du bandeau.
+    Pleine largeur, avec une image de fond et un fond uni de secours.
+  */
+  .alma-banner-container {
+    width: 100%;
+    padding: 60px 20px; /* Espace en haut et en bas */
+    box-sizing: border-box;
+    background-color: #4A5A70; /* Couleur de fond si l'image ne charge pas */
+    /* J'utilise une image de remplacement pour simuler votre fond */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://placehold.co/1920x400/465A71/FFFFFF?text=Arri%C3%A8re-plan+de+biblioth%C3%A8que');
+    background-size: cover;
+    background-position: center center;
+  }
+
+  /* Le titre principal, centré et en blanc.
+  */
+  .alma-banner-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin: 0 0 30px 0;
+  }
+  
+  /* Un 'wrapper' pour centrer le contenu (formulaire + liens) 
+    à l'intérieur du bandeau pleine largeur.
+  */
+  .alma-search-wrapper {
+    max-width: 700px; /* Correspond à la largeur max de l'image */
+    margin: 0 auto;
+  }
+
+  /* Le formulaire lui-même. 
+    Nous n'avons plus besoin de flex ici.
+  */
+  .alma-search-form {
+    width: 100%;
+  }
+
+  /* Le conteneur pour le champ de recherche ET le bouton loupe.
+    'position: relative' est crucial pour placer le bouton
+    par-dessus le champ de recherche.
+  */
+  .alma-input-group {
+    position: relative;
+    width: 100%;
+  }
+
+  /*
+    Le champ de recherche.
+    - Coins très arrondis ('pill-shape').
+    - 'padding-right' important pour laisser de la place au bouton !
+  */
+  .alma-search-input {
+    width: 100%;
+    padding: 15px 50px 15px 25px; /* haut/bas | droite (pour bouton) | gauche */
+    border: none;
+    border-radius: 9999px; /* Le secret de la forme "pillule" */
+    font-size: 1rem;
+    box-sizing: border-box; /* Important pour que le padding n'ajoute pas de largeur */
+  }
+
+  /* Effet visuel quand on clique dans le champ */
+  .alma-search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7); /* Lueur blanche */
+  }
+
+  /*
+    Le bouton de recherche (maintenant une loupe).
+    - 'position: absolute' pour le placer DANS le '.alma-input-group'.
+    - Transformé pour être un cercle transparent avec une icône.
+  */
+  .alma-search-button {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Léger écart du bord droit */
+    transform: translateY(-50%); /* Centrage vertical parfait */
+    background: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555; /* Couleur de l'icône SVG */
+  }
+  
+  /* Icône SVG dans le bouton */
+  .alma-search-button svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Effet au survol du bouton */
+  .alma-search-button:hover {
+    color: #000;
+  }
+
+  /*
+    Conteneur pour les liens rapides ("Posez votre question", etc.)
+    Alignés à droite sur grand écran.
+  */
+  .alma-quick-links {
+    display: flex;
+    justify-content: flex-end; /* Aligne les liens à droite */
+    gap: 20px; /* Espace entre les liens */
+    margin-top: 15px;
+    padding-right: 10px; /* Petit alignement */
+  }
+
+  .alma-quick-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .alma-quick-links a:hover {
+    text-decoration: underline;
+  }
+
+  /*
+    MEDIA QUERY POUR LA RESPONSIVITÉ
+    Sur les petits écrans (moins de 600px) :
+  */
+  @media (max-width: 600px) {
+    .alma-banner-title {
+      font-size: 1.8rem; /* Titre plus petit */
+    }
+
+    .alma-search-input {
+      padding: 12px 45px 12px 20px; /* Padding ajusté */
+    }
+
+    /* Les liens rapides passent au centre sous le formulaire */
+    .alma-quick-links {
+      justify-content: center;
+    }
+  }
+</style>
+
+<!-- 
+  Structure HTML mise à jour
+-->
+<div class="alma-search-font"> <!-- Applique la police de base -->
+  
+  <div class="alma-banner-container">
+    <h1 class="alma-banner-title">Votre découverte commence ici</h1>
     
-  </form>
+    <div class="alma-search-wrapper">
+      
+      <form name="almaSearchForm" method="get" target="_self" action="https://mon-psb.primo.exlibrisgroup.com/nde/search" enctype="application/x-www-form-urlencoded; charset=utf-8" class="alma-search-form">
+        
+        <div class="alma-input-group">
+          <!-- Champ de recherche visible -->
+          <input type="text" name="query" placeholder="Rechercher..." class="alma-search-input">
+          
+          <!-- 
+            Le 'input' de type 'submit' a été remplacé par un 'button' 
+            de 'type="submit"' pour permettre de mettre une icône SVG à l'intérieur.
+            La fonctionnalité est identique.
+          -->
+          <button type="submit" class="alma-search-button" aria-label="Rechercher">
+            <!-- Icône de loupe SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+              <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- 
+          Paramètres cachés (hidden) CONSERVÉS.
+          Ils sont essentiels au fonctionnement.
+        -->
+        <input type="hidden" name="tab" value="Everything">
+        <input type="hidden" name="search_scope" value="MyInst_and_CI">
+        <input type="hidden" name="searchInFulltext" value="false">
+        <input type="hidden" name="vid" value="33MON_INST:33UM_NDE_VU1">
+        
+      </form>
+
+      <!-- Liens rapides ajoutés (comme sur l'image) -->
+      <div class="alma-quick-links">
+        <a href="#">Posez votre question</a>
+        <a href="#">Recherche avancée</a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
 
 
 </div>
@@ -199,4 +384,5 @@ _                            <li><a href="#">Patrimoine écrit</a></li>
 </body>
 
 </html>
+
 
