@@ -164,10 +164,39 @@ _                            <li><a href="#">Patrimoine écrit</a></li>
         </ul>
       </nav>
     </header>
+<div style="border: 1px solid #ddd; padding: 15px; background: #f9f9f9; border-radius: 8px;">
+  
+  <form name="almaSearchForm" method="get" target="_self" action="https://mon-psb.primo.exlibrisgroup.com/nde/search" enctype="application/x-www-form-urlencoded; charset=utf-8">
+    
+    <!-- 
+      Ceci est le champ de recherche visible par l'utilisateur.
+      Le 'name' est "query", ce qui correspond à l'URL.
+    -->
+    <input type="text" name="query" size="35" placeholder="Rechercher dans Alma..." style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; margin-right: 5px;">
+    
+    <!-- 
+      Ceci est le bouton de soumission.
+      'type="submit"' est crucial car le JS est bloqué.
+    -->
+    <input type="submit" value="Rechercher" style="padding: 8px 12px; background: #DE6E17; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">
 
+    <!-- 
+      Paramètres cachés (hidden) qui doivent être envoyés
+      avec chaque recherche, conformément à l'URL.
+    -->
+    <input type="hidden" name="tab" value="Everything">
+    <input type="hidden" name="search_scope" value="MyInst_and_CI">
+    <input type="hidden" name="searchInFulltext" value="false">
+    <input type="hidden" name="vid" value="33MON_INST:33UM_NDE_VU1">
+    
+  </form>
+
+
+</div>
 <script src="menu_de_navigation.js"></script>
     
 
 </body>
 
 </html>
+
