@@ -188,7 +188,17 @@ _                            <li><a href="#">Patrimoine écrit</a></li>
     Pleine largeur, avec une image de fond et un fond uni de secours.
   */
   .alma-banner-container {
-    width: 100%;
+    /* MODIFIÉ : 
+       Utilise '100vw' (100% de la largeur de la fenêtre) au lieu de '100%'.
+       'left: 50%' et 'transform: translateX(-50%)' forcent le bloc
+       à ignorer les contraintes du parent et à se centrer
+       par rapport à la fenêtre.
+    */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    
     padding: 60px 20px; /* Espace en haut et en bas */
     box-sizing: border-box;
     background-color: #4A5A70; /* Couleur de fond si l'image ne charge pas */
@@ -384,5 +394,6 @@ _                            <li><a href="#">Patrimoine écrit</a></li>
 </body>
 
 </html>
+
 
 
