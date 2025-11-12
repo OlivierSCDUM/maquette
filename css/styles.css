@@ -373,7 +373,20 @@ body {
 }
 
 
-/* --- NOUVEAU: Styles pour le Footer --- */
+/* --- Styles pour le Mega Menu full-width --- */
+
+/* Assure que le header est le parent de positionnement */
+#custom-main-header {
+    position: relative;
+}
+
+/* Annule le 'position: relative' supposé de 'menu_de_navigation.css' */
+.mega-menu-item {
+    position: static;
+}
+
+
+/* --- Styles pour le Footer --- */
 
 /* Liens de texte dans le footer */
 .footer-link {
