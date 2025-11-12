@@ -375,24 +375,12 @@ body {
 
 /* --- Styles pour le Mega Menu full-width --- */
 
-/* Assure que le header est le parent de positionnement */
-#custom-main-header {
-    position: relative;
-}
-
-/* * MODIFICATION CLÉ: Ajout de !important
- * Force l'annulation de 'position: relative' de 'menu_de_navigation.css'
+/* * NOTE: J'ai supprimé les règles en conflit.
+ * Votre 'menu_de_navigation.css' et 'index.html' (avec la structure
+ * <div class="container..."><div class="mega-menu-grid">...</div></div>)
+ * contiennent tout ce qu'il faut pour que cela fonctionne.
+ * Nous n'avons pas besoin de règles supplémentaires ici.
 */
-.mega-menu-item {
-    position: static !important;
-}
-
-/* * MODIFICATION CLÉ: Ajout de !important
- * Force la grille à prendre 100% de la largeur de son conteneur
-*/
-.mega-menu-grid {
-    width: 100% !important;
-}
 
 
 /* --- Styles pour le Footer --- */
