@@ -380,9 +380,18 @@ body {
     position: relative;
 }
 
-/* Annule le 'position: relative' supposé de 'menu_de_navigation.css' */
+/* * MODIFICATION CLÉ: Ajout de !important
+ * Force l'annulation de 'position: relative' de 'menu_de_navigation.css'
+*/
 .mega-menu-item {
-    position: static;
+    position: static !important;
+}
+
+/* * MODIFICATION CLÉ: Ajout de !important
+ * Force la grille à prendre 100% de la largeur de son conteneur
+*/
+.mega-menu-grid {
+    width: 100% !important;
 }
 
 
@@ -452,32 +461,3 @@ body {
     height: 28px; /* h-7 */
     fill: currentColor;
 }
-
-/* --- Styles pour le Mega Menu full-width --- */
-
-/* Assure que le header est le parent de positionnement */
-#custom-main-header {
-    position: relative;
-}
-
-/* Annule le 'position: relative' supposé de 'menu_de_navigation.css' */
-.mega-menu-item {
-    position: static;
-}
-
-/* * NOUVELLE RÈGLE: Forcer la grille à utiliser toute la largeur
- * disponible de son conteneur (défini par les classes Tailwind
- * 'max-w-7xl' et 'mx-auto' sur ce même élément).
- * Cela annule un éventuel 'width' fixe de 'menu_de_navigation.css'.
-*/
-.mega-menu-grid {
-    width: 100%;
-}
-
-
-/* --- NOUVEAU: Styles pour le Footer --- */
-
-/* Liens de texte dans le footer */
-/* ... (le reste de votre code CSS pour le footer) ... */
-
-En ajoutant `.mega-menu-grid { width: 100%; }`, la grille va maintenant s'étaler pour remplir l'espace `max-w-7xl` (1280px) que nous avons défini, et les colonnes s'espaceront enfin comme vous le souhaitiez.
