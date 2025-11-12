@@ -303,14 +303,24 @@
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
 
                 <!-- 1. Ressources par discipline -->
-                <a href="ressources-par-discipline.html" title="Consulter les ressources par discipline" class="resource-card group">
-                    <span class="material-symbols-outlined resource-card-icon">
-                        topic
-                    </span>
-                    <h3 class="resource-card-title">
-                        Ressources par discipline
-                    </h3>
-                </a>
+                <div class="resource-card">
+                    <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined resource-card-icon">
+                            article
+                        </span>
+                        <h3 class="resource-card-title">
+                            Ressources par discipline
+                        </h3>
+                    </div>
+                    <!-- Liste de sous-liens -->
+                    <ul class="resource-card-sublist">
+                        <li><a href="#" class="resource-card-link">Droit</a></li>
+                        <li><a href="#" class="resource-card-link">Sciences et Techniques</a></li>
+                        <li><a href="#" class="resource-card-link">Sciences économiques - Gestion</a></li>
+                        <li><a href="#" class="resource-card-link">Santé</a></li>
+                        <li><a href="#" class="resource-card-link">SHS - Sciences de l'éducation</a></li>
+                    </ul>
+                </div>
 
                 <!-- 2. Toutes les bases de données -->
                 <a href="#" title="Voir toutes les bases de données" class="resource-card group">
@@ -417,4 +427,5 @@
     
 </body>
 </html>
+
 
