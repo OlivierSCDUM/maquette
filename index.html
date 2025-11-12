@@ -5,72 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header avec Méga Menu</title>
 
-     <link rel="stylesheet" href="menu_de_navigation.css">
-   <!-- 1. Le script de Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
+    <!-- MODIFIÉ: Chemin vers le dossier css -->
+    <link rel="stylesheet" href="css/menu_de_navigation.css">
     
-<!-- 2. Le lien pour les icônes Google Fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- NOUVEAU: Lien vers votre nouveau fichier de styles centralisé -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Script de Tailwind CSS (gardé) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icônes Google Fonts (gardé) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-<!-- 3. L'ensemble des styles CSS pour les vignettes -->
-<style>
-    /* Configuration de la police "Inter" (moderne et lisible) */
-    body {
-        font-family: "Inter", sans-serif;
-    }
-
-    /* Styles pour les cartes (vignettes) */
-    .card {
-        background-color: #fff;
-        border-radius: 0.75rem; /* rounded-xl */
-        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
-        padding: 1.5rem; /* p-6 (MODIFIÉ: réduit de 2rem) */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        transition-property: all;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 300ms;
-        text-decoration: none; /* Ajouté pour enlever le soulignement du lien */
-    }
-
-    .card:hover {
-        /* shadow-2xl */
-        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-        /* -translate-y-2 */
-        transform: translateY(-0.5rem);
-    }
-
-    /* Styles pour les icônes Google */
-    .card-icon {
-        font-size: 3rem; /* 48px, (MODIFIÉ: réduit de 4rem) */
-        line-height: 1; /* Pour un alignement correct */
-        color: #E11D48; /* Couleur "rouge rose" (Tailwind rose-600) */
-        transition: transform 0.3s ease;
-    }
-
-    /* Animation de survol sur l'icône,
-       déclenchée par le survol de la carte (.card) */
-    .card:hover .card-icon {
-        transform: scale(1.1);
-    }
-
-    /* Styles pour le titre des cartes */
-    .card-title {
-        margin-top: 1rem; /* mt-4 (MODIFIÉ: réduit de 1.5rem) */
-        font-size: 1.125rem; /* text-lg (MODIFIÉ: réduit de 1.25rem) */
-        line-height: 1.75rem;
-        font-weight: 600; /* font-semibold */
-        color: rgb(17 24 39); /* text-gray-900 */
-    }
-</style>
+    <!-- SUPPRIMÉ: Le gros bloc <style> a été déplacé dans css/styles.css -->
 </head>
 <body>
     
     <header id="custom-main-header">
+      <!-- MODIFIÉ: Chemin relatif vers l'image du logo -->
       <a class="logo-link" href="https://olivierscdum.github.io/maquette/">
-        <img src="https://olivierscdum.github.io/maquette/library-logo3.png" alt="Logo de la bibliothèque">
+        <img src="images/library-logo3.png" alt="Logo de la bibliothèque">
       </a>
       <button class="burger-menu" id="burger-menu-trigger" aria-label="Ouvrir le menu">
         <span class="burger-bar"></span>
@@ -84,25 +38,25 @@
               Vos BU
             </button>
             <div class="mega-menu-content" id="mega-menu-panel-bu">
-                <div class="mega-menu-grid">
-                    <div class="mega-menu-column">
-                        <h4>Les bibliothèques</h4>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Les Services</h4>
-                        <ul>
-                            <li><a href="#">Imprimer</a></li>
-                            <li><a href="#">Prêt entre bibliothèques</a></li>
-                            <li><a href="#">Tous les services</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Besoin d'aide ?</h4>
-                    </div>
-                    <div class="mega-menu-column"></div>
-                    <div class="mega-menu-column"></div>
-                    <div class="mega-menu-column"></div>
+              <div class="mega-menu-grid">
+                <div class="mega-menu-column">
+                  <h4>Les bibliothèques</h4>
                 </div>
+                <div class="mega-menu-column">
+                  <h4>Les Services</h4>
+                  <ul>
+                    <li><a href="#">Imprimer</a></li>
+                    <li><a href="#">Prêt entre bibliothèques</a></li>
+                    <li><a href="#">Tous les services</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Besoin d'aide ?</h4>
+                </div>
+                <div class="mega-menu-column"></div>
+                <div class="mega-menu-column"></div>
+                <div class="mega-menu-column"></div>
+              </div>
             </div>
           </li>
           <li><a href="#">Etudiants</a></li>
@@ -113,52 +67,52 @@
               Doctorants
             </button>
             <div class="mega-menu-content" id="mega-menu-panel-doctorants">
-                <div class="mega-menu-grid">
-                    <div class="mega-menu-column">
-                        <h4>Trouver des documents</h4>
-                        <ul>
-                            <li><a href="#">Bases de données</a></li>
-                            <li><a href="#">Trouver des thèses</a></li>
-                            <li><a href="#">Thèses d'exercices</a></li>
-                            <li><a href="#">The metanews</a></li>
-                            <li><a href="#">Vous ne trouvez pas ?</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Préparer ma thèse</h4>
-                        <ul>
-                            <li><a href="#">Thèse de doctorat</a></li>
-                            <li><a href="#">Thèse d'exercice</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Gérer mes activités de chercheur</h4>
-                        <ul>
-                            <li><a href="#">Identité numéirque</a></li>
-                            <li><a href="#">Publier</a></li>
-                            <li><a href="#">Gérer mes données</a></li>
-                            <li><a href="#">Droit d'auteur / Plagiat</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Mes outils</h4>
-                        <ul>
-                            <li><a href="#">Click & read</a></li>
-                            <li><a href="#">Google scholar</a></li>
-                            <li><a href="#">Revue de littérature</a></li>
-                            <li><a href="#">Zotero</a></li>
-                            <li><a href="#">ia académiques</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Assistance / Nous contacter</h4>
-                        <ul>
-                            <li><a href="#">Une question ?</a></li>
-                            <li><a href="#">Suggérer un achat</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column"></div> <!-- Colonne vide pour remplir la grille de 6 -->
+              <div class="mega-menu-grid">
+                <div class="mega-menu-column">
+                  <h4>Trouver des documents</h4>
+                  <ul>
+                    <li><a href="#">Bases de données</a></li>
+                    <li><a href="#">Trouver des thèses</a></li>
+                    <li><a href="#">Thèses d'exercices</a></li>
+                    <li><a href="#">The metanews</a></li>
+                    <li><a href="#">Vous ne trouvez pas ?</a></li>
+                  </ul>
                 </div>
+                <div class="mega-menu-column">
+                  <h4>Préparer ma thèse</h4>
+                  <ul>
+                    <li><a href="#">Thèse de doctorat</a></li>
+                    <li><a href="#">Thèse d'exercice</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Gérer mes activités de chercheur</h4>
+                  <ul>
+                    <li><a href="#">Identité numéirque</a></li>
+                    <li><a href="#">Publier</a></li>
+                    <li><a href="#">Gérer mes données</a></li>
+                    <li><a href="#">Droit d'auteur / Plagiat</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Mes outils</h4>
+                  <ul>
+                    <li><a href="#">Click & read</a></li>
+                    <li><a href="#">Google scholar</a></li>
+                    <li><a href="#">Revue de littérature</a></li>
+                    <li><a href="#">Zotero</a></li>
+                    <li><a href="#">ia académiques</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Assistance / Nous contacter</h4>
+                  <ul>
+                    <li><a href="#">Une question ?</a></li>
+                    <li><a href="#">Suggérer un achat</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column"></div> <!-- Colonne vide pour remplir la grille de 6 -->
+              </div>
             </div>
           </li>
           
@@ -168,360 +122,143 @@
               Pour la recherche
             </button>
             <div class="mega-menu-content" id="mega-menu-panel-recherche">
-                <div class="mega-menu-grid">
-                    <div class="mega-menu-column">
-                        <h4>Publier en accès ouvert</h4>
-                        <ul>
-                            <li><a href="#">Voies de publication</a></li>
-                            <li><a href="#">Déposer dans Hal</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Valoriser</h4>
-                        <ul>
-                            <li><a href="#">Identité Numérique</a></li>
-                            <li><a href="#">Production scientifiques de l'UM</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Gérer mes données</h4>
-                        <ul>
-                            <li><a href="#">Ecodor</a></li>
-                            <li><a href="#">Gérer ses données à l'UM</a></li>
-                            <li><a href="#">Cahiers de laboratoire électroniques</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Trouver des documents</h4>
-                        <ul>
-                            <li><a href="#">Bases de données par discipline</a></li>
-                            <li><a href="#">Revue de littérature</a></li>
-                            <li><a href="#">Construire une veille</a></li>
-_                            <li><a href="#">Patrimoine écrit</a></li>
-                            <li><a href="#">Vous ne trouvez pas ?</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Vos outils</h4>
-                        <ul>
-                            <li><a href="#">Zotero</a></li>
-                            <li><a href="#">TDM avec nos abonnements</a></li>
-                            <li><a href="#">IA avec nos abonnements</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Assistance / accompagnement</h4>
-                        <ul>
-                            <li><a href="#">Contactez-nous</a></li>
-                            <li><a href="#">Suggérer un achat/un don</a></li>
-                        </ul>
-                    </div>
+              <div class="mega-menu-grid">
+                <div class="mega-menu-column">
+                  <h4>Publier en accès ouvert</h4>
+                  <ul>
+                    <li><a href="#">Voies de publication</a></li>
+                    <li><a href="#">Déposer dans Hal</a></li>
+                  </ul>
                 </div>
+                <div class="mega-menu-column">
+                  <h4>Valoriser</h4>
+                  <ul>
+                    <li><a href="#">Identité Numérique</a></li>
+                    <li><a href="#">Production scientifiques de l'UM</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Gérer mes données</h4>
+                  <ul>
+                    <li><a href="#">Ecodor</a></li>
+                    <li><a href="#">Gérer ses données à l'UM</a></li>
+                    <li><a href="#">Cahiers de laboratoire électroniques</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Trouver des documents</h4>
+                  <ul>
+                    <li><a href="#">Bases de données par discipline</a></li>
+                    <li><a href="#">Revue de littérature</a></li>
+                    <li><a href="#">Construire une veille</a></li>
+                    <li><a href="#">Patrimoine écrit</a></li>
+                    <li><a href="#">Vous ne trouvez pas ?</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Vos outils</h4>
+                  <ul>
+                    <li><a href="#">Zotero</a></li>
+                    <li><a href="#">TDM avec nos abonnements</a></li>
+                    <li><a href="#">IA avec nos abonnements</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Assistance / accompagnement</h4>
+                  <ul>
+                    <li><a href="#">Contactez-nous</a></li>
+                    <li><a href="#">Suggérer un achat/un don</a></li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </li>
         </ul>
       </nav>
     </header>
-<div style="border: 1px solid #ddd; padding: 15px; background: #f9f9f9; border-radius: 8px;">
-  
-  <form name="almaSearchForm" method="get" target="_self" action="https://mon-psb.primo.exlibrisgroup.com/nde/search" enctype="application/x-www-form-urlencoded; charset=utf-8">
+
+    <!-- MODIFIÉ: Le style inline a été remplacé par une classe -->
+    <div class="alma-form-wrapper">
     
-    <!--
-  Formulaire de recherche pour Alma (Style "Bandeau" basé sur l'image)
-  
-  Ce code est en HTML pur, SANS JavaScript.
-  Il est conçu pour être collé dans un bloc "HTML Personnalisé" de WordPress.
-  
-  Action: https://mon-psb.primo.exlibrisgroup.com/nde/search
-  Methode: GET
--->
+      <!-- SUPPRIMÉ: Le bloc <style> qui était ici a été déplacé dans css/styles.css -->
 
-<style>
-  /* Police de base */
-  .alma-search-font {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
-
-  /* Le conteneur principal du bandeau.
-    Pleine largeur, avec une image de fond et un fond uni de secours.
-  */
-  .alma-banner-container {
-    /* MODIFIÉ : 
-       Utilise '100vw' (100% de la largeur de la fenêtre) au lieu de '100%'.
-       'left: 50%' et 'transform: translateX(-50%)' forcent le bloc
-       à ignorer les contraintes du parent et à se centrer
-       par rapport à la fenêtre.
-    */
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    
-    padding: 60px 20px; /* Espace en haut et en bas */
-    box-sizing: border-box;
-    background-color: #4A5A70; /* Couleur de fond si l'image ne charge pas */
-    /* J'utilise une image de remplacement pour simuler votre fond */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://olivierscdum.github.io/maquette/fond.png');
-    background-size: cover;
-    background-position: center center;
-  }
-
-  /* Le titre principal, centré et en blanc.
-  */
-  .alma-banner-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    margin: 0 0 30px 0;
-  }
-  
-  /* Un 'wrapper' pour centrer le contenu (formulaire + liens) 
-    à l'intérieur du bandeau pleine largeur.
-  */
-  .alma-search-wrapper {
-    max-width: 700px; /* Correspond à la largeur max de l'image */
-    margin: 0 auto;
-  }
-
-  /* Le formulaire lui-même. 
-    Nous n'avons plus besoin de flex ici.
-  */
-  .alma-search-form {
-    width: 100%;
-  }
-
-  /* Le conteneur pour le champ de recherche ET le bouton loupe.
-    'position: relative' est crucial pour placer le bouton
-    par-dessus le champ de recherche.
-  */
-  .alma-input-group {
-    position: relative;
-    width: 100%;
-  }
-
-  /*
-    Le champ de recherche.
-    - Coins très arrondis ('pill-shape').
-    - 'padding-right' important pour laisser de la place au bouton !
-  */
-  .alma-search-input {
-    width: 100%;
-    padding: 15px 50px 15px 25px; /* haut/bas | droite (pour bouton) | gauche */
-    border: none;
-    border-radius: 9999px; /* Le secret de la forme "pillule" */
-    font-size: 1rem;
-    box-sizing: border-box; /* Important pour que le padding n'ajoute pas de largeur */
-  }
-
-  /* Effet visuel quand on clique dans le champ */
-  .alma-search-input:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7); /* Lueur blanche */
-  }
-
-  /*
-    Le bouton de recherche (maintenant une loupe).
-    - 'position: absolute' pour le placer DANS le '.alma-input-group'.
-    - Transformé pour être un cercle transparent avec une icône.
-  */
-  .alma-search-button {
-    position: absolute;
-    top: 50%;
-    right: 10px; /* Léger écart du bord droit */
-    transform: translateY(-50%); /* Centrage vertical parfait */
-    background: transparent;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #555; /* Couleur de l'icône SVG */
-  }
-  
-  /* Icône SVG dans le bouton */
-  .alma-search-button svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  /* Effet au survol du bouton */
-  .alma-search-button:hover {
-    color: #000;
-  }
-
-  /*
-    Conteneur pour les liens rapides ("Posez votre question", etc.)
-    Alignés à droite sur grand écran.
-  */
-  .alma-quick-links {
-    display: flex;
-    justify-content: flex-end; /* Aligne les liens à droite */
-    gap: 20px; /* Espace entre les liens */
-    margin-top: 15px;
-    padding-right: 10px; /* Petit alignement */
-  }
-
-  .alma-quick-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-  }
-
-  .alma-quick-links a:hover {
-    text-decoration: underline;
-  }
-
-  /*
-    MEDIA QUERY POUR LA RESPONSIVITÉ
-    Sur les petits écrans (moins de 600px) :
-  */
-  @media (max-width: 600px) {
-    .alma-banner-title {
-      font-size: 1.8rem; /* Titre plus petit */
-    }
-
-    .alma-search-input {
-      padding: 12px 45px 12px 20px; /* Padding ajusté */
-    }
-
-    /* Les liens rapides passent au centre sous le formulaire */
-    .alma-quick-links {
-      justify-content: center;
-    }
-  }
-</style>
-
-<!-- 
-  Structure HTML mise à jour
--->
-<div class="alma-search-font"> <!-- Applique la police de base -->
-  
-  <div class="alma-banner-container">
-    <h1 class="alma-banner-title">Votre découverte commence ici</h1>
-    
-    <div class="alma-search-wrapper">
-      
-      <form name="almaSearchForm" method="get" target="_self" action="https://mon-psb.primo.exlibrisgroup.com/nde/search" enctype="application/x-www-form-urlencoded; charset=utf-8" class="alma-search-form">
-        
-        <div class="alma-input-group">
-          <!-- Champ de recherche visible -->
-          <input type="text" name="query" placeholder="Rechercher..." class="alma-search-input">
-          
-          <!-- 
-            Le 'input' de type 'submit' a été remplacé par un 'button' 
-            de 'type="submit"' pour permettre de mettre une icône SVG à l'intérieur.
-            La fonctionnalité est identique.
-          -->
-          <button type="submit" class="alma-search-button" aria-label="Rechercher">
-            <!-- Icône de loupe SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-              <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path>
-            </svg>
-          </button>
+      <!-- Structure HTML du formulaire Alma (inchangée) -->
+      <form name="almaSearchForm" method="get" target="_self" action="https://mon-psb.primo.exlibrisgroup.com/nde/search" enctype="application/x-www-form-urlencoded; charset=utf-8">
+        <div class="alma-search-font">
+          <div class="alma-banner-container">
+            <h1 class="alma-banner-title">Votre découverte commence ici</h1>
+            <div class="alma-search-wrapper">
+              <form name="almaSearchForm" method="get" target="_self" action="https://mon-psb.primo.exlibrisgroup.com/nde/search" enctype="application/x-www-form-urlencoded; charset=utf-8" class="alma-search-form">
+                <div class="alma-input-group">
+                  <input type="text" name="query" placeholder="Rechercher..." class="alma-search-input">
+                  <button type="submit" class="alma-search-button" aria-label="Rechercher">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                      <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path>
+                    </svg>
+                  </button>
+                </div>
+                <input type="hidden" name="tab" value="Everything">
+                <input type="hidden" name="search_scope" value="MyInst_and_CI">
+                <input type="hidden" name="searchInFulltext" value="false">
+                <input type="hidden" name="vid" value="33MON_INST:33UM_NDE_VU1">
+              </form>
+              <div class="alma-quick-links">
+                <a href="#">Posez votre question</a>
+                <a href="#">Recherche avancée</a>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <!-- 
-          Paramètres cachés (hidden) CONSERVÉS.
-          Ils sont essentiels au fonctionnement.
-        -->
-        <input type="hidden" name="tab" value="Everything">
-        <input type="hidden" name="search_scope" value="MyInst_and_CI">
-        <input type="hidden" name="searchInFulltext" value="false">
-        <input type="hidden" name="vid" value="33MON_INST:33UM_NDE_VU1">
-        
       </form>
-
-      <!-- Liens rapides ajoutés (comme sur l'image) -->
-      <div class="alma-quick-links">
-        <a href="#">Posez votre question</a>
-        <a href="#">Recherche avancée</a>
-      </div>
-
     </div>
-  </div>
 
-</div>
-
-
-</div>
-
-<!-- C'est le seul morceau à mettre dans votre <body> -->
-<section class="w-full bg-stone-100 py-12 shadow-sm">
-        
-    <!-- MODIFIÉ: "mx-auto" ajouté pour centrer le conteneur -->
-    <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
-        
-        <!-- Titre -->
-        <!-- MODIFIÉ: Taille de police réduite à text-3xl -->
+    <!-- Section "Missions du SCD" (inchangée) -->
+    <section class="w-full bg-stone-100 py-12 shadow-sm">
+      <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
         <h1 class="text-3xl font-bold text-gray-800 text-center mb-12">
-            Les missions du SCD
+          Les missions du SCD
         </h1>
-
-        <!-- 2. Section des vignettes -->
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-
-            <!-- Vignette 1: Les BU et services (MODIFIÉ: C'est maintenant un lien) -->
-            <a href="#" title="En savoir plus sur Les BU et services" class="card group">
-                <!-- Icône Google Material Symbol -->
-                <span class="material-symbols-outlined card-icon">
-                    domain
-                </span>
-                <h3 class="card-title">
-                    Les BU et services
-                </h3>
-            </a>
-
-            <!-- Vignette 2: Les collections (MODIFIÉ: C'est maintenant un lien) -->
-            <a href="#" title="En savoir plus sur Les collections" class="card group">
-                <!-- Icône Google Material Symbol -->
-                <span class="material-symbols-outlined card-icon">
-                    collections_bookmark
-                </span>
-                <h3 class="card-title">
-                    Les collections
-                </h3>
-            </a>
-
-            <!-- Vignette 3: L'accompagnement et la formation (MODIFIÉ: C'est maintenant un lien) -->
-            <a href="#" title="En savoir plus sur L'accompagnement et la formation" class="card group">
-                <!-- Icône Google Material Symbol -->
-                <span class="material-symbols-outlined card-icon">
-                    school
-                </span>
-                <h3 class="card-title">
-                    L'accompagnement et la formation
-                </h3>
-            </a>
-
-            <!-- Vignette 4: L'appui à la recherche (MODIFIÉ: C'est maintenant un lien) -->
-            <a href="#" title="En savoir plus sur L'appui à la recherche" class="card group">
-                <!-- Icône Google Material Symbol -->
-                <span class="material-symbols-outlined card-icon">
-                    science
-                </span>
-                <h3 class="card-title">
-                    L'appui à la recherche
-                </h3>
-            </a>
-
-        </div> <!-- Fin de la grille -->
-
-    </div> <!-- Fin du container -->
-</section>
+          <a href="#" title="En savoir plus sur Les BU et services" class="card group">
+            <span class="material-symbols-outlined card-icon">
+              domain
+            </span>
+            <h3 class="card-title">
+              Les BU et services
+            </h3>
+          </a>
+          <a href="#" title="En savoir plus sur Les collections" class="card group">
+            <span class="material-symbols-outlined card-icon">
+              collections_bookmark
+            </span>
+            <h3 class="card-title">
+              Les collections
+            </h3>
+          </a>
+          <a href="#" title="En savoir plus sur L'accompagnement et la formation" class="card group">
+            <span class="material-symbols-outlined card-icon">
+              school
+            </span>
+            <h3 class="card-title">
+              L'accompagnement et la formation
+            </h3>
+          </a>
+          <a href="#" title="En savoir plus sur L'appui à la recherche" class="card group">
+            <span class="material-symbols-outlined card-icon">
+              science
+            </span>
+            <h3 class="card-title">
+              L'appui à la recherche
+            </h3>
+          </a>
+        </div>
+      </div>
+    </section>
     
     
-    <script src="menu_de_navigation.js"></script>
+    <!-- MODIFIÉ: Chemin vers le dossier js -->
+    <script src="js/menu_de_navigation.js"></script>
     
 
 </body>
-
 </html>
-
-
-
-
-
-
-
