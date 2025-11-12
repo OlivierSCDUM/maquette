@@ -174,7 +174,7 @@ body {
   }
 }
 
-/* --- NOUVEAU: Styles pour les Boutons de Service Rapide --- */
+/* --- Styles pour les Boutons de Service Rapide --- */
 
 .quick-button-link {
   display: flex;
@@ -230,4 +230,69 @@ body {
 /* Le texte change de couleur */
 .quick-button-link:hover .quick-button-label {
   color: #E11D48; /* rose-600 */
+}
+
+
+/* --- NOUVEAU: Styles pour le bandeau "Ressources" --- */
+
+/* La carte ressource (fond gris plus clair) */
+.resource-card {
+    background-color: #374151; /* text-gray-700 */
+    border-radius: 0.75rem; /* rounded-xl */
+    padding: 1.5rem; /* p-6 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    /* Assure que toutes les cartes ont la même hauteur */
+    height: 100%; 
+}
+
+/* S'applique à <a> et <div> pour l'effet de survol */
+a.resource-card:hover {
+    background-color: #4B5563; /* text-gray-600 */
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
+/* L'icône (garde la couleur "rose-rouge") */
+.resource-card-icon {
+    font-size: 3rem; /* 48px */
+    line-height: 1;
+    color: #E11D48; /* rose-600 */
+}
+
+/* Le titre de la carte */
+.resource-card-title {
+    margin-top: 1rem;
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+}
+
+/* Liste de sous-liens (pour la 3e carte) */
+.resource-card-sublist {
+    margin-top: 1.5rem; /* mt-6 */
+    text-align: left;
+    width: 100%;
+    padding-left: 1rem; /* pl-4 */
+    list-style: none; /* pas de puces */
+}
+
+.resource-card-sublist li {
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* Les liens dans la sous-liste */
+.resource-card-link {
+    color: #D1D5DB; /* text-gray-300 */
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.resource-card-link:hover {
+    color: #FFFFFF; /* white */
+    text-decoration: underline;
 }
