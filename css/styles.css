@@ -233,7 +233,7 @@ body {
 }
 
 
-/* --- NOUVEAU: Styles pour le bandeau "Ressources" --- */
+/* --- Styles pour le bandeau "Ressources" --- */
 
 /* La carte ressource (fond gris plus clair) */
 .resource-card {
@@ -251,9 +251,7 @@ body {
     height: 100%; 
 }
 
-/* * MODIFICATION CLÉ: 
- * J'ai retiré 'a.' pour que l'effet de survol s'applique 
- * aussi aux <div> qui ont la classe .resource-card.
+/* * CORRECTION: s'applique à .resource-card (<a> ou <div>)
 */
 .resource-card:hover {
     background-color: #4B5563; /* text-gray-600 */
@@ -298,4 +296,78 @@ body {
 .resource-card-link:hover {
     color: #FFFFFF; /* white */
     text-decoration: underline;
+}
+
+
+/* --- NOUVEAU: Styles pour le bandeau "Actualités" --- */
+
+.news-card {
+    display: block; /* Pour que le <a> se comporte comme un bloc */
+    text-decoration: none;
+    border-radius: 0.75rem; /* rounded-xl */
+    overflow: hidden; /* Pour que l'image respecte les coins arrondis */
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+    transition: all 0.3s ease;
+}
+
+.news-card:hover {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); /* shadow-2xl */
+    transform: translateY(-0.5rem); /* -translate-y-2 */
+}
+
+/* Conteneur pour l'image (pour le titre par-dessus) */
+.news-image-container {
+    position: relative;
+    height: 200px; /* Hauteur fixe pour l'image */
+}
+
+.news-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image couvre la zone sans se déformer */
+    transition: transform 0.3s ease;
+}
+
+/* Effet de zoom sur l'image au survol */
+.news-card:hover .news-image {
+    transform: scale(1.05);
+}
+
+/* Titre par-dessus l'image */
+.news-image-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.75rem 1rem; /* p-3, p-4 */
+    font-weight: 600; /* font-semibold */
+    color: white;
+    font-size: 1.125rem; /* text-lg */
+    /* Dégradé pour la lisibilité */
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+}
+
+/* Bloc pour la date (fond blanc) */
+.news-date {
+    background-color: white;
+    padding: 0.75rem 1rem;
+    color: #E11D48; /* rose-600 */
+    font-weight: 600; /* font-semibold */
+    font-size: 0.875rem; /* text-sm */
+    border-bottom: 1px solid #e5e7eb; /* border-gray-200 */
+}
+
+/* Bloc pour la description (fond bleu/gris) */
+.news-description {
+    background-color: #374151; /* bg-gray-700 (comme le bandeau ressources) */
+    color: white;
+    padding: 1rem;
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.25rem;
+    /* Hauteur fixe pour 2 lignes */
+    height: 4.5rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
