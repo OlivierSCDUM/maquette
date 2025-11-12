@@ -269,7 +269,8 @@
 
                 <!-- COLONNE DE GAUCHE (MENU) -->
                 <aside class="lg:col-span-1">
-                    <nav id="side-nav" class="sticky top-8 space-y-2">
+                    <!-- MODIFIÉ: Ajout de la classe .side-nav-panel pour le style -->
+                    <nav id="side-nav" class="sticky top-8 space-y-2 side-nav-panel">
                         
                         <!-- Chapeau 1: Lien direct -->
                         <a href="page-des-bus.html" class="side-nav-item">
@@ -313,22 +314,22 @@
                                 <a href="#ressource-shs" class="side-nav-sublink">SHS et science de l'éducation</a>
                                 <a href="#ressource-um" class="side-nav-sublink">Les publications de l'UM</a>
                             </div>
-                        </div>
-
-                        <!-- Chapeau 4: Accordéon -->
+                        <!-- Chapeau 4: Accordéon (MODIFIÉ POUR ÊTRE OUVERT PAR DÉFAUT) -->
                         <div>
-                            <button type="button" class="side-nav-toggle">
+                            <button type="button" class="side-nav-toggle active"> <!-- 1. 'active' AJOUTÉ -->
                                 <span class_group="flex items-center">
                                     <span class="material-symbols-outlined">school</span>
                                     <span>Formation / Accompagnement</span>
                                 </span>
-                                <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                                <!-- 2. 'rotate-90' AJOUTÉ -->
+                                <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
                             </button>
-                            <!-- Sous-menu (caché par défaut) -->
-                            <div class="side-nav-submenu hidden">
+                            <!-- 3. 'hidden' SUPPRIMÉ -->
+                            <div class="side-nav-submenu"> 
                                 <a href="#formation-etudiants" class="side-nav-sublink">Etudiants</a>
                                 <a href="#formation-doctorants" class="side-nav-sublink">Doctorants</a>
-                                <a href="#formation-enseignants" class="side-nav-sublink">Enseignants / Personnel</a>
+                                <!-- 4. 'active' AJOUTÉ ICI -->
+                                <a href="#formation-enseignants" class="side-nav-sublink active">Enseignants / Personnel</a>
                             </div>
                         </div>
 
