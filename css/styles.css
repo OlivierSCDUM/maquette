@@ -299,7 +299,7 @@ body {
 }
 
 
-/* --- NOUVEAU: Styles pour le bandeau "Actualités" --- */
+/* --- Styles pour le bandeau "Actualités" --- */
 
 .news-card {
     display: block; /* Pour que le <a> se comporte comme un bloc */
@@ -370,4 +370,72 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+
+/* --- NOUVEAU: Styles pour le Footer --- */
+
+/* Liens de texte dans le footer */
+.footer-link {
+    color: #FBCFE8; /* rose-200 (light pink) */
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.footer-link:hover {
+    color: #FFFFFF; /* white */
+    text-decoration: underline;
+}
+
+/* Boutons App Store / Google Play */
+.store-button {
+    display: flex;
+    align-items: center;
+    background-color: #000; /* Black background */
+    color: white;
+    border: 1px solid white;
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 0.5rem 1rem; /* p-2 px-4 */
+    text-decoration: none;
+    transition: all 0.2s ease;
+    max-width: 200px; /* Limite la largeur des boutons */
+}
+.store-button:hover {
+    background-color: #333;
+    transform: scale(1.03);
+}
+.store-button svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+    margin-right: 0.75rem; /* mr-3 */
+}
+.store-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.store-text-small {
+    font-size: 0.75rem; /* text-xs */
+    line-height: 1;
+    color: #D1D5DB; /* gray-300 */
+}
+.store-text-large {
+    font-size: 1rem; /* text-base */
+    font-weight: 600; /* font-semibold */
+    line-height: 1;
+}
+
+/* Icônes de réseaux sociaux */
+.social-icon-link {
+    color: #FBCFE8; /* rose-200 */
+    transition: all 0.2s ease;
+}
+.social-icon-link:hover {
+    color: #FFFFFF; /* white */
+    transform: scale(1.1);
+}
+.social-icon-link svg {
+    width: 28px; /* w-7 */
+    height: 28px; /* h-7 */
+    fill: currentColor;
 }
