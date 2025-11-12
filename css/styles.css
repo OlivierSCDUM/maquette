@@ -485,6 +485,12 @@ html {
     font-weight: 600;
     color: #E11D48; /* text-rose-600 */
 }
+/* NOUVEAU: Style pour le lien de la page active (à ajouter manuellement) */
+.side-nav-sublink.active {
+    font-weight: 600;
+    color: #E11D48; /* text-rose-600 */
+    background-color: #FEF2F2; /* bg-rose-50 (pour correspondre au chapeau) */
+}
 
 
 /* --- Styles pour le Footer --- */
