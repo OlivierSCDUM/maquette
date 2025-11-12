@@ -251,8 +251,11 @@ body {
     height: 100%; 
 }
 
-/* S'applique à <a> et <div> pour l'effet de survol */
-a.resource-card:hover {
+/* * MODIFICATION CLÉ: 
+ * J'ai retiré 'a.' pour que l'effet de survol s'applique 
+ * aussi aux <div> qui ont la classe .resource-card.
+*/
+.resource-card:hover {
     background-color: #4B5563; /* text-gray-600 */
     transform: translateY(-4px);
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
