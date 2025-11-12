@@ -7,6 +7,11 @@ body {
     font-family: "Inter", sans-serif;
 }
 
+/* NOUVEAU: Ajout pour le défilement fluide des ancres */
+html {
+    scroll-behavior: smooth;
+}
+
 /* --- Styles pour les vignettes "Missions" --- */
 .card {
     background-color: #fff;
@@ -388,7 +393,97 @@ body {
     grid-template-columns: repeat(5, 1fr);
 }
 .mega-menu-grid.grid-6-cols {
+    /* La valeur par défaut de votre CSS original */
     grid-template-columns: repeat(6, 1fr);
+}
+
+
+/* --- NOUVEAU: Styles pour le Menu Latéral --- */
+
+/* Style pour un lien direct (ex: "Les BUs") */
+.side-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Espace entre icône et texte */
+    padding: 0.75rem 1rem; /* p-3 px-4 */
+    border-radius: 0.5rem; /* rounded-lg */
+    font-weight: 600; /* font-semibold */
+    color: #374151; /* text-gray-700 */
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.side-nav-item:hover {
+    background-color: #F3F4F6; /* bg-gray-100 */
+    color: #1F2937; /* text-gray-900 */
+}
+
+/* Style pour un bouton accordéon (ex: "Services en BU") */
+.side-nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Met l'icône à droite */
+    width: 100%;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    color: #374151;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+.side-nav-toggle:hover {
+    background-color: #F3F4F6; /* bg-gray-100 */
+    color: #1F2937; /* text-gray-900 */
+}
+
+/* Style du bouton quand l'accordéon est ouvert */
+.side-nav-toggle.active {
+    background-color: #FEF2F2; /* bg-rose-50 */
+    color: #E11D48; /* text-rose-600 */
+}
+
+/* L'icône chevron */
+.icon-toggle {
+    transition: transform 0.2s ease;
+}
+/* Rotation de l'icône (gérée par JS via .rotate-90 de Tailwind) */
+.rotate-90 {
+    transform: rotate(90deg);
+}
+
+/* Conteneur du sous-menu */
+.side-nav-submenu {
+    padding-left: 1.5rem; /* pl-6 */
+    margin-top: 0.5rem; /* mt-2 */
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; /* Espace entre les liens */
+    border-left: 2px solid #FDE2E7; /* border-l-2 border-rose-100 */
+}
+
+/* Liens de sous-menu (ancres) */
+.side-nav-sublink {
+    display: block;
+    padding: 0.5rem 1rem; /* p-2 px-4 */
+    border-radius: 0.375rem; /* rounded-md */
+    font-size: 0.875rem; /* text-sm */
+    color: #4B5563; /* text-gray-600 */
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.side-nav-sublink:hover {
+    background-color: #F3F4F6; /* bg-gray-100 */
+    color: #1F2937; /* text-gray-900 */
+}
+/* Style pour le lien "actif" (plus difficile sans JS complexe, mais le survol est déjà bien) */
+.side-nav-sublink:active {
+    font-weight: 600;
+    color: #E11D48; /* text-rose-600 */
 }
 
 
