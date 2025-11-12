@@ -373,14 +373,23 @@ body {
 }
 
 
-/* --- Styles pour le Mega Menu full-width --- */
+/* --- NOUVEAU: Styles pour le Mega Menu (Correction) --- */
+/* Ces règles annulent le 'repeat(6, 1fr)' global de menu_de_navigation.css
+   pour les menus qui ont MOINS de 6 colonnes,
+   afin que leurs colonnes s'étalent sur toute la largeur. */
 
-/* * NOTE: J'ai supprimé les règles en conflit.
- * Votre 'menu_de_navigation.css' et 'index.html' (avec la structure
- * <div class="container..."><div class="mega-menu-grid">...</div></div>)
- * contiennent tout ce qu'il faut pour que cela fonctionne.
- * Nous n'avons pas besoin de règles supplémentaires ici.
-*/
+.mega-menu-grid.grid-3-cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+.mega-menu-grid.grid-4-cols {
+    grid-template-columns: repeat(4, 1fr);
+}
+.mega-menu-grid.grid-5-cols {
+    grid-template-columns: repeat(5, 1fr);
+}
+.mega-menu-grid.grid-6-cols {
+    grid-template-columns: repeat(6, 1fr);
+}
 
 
 /* --- Styles pour le Footer --- */
