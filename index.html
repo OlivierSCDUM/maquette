@@ -20,7 +20,7 @@
 </head>
 <body>
     
-    <header id="custom-main-header">
+   <header id="custom-main-header">
       <!-- MODIFIÉ: Chemin relatif vers l'image -->
       <a class="logo-link" href="https://olivierscdum.github.io/maquette/">
         <img src="images/library-logo3.png" alt="Logo de la bibliothèque">
@@ -36,8 +36,10 @@
             <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-bu">
               Vos BU
             </button>
-            <div class="mega-menu-content" id="mega-menu-panel-bu">
-              <div class="mega-menu-grid">
+            <!-- MODIFIÉ: Ajout des classes 'absolute left-0 right-0' pour la pleine largeur -->
+            <div class="mega-menu-content absolute left-0 right-0" id="mega-menu-panel-bu">
+              <!-- MODIFIÉ: Ajout des classes de conteneur Tailwind -->
+              <div class="mega-menu-grid container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div class="mega-menu-column">
                       <h4>Les bibliothèques</h4>
                   </div>
@@ -63,10 +65,10 @@
           <!-- NOUVEAU MÉGA MENU "ETUDIANTS" -->
           <li class="mega-menu-item">
             <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-etudiants">
-              Etudiants
-            </button>
-            <div class="mega-menu-content" id="mega-menu-panel-etudiants">
-              <div class="mega-menu-grid">
+            <!-- MODIFIÉ: Ajout des classes 'absolute left-0 right-0' pour la pleine largeur -->
+            <div class="mega-menu-content absolute left-0 right-0" id="mega-menu-panel-etudiants">
+              <!-- MODIFIÉ: Ajout des classes de conteneur Tailwind -->
+              <div class="mega-menu-grid container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   
                   <!-- Chapeau 1: etudier en BU -->
                   <div class="mega-menu-column">
@@ -75,10 +77,10 @@
                           <li><a href="#">Trouver un espace de travail</a></li>
                           <li><a href="#">Salles de travail en groupes</a></li>
                           <li><a href="#">Horaires des bu</a></li>
-                      </ul>
-                  </div>
-                  
-                  <!-- Chapeau 2: Trouver des documents -->
+            <!-- MODIFIÉ: Ajout des classes 'absolute left-0 right-0' pour la pleine largeur -->
+            <div class="mega-menu-content absolute left-0 right-0" id="mega-menu-panel-doctorants">
+              <!-- MODIFIÉ: Ajout des classes de conteneur Tailwind -->
+              <div class="mega-menu-grid container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div class="mega-menu-column">
                       <h4>Trouver des documents</h4>
                       <ul>
@@ -175,10 +177,10 @@
           <!-- NOUVEAU MÉGA MENU "POUR L'ENSEIGNEMENT" -->
           <li class="mega-menu-item">
             <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-enseignement">
-              Pour l'enseignement
-            </button>
-            <div class="mega-menu-content" id="mega-menu-panel-enseignement">
-              <div class="mega-menu-grid">
+            <!-- MODIFIÉ: Ajout des classes 'absolute left-0 right-0' pour la pleine largeur -->
+            <div class="mega-menu-content absolute left-0 right-0" id="mega-menu-panel-enseignement">
+              <!-- MODIFIÉ: Ajout des classes de conteneur Tailwind -->
+              <div class="mega-menu-grid container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   
                   <!-- Chapeau 1: Pour vos enseignements -->
                   <div class="mega-menu-column">
@@ -229,10 +231,10 @@
 
           <li class="mega-menu-item">
             <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-recherche">
-              Pour la recherche
-            </button>
-            <div class="mega-menu-content" id="mega-menu-panel-recherche">
-              <div class="mega-menu-grid">
+            <!-- MODIFIÉ: Ajout des classes 'absolute left-0 right-0' pour la pleine largeur -->
+            <div class="mega-menu-content absolute left-0 right-0" id="mega-menu-panel-recherche">
+              <!-- MODIFIÉ: Ajout des classes de conteneur Tailwind -->
+              <div class="mega-menu-grid container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div class="mega-menu-column">
                       <h4>Publier en accès ouvert</h4>
                       <ul>
@@ -714,6 +716,7 @@
     
 </body>
 </html>
+
 
 
 
