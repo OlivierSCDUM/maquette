@@ -492,6 +492,15 @@ html {
     background-color: #FEF2F2; /* bg-rose-50 (pour correspondre au chapeau) */
 }
 
+/* --- NOUVEAU: Style pour le Panneau de Menu Latéral --- */
+.side-nav-panel {
+    background-color: #f9fafb; /* Tailwind bg-gray-50 */
+    padding: 1rem; /* p-4 */
+    border-radius: 0.75rem; /* rounded-xl */
+    border: 1px solid #e5e7eb; /* border-gray-200 */
+    /* L'attribut 'space-y-2' est déjà sur l'élément, 
+       ce padding va donc s'ajouter parfaitement. */
+}
 
 /* --- Styles pour le Footer --- */
 
