@@ -65,6 +65,8 @@
           <!-- NOUVEAU MÉGA MENU "ETUDIANTS" -->
           <li class="mega-menu-item">
             <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-etudiants">
+              Etudiants <!-- CORRIGÉ: Ajout du texte -->
+            </button> <!-- CORRIGÉ: Balise </button> déplacée ici -->
             <!-- MODIFIÉ: Ajout des classes 'absolute left-0 right-0' pour la pleine largeur -->
             <div class="mega-menu-content absolute left-0 right-0" id="mega-menu-panel-etudiants">
               <!-- MODIFIÉ: Ajout des classes de conteneur Tailwind -->
@@ -77,10 +79,12 @@
                           <li><a href="#">Trouver un espace de travail</a></li>
                           <li><a href="#">Salles de travail en groupes</a></li>
                           <li><a href="#">Horaires des bu</a></li>
-            <!-- MODIFIÉ: Ajout des classes 'absolute left-0 right-0' pour la pleine largeur -->
-            <div class="mega-menu-content absolute left-0 right-0" id="mega-menu-panel-doctorants">
-              <!-- MODIFIÉ: Ajout des classes de conteneur Tailwind -->
-              <div class="mega-menu-grid container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- CORRIGÉ: La structure du menu Doctorants était imbriquée ici par erreur -->
+            <!-- Je la déplace après la fermeture du menu Etudiants -->
+                      </ul>
+                  </div>
+
+                  <!-- Chapeau 2: Trouver des documents -->
                   <div class="mega-menu-column">
                       <h4>Trouver des documents</h4>
                       <ul>
@@ -122,8 +126,10 @@
             <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-doctorants">
               Doctorants
             </button>
-            <div class="mega-menu-content" id="mega-menu-panel-doctorants">
-              <div class="mega-menu-grid">
+            <!-- CORRIGÉ: Ajout des classes de pleine largeur -->
+            <div class="mega-menu-content absolute left-0 right-0" id="mega-menu-panel-doctorants">
+              <!-- CORRIGÉ: Ajout des classes de conteneur -->
+              <div class="mega-menu-grid container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div class="mega-menu-column">
                       <h4>Trouver des documents</h4>
                       <ul>
@@ -177,6 +183,8 @@
           <!-- NOUVEAU MÉGA MENU "POUR L'ENSEIGNEMENT" -->
           <li class="mega-menu-item">
             <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-enseignement">
+              Pour l'enseignement <!-- CORRIGÉ: Ajout du texte -->
+            </button> <!-- CORRIGÉ: Balise </button> déplacée ici -->
             <!-- MODIFIÉ: Ajout des classes 'absolute left-0 right-0' pour la pleine largeur -->
             <div class="mega-menu-content absolute left-0 right-0" id="mega-menu-panel-enseignement">
               <!-- MODIFIÉ: Ajout des classes de conteneur Tailwind -->
@@ -231,6 +239,8 @@
 
           <li class="mega-menu-item">
             <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-recherche">
+              Pour la recherche <!-- CORRIGÉ: Ajout du texte -->
+            </button> <!-- CORRIGÉ: Balise </button> déplacée ici -->
             <!-- MODIFIÉ: Ajout des classes 'absolute left-0 right-0' pour la pleine largeur -->
             <div class="mega-menu-content absolute left-0 right-0" id="mega-menu-panel-recherche">
               <!-- MODIFIÉ: Ajout des classes de conteneur Tailwind -->
@@ -716,6 +726,7 @@
     
 </body>
 </html>
+
 
 
 
