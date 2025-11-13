@@ -325,7 +325,7 @@
                         <!-- Chapeau 4: Accordéon (CORRIGÉ: OUVERT PAR DÉFAUT, L1 ACTIF) -->
                         <div>
                             <!-- L1 Toggle = ACTIF (rouge) et TOURNÉ -->
-                            <button type="button" class="side-nav-toggle active">
+                            <button type="button" class="side-nav-toggle active" data-default-active="true"> <!-- Ajout de 'data-default-active' -->
                                 <span class="flex items-center">
                                     <span class="material-symbols-outlined">school</span>
                                     <span>Formation / Accompagnement</span>
@@ -409,6 +409,57 @@
                             </li>
                         </ul>
 
+
+                        <!-- Sections de la page (pour les ancres) -->
+                        <section id="service-emprunter" class="mt-8">
+                            <h2>Emprunter / rendre des documents</h2>
+                            <p>Contenu à venir pour "Emprunter / rendre des documents"...</p>
+                        </section>
+                        
+                        <section id="service-peb" class="mt-8">
+                            <h2>Faire venir un document d'une autre BU</h2>
+                            <p>Contenu à venir pour "Faire venir un document"...</p>
+                        </section>
+                        
+                        <section id="service-prolonger" class="mt-8">
+                            <h2>Prolonger un prêt</h2>
+                            <p>Contenu à venir pour "Prolonger un prêt"...</p>
+                        </section>
+
+                        <section id="service-espace" class="mt-8">
+                            <h2>Trouver un espace de travail</h2>
+                            <p>Contenu à venir pour "Trouver un espace de travail"...</p>
+                        </section>
+
+                        <!-- Section pour "Ressources documentaires" -->
+                        <section id="ressource-droit" class="mt-8">
+                            <h2>Droit</h2>
+                            <p>Contenu à venir pour "Ressources en Droit"...</p>
+                        </section>
+                        
+                        <section id="ressource-sciences" class="mt-8">
+                            <h2>Sciences et techniques</h2>
+                            <p>Contenu à venir pour "Ressources en Sciences et techniques"...</p>
+                        </section>
+                        
+                        <!-- Ajoutez d'autres sections ici... -->
+                        <section id="ressource-eco" class="mt-8">
+                          <h2>Science économique et gestion</h2>
+                          <p>Contenu à venir...</p>
+                        </section>
+                        <section id="ressource-sante" class="mt-8">
+                          <h2>Santé</h2>
+                          <p>Contenu à venir...</p>
+                        </section>
+                        <section id="ressource-shs" class="mt-8">
+                          <h2>SHS et science de l'éducation</h2>
+                          <p>Contenu à venir...</p>
+                        </section>
+                        <section id="ressource-um" class="mt-8">
+                          <h2>Les publications de l'UM</h2>
+                          <p>Contenu à venir...</p>
+                        </section>
+                        
                         <!-- Section pour "Formation" -->
                         <section id="formation-etudiants" class="mt-8">
                             <h2>Pour les étudiants</h2>
@@ -504,83 +555,88 @@
                             </ul>
                         </section>
 
-                        <!-- ** CORRIGÉ: ID "formation-enseignants" SUPPRIMÉ d'ici ** -->
+                        <!-- ** CORRIGÉ: ID "formation-enseignants" SUPPRIMÉ ** -->
                         <section class="mt-8">
                             <h2>Soutien pour Enseignants / Personnel</h2>
 
-                            <!-- ** CORRIGÉ: ID et structure de contenu ** -->
-                            <h3 id="ens-enseignement">Pour l’enseignement</h3>
-                            <ul>
-                                <li>
-                                    “Outils pour vos enseignements”
-                                    <ul>
-                                        <li>Référentiel des compétences informationnelles de l’UM (paragraphe à développer + lien)</li>
-                                        <li>Accompagnement perso=> Formulaire FUCI (+SOAR ?) ?</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    “Pour mes étudiants”
-                                    <ul>
-                                        <li>Catalogue de formation du SCD => Lien doc pdf</li>
-                                        <li>Ressources pédagogiques en accès libre => lien rubrique « Outils » Moodle</li>
-                                        <li>Demander une formation pour mes étudiants => Formulaire FUCI</li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <!-- ** CORRIGÉ: "ens-enseignement" est maintenant une SECTION ** -->
+                            <section id="ens-enseignement">
+                                <h3>Pour l’enseignement</h3>
+                                <ul>
+                                    <li>
+                                        “Outils pour vos enseignements”
+                                        <ul>
+                                            <li>Référentiel des compétences informationnelles de l’UM (paragraphe à développer + lien)</li>
+                                            <li>Accompagnement perso=> Formulaire FUCI (+SOAR ?) ?</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        “Pour mes étudiants”
+                                        <ul>
+                                            <li>Catalogue de formation du SCD => Lien doc pdf</li>
+                                            <li>Ressources pédagogiques en accès libre => lien rubrique « Outils » Moodle</li>
+                                            <li>Demander une formation pour mes étudiants => Formulaire FUCI</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </section>
 
-                            <!-- ** CORRIGÉ: ID et structure de contenu ** -->
-                            <h3 id="ens-recherche">Pour la recherche</h3>
-                            <p>Pour FUCI : Uniquement dans la rubrique : « Trouver des documents »</p>
-                            <ul>
-                                <li>
-                                    “Ressources et bases de données”
-                                    <p>=>Ressources accès libre / tutos Moodle</p>
-                                </li>
-                                <li>
-                                    “Construire une veille”
-                                    <p>=>Formations continues (lien « Veille… »)</p>
-                                </li>
-                                <li>
-                                    A ajouter : Revue de littérature
-                                    <ul>
-                                        <li>Lien vers ?</li>
-                                    </ul>
-                                </li>
-                                <li>“Accompagnement personnalisé” => Formulaire FUCI</li>
-                            </ul>
+                            <!-- ** CORRIGÉ: "ens-recherche" est maintenant une SECTION ** -->
+                            <section id="ens-recherche" class="mt-8">
+                                <h3>Pour la recherche</h3>
+                                <p>Pour FUCI : Uniquement dans la rubrique : « Trouver des documents »</p>
+                                <ul>
+                                    <li>
+                                        “Ressources et bases de données”
+                                        <p>=>Ressources accès libre / tutos Moodle</p>
+                                    </li>
+                                    <li>
+                                        “Construire une veille”
+                                        <p>=>Formations continues (lien « Veille… »)</p>
+                                    </li>
+                                    <li>
+                                        A ajouter : Revue de littérature
+                                        <ul>
+                                            <li>Lien vers ?</li>
+                                        </ul>
+                                    </li>
+                                    <li>“Accompagnement personnalisé” => Formulaire FUCI</li>
+                                </ul>
+                                
+                                <p>« Publier en accès ouvert » = > SOAR</p>
+                                <p>« Valoriser » = > SOAR</p>
+                                <p>« Gérer mes données » = > SOAR</p>
+                                
+                                <ul>
+                                    <li>Assistance SOAR / guichet unique ECODOR</li>
+                                </ul>
+                                
+                                <p>« Vos outils » :</p>
+                                <p>Pour FUCI :</p>
+                                <p>“Gérer et rédiger des références biblio avec Zotero ?”</p>
+                                <p>=> Liens vers :</p>
+                                <ul>
+                                    <li>Ressources accès libre / tutos Moodle</li>
+                                    <li>Formations continues (lien direct : « Savoir utiliser le logiciel… »)</li>
+                                    <li>Accompagnement perso=> Formulaire FUCI</li>
+                                </ul>
+                            </section>
                             
-                            <p>« Publier en accès ouvert » = > SOAR</p>
-                            <p>« Valoriser » = > SOAR</p>
-                            <p>« Gérer mes données » = > SOAR</p>
-                            
-                            <ul>
-                                <li>Assistance SOAR / guichet unique ECODOR</li>
-                            </ul>
-                            
-                            <p>« Vos outils » :</p>
-                            <p>Pour FUCI :</p>
-                            <p>“Gérer et rédiger des références biblio avec Zotero ?”</p>
-                            <p>=> Liens vers :</p>
-                            <ul>
-                                <li>Ressources accès libre / tutos Moodle</li>
-                                <li>Formations continues (lien direct : « Savoir utiliser le logiciel… »)</li>
-                                <li>Accompagnement perso=> Formulaire FUCI</li>
-                            </ul>
-
-                            <!-- ** CORRIGÉ: ID et structure de contenu ** -->
-                            <h3 id="ens-formation-continue">Formations continues</h3>
-                            <p>=> Liens directs vers session/inscriptions catalogue UM GEFORP</p>
-                            <ul>
-                                <li>ER34 - Services et ressources des bibliothèques universitaires de l’UM</li>
-                                <li>ER35 - Veille informationnelle sur un sujet d'actualité</li>
-                                <li>ER36 - Savoir utiliser le logiciel Zotero pour organiser et citer ses références bibliographiques</li>
-                                <li>ER18 - Identité numérique du chercheur</li>
-                                <li>ER72 - Publier en Open Access : oui mais comment ?</li>
-                                <li>ER19- Gérer ses données de la recherche</li>
-                            </ul>
-                            <p>Toutes les formations : lien GEFORP > Rubrique Enseignement et recherche</p>
+                            <!-- ** CORRIGÉ: "ens-formation-continue" est maintenant une SECTION ** -->
+                            <section id="ens-formation-continue" class="mt-8">
+                                <h3>Formations continues</h3>
+                                <p>=> Liens directs vers session/inscriptions catalogue UM GEFORP</p>
+                                <ul>
+                                    <li>ER34 - Services et ressources des bibliothèques universitaires de l’UM</li>
+                                    <li>ER35 - Veille informationnelle sur un sujet d'actualité</li>
+                                    <li>ER36 - Savoir utiliser le logiciel Zotero pour organiser et citer ses références bibliographiques</li>
+                                    <li>ER18 - Identité numérique du chercheur</li>
+                                    <li>ER72 - Publier en Open Access : oui mais comment ?</li>
+                                    <li>ER19- Gérer ses données de la recherche</li>
+                                </ul>
+                                <p>Toutes les formations : lien GEFORP > Rubrique Enseignement et recherche</p>
+                            </section>
                         </section>
-                        <!-- ** FIN DU CONTENU CORRIGÉ ** -->
 
                     </div>
                 </div>
@@ -671,7 +727,8 @@
             
             const toggles = document.querySelectorAll('.side-nav-toggle');
             const navLinks = document.querySelectorAll('.side-nav-sublink');
-            const sections = document.querySelectorAll('main [id]');
+            // ** CORRIGÉ: On observe que les <section> avec ID **
+            const sections = document.querySelectorAll('main section[id]');
 
             // --- SCRIPT 1: Gestion de l'accordéon au clic ---
             toggles.forEach(function (toggle) {
@@ -682,7 +739,6 @@
 
                     // Vérifie que l'élément suivant est bien un sous-menu
                     if (submenu && submenu.classList.contains('side-nav-submenu')) {
-                        // Si c'est un accordéon, on empêche le lien de sauter
                         event.preventDefault(); 
                         submenu.classList.toggle('hidden');
                         this.classList.toggle('active');
@@ -700,15 +756,16 @@
                     navLinks.forEach(link => {
                         link.classList.remove('active');
                     });
-                    // ET on efface tous les 'toggles' actifs (L1, L2)
-                    // SAUF celui qui est actif par défaut (le L1 'Formation')
-                    toggles.forEach(toggle => {
-                        // Ne pas retirer 'active' du toggle L1 'Formation'
-                        if (!toggle.classList.contains('default-active')) {
+                    
+                    // On efface tous les 'toggles' L2 actifs
+                    document.querySelectorAll('.side-nav-toggle.active').forEach(toggle => {
+                        // On ne retire pas 'active' du L1 (Formation) qui est actif par défaut
+                        if (!toggle.hasAttribute('data-default-active')) {
                             toggle.classList.remove('active');
                         }
                     });
 
+                    // On trouve la dernière entrée visible (la plus basse à l'écran)
                     const visibleEntries = entries.filter(entry => entry.isIntersecting);
                     const lastVisibleEntry = visibleEntries[visibleEntries.length - 1];
 
@@ -720,16 +777,19 @@
                             // 1. Activer le lien L3
                             activeLink.classList.add('active');
                             
-                            // 2. Activer le parent L2
-                            const l2Toggle = activeLink.closest('.side-nav-submenu').previousElementSibling;
-                            if (l2Toggle && l2Toggle.classList.contains('side-nav-toggle')) {
-                                l2Toggle.classList.add('active');
+                            // 2. Activer le parent L2 (s'il existe)
+                            const l2Submenu = activeLink.closest('.side-nav-submenu');
+                            if (l2Submenu) {
+                                const l2Toggle = l2Submenu.previousElementSibling;
+                                if (l2Toggle && l2Toggle.classList.contains('side-nav-toggle')) {
+                                    l2Toggle.classList.add('active');
+                                }
                             }
                         }
                     }
                 }, { 
-                    rootMargin: '-40% 0px -55% 0px', // Zone de détection (milieu)
-                    threshold: 0
+                    rootMargin: '-20% 0px -75% 0px', // Une "tripwire" à 20% du haut
+                    threshold: 0 
                 });
 
                 sections.forEach(section => {
@@ -756,7 +816,7 @@
                             const icon = toggle.querySelector('.icon-toggle');
                             
                             current.classList.remove('hidden');
-                            toggle.classList.add('active');
+                            toggle.classList.add('active'); // Ouvre et met en rouge le parent
                             if (icon) {
                                 icon.classList.add('rotate-90');
                             }
@@ -767,7 +827,7 @@
                 }
             } else {
                 // --- COMPORTEMENT PAR DÉFAUT (SI PAS D'ANCRE) ---
-                // Ouvre L1 ("Formation") et L2 ("Enseignants") mais SANS les activer (pas de rouge)
+                // Ouvre L1 ("Formation") et L2 ("Enseignants")
                 
                 // Cible le 3e 'toggle' (0=Services, 1=Ressources, 2=Formation)
                 const formationToggle = document.querySelectorAll('.side-nav-toggle')[2]; 
@@ -775,13 +835,12 @@
                     const submenu = formationToggle.nextElementSibling;
                     const icon = formationToggle.querySelector('.icon-toggle');
                     
-                    formationToggle.classList.add('active'); // L1 Chapeau est rouge
-                    // Ajoute une classe spéciale pour que le Scroll-Spy ne l'efface pas
-                    formationToggle.classList.add('default-active'); 
+                    formationToggle.classList.add('active'); // L1 Chapeau est ROUGE
+                    formationToggle.setAttribute('data-default-active', 'true'); // Marqueur pour le Script 2
                     
-                    submenu.classList.remove('hidden'); // Le sous-menu est visible
+                    submenu.classList.remove('hidden'); // L1 sous-menu est visible
                     if(icon) {
-                        icon.classList.add('rotate-90'); // L'icône est tournée
+                        icon.classList.add('rotate-90'); // L1 icône est tournée
                     }
                     
                     // Cible le L2 'toggle' ("Enseignants / Personnel")
@@ -790,7 +849,7 @@
                          const submenuL2 = enseignantToggle.nextElementSibling;
                          const iconL2 = enseignantToggle.querySelector('.icon-toggle');
 
-                         // ON N'AJOUTE PAS '.active' AU CHAPEAU L2
+                         // L2 N'EST PAS ROUGE
                          submenuL2.classList.remove('hidden'); // L2 sous-menu est visible
                          if(iconL2) {
                             iconL2.classList.add('rotate-90'); // L2 icône est tournée
