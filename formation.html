@@ -286,7 +286,6 @@
 
                         <!-- Chapeau 2: Accordéon -->
                         <div>
-                            <!-- ** CORRIGÉ: class_group -> class ** -->
                             <button type="button" class="side-nav-toggle">
                                 <span class="flex items-center">
                                     <span class="material-symbols-outlined">design_services</span>
@@ -305,7 +304,6 @@
 
                         <!-- Chapeau 3: Accordéon (RESTAURÉ) -->
                         <div>
-                            <!-- ** CORRIGÉ: class_group -> class ** -->
                             <button type="button" class="side-nav-toggle">
                                 <span class="flex items-center">
                                     <span class="material-symbols-outlined">collections_bookmark</span>
@@ -324,33 +322,34 @@
                             </div>
                         </div>
                             
-                        <!-- Chapeau 4: Accordéon (CORRIGÉ POUR L'ÉTAT PAR DÉFAUT) -->
+                        <!-- Chapeau 4: Accordéon (OUVERT PAR DÉFAUT) -->
                         <div>
-                            <!-- MODIFIÉ: 'active' est supprimé (sera ajouté par script) -->
-                            <button type="button" class="side-nav-toggle">
+                            <!-- L1 Toggle = ACTIF et TOURNÉ -->
+                            <button type="button" class="side-nav-toggle active">
                                 <span class="flex items-center">
                                     <span class="material-symbols-outlined">school</span>
                                     <span>Formation / Accompagnement</span>
                                 </span>
-                                <!-- MODIFIÉ: 'rotate-90' est supprimé -->
-                                <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                                <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
                             </button>
-                            <!-- MODIFIÉ: 'hidden' est ajouté pour être fermé par défaut -->
-                            <div class="side-nav-submenu hidden"> 
+                            <!-- L1 Sub-menu (OUVERT) -->
+                            <div class="side-nav-submenu"> 
                                 <a href="#formation-etudiants" class="side-nav-sublink">Etudiants</a>
                                 <a href="#formation-doctorants" class="side-nav-sublink">Doctorants</a>
                                 
-                                <!-- L2 Accordéon (indenté) -->
+                                <!-- MODIFIÉ: L1 Item "Enseignants" devient un L2 Accordéon (indenté) -->
                                 <div class="pl-4"> <!-- Indentation -->
-                                    <button type="button" class="side-nav-toggle">
+                                    <!-- L2 Toggle = ACTIF et TOURNÉ -->
+                                    <button type="button" class="side-nav-toggle active">
                                         <span class="flex items-center">
                                             <span>Enseignants / Personnel</span>
                                         </span>
-                                        <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                                        <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
                                     </button>
-                                    <!-- L2 'submenu' est FERMÉ ('hidden' est présent) -->
-                                    <div class="side-nav-submenu hidden">
-                                        <a href="#ens-enseignement" class="side-nav-sublink">Pour l'enseignement</a>
+                                    <!-- L2 Sub-menu (OUVERT) -->
+                                    <div class="side-nav-submenu">
+                                        <!-- L2 Link = ACTIF PAR DÉFAUT -->
+                                        <a href="#ens-enseignement" class="side-nav-sublink active">Pour l'enseignement</a>
                                         <a href="#ens-recherche" class="side-nav-sublink">Pour la recherche</a>
                                         <a href="#ens-formation-continue" class="side-nav-sublink">Formation continue</a>
                                     </div>
@@ -555,8 +554,8 @@
                             </ul>
                         </section>
 
-                        <!-- L'ID est ici sur la <section> parente -->
-                        <section id="formation-enseignants" class="mt-8">
+                        <!-- ** CORRIGÉ: L'ID 'formation-enseignants' est retiré d'ici ** -->
+                        <section class="mt-8">
                             <h2>Soutien pour Enseignants / Personnel</h2>
 
                             <!-- L'ID est ici sur le <h3> -->
@@ -567,6 +566,7 @@
                                     <ul>
                                         <li>Référentiel des compétences informationnelles de l’UM (paragraphe à développer + lien)</li>
                                         <!-- L'ID est ici sur le <li> -->
+                                        <!-- ** CONTENU RESTAURÉ CI-DESSOUS ** -->
                                         <li id="ens-formation-continue">
                                             Formations continues :
                                             <p>=> Liens directs vers session/inscriptions catalogue UM GEFORP</p>
@@ -632,6 +632,7 @@
                                 <li>Accompagnement perso=> Formulaire FUCI</li>
                             </ul>
                         </section>
+                        <!-- ** FIN DU CONTENU RESTAURÉ ** -->
 
                     </div>
                 </div>
@@ -743,32 +744,23 @@
             });
 
             // --- SCRIPT 2: "Scroll-Spy" pour surligner le menu en fonction du défilement ---
-            // **CORRIGÉ: N'observe que les sections qui ont un lien dans le menu**
             const navLinks = document.querySelectorAll('.side-nav-sublink');
-            const sections = [];
-            
-            navLinks.forEach(link => {
-                const id = link.getAttribute('href');
-                if (id.startsWith('#')) {
-                    const section = document.querySelector(id);
-                    if (section) {
-                        sections.push(section);
-                    }
-                }
-            });
+            // ** CORRIGÉ: On observe TOUS les [id] dans <main> **
+            const sections = document.querySelectorAll('main [id]');
             
             if(sections.length > 0 && navLinks.length > 0) {
                 const observer = new IntersectionObserver((entries) => {
+                    // D'abord, on efface tous les liens actifs
                     navLinks.forEach(link => {
                         link.classList.remove('active');
                     });
 
-                    // On trouve la première entrée visible
-                    // (find est OK car on ne suit que les sections valides)
-                    const visibleEntry = entries.find(entry => entry.isIntersecting);
+                    // On trouve la dernière entrée visible (la plus basse à l'écran)
+                    const visibleEntries = entries.filter(entry => entry.isIntersecting);
+                    const lastVisibleEntry = visibleEntries[visibleEntries.length - 1];
 
-                    if (visibleEntry) {
-                        const id = visibleEntry.target.getAttribute('id');
+                    if (lastVisibleEntry) {
+                        const id = lastVisibleEntry.target.getAttribute('id');
                         const activeLink = document.querySelector(`.side-nav-sublink[href="#${id}"]`);
                         
                         if (activeLink) {
@@ -776,11 +768,11 @@
                         }
                     }
                 }, { 
-                    rootMargin: '-40% 0px -60% 0px', // Zone de détection (milieu)
-                    threshold: 0 
+                    rootMargin: '-40% 0px -55% 0px', // Zone de détection (une bande de 5% au milieu)
+                    threshold: 0
                 });
 
-                // On observe UNIQUEMENT les sections qui ont un lien
+                // On observe TOUTES les sections
                 sections.forEach(section => {
                     observer.observe(section);
                 });
@@ -807,21 +799,43 @@
                         }
                         current = current.parentElement; 
                     }
+                    // Active le lien sur lequel on a cliqué
                     targetLink.classList.add('active');
                 }
             } else {
                 // --- COMPORTEMENT PAR DÉFAUT (SI PAS D'ANCRE) ---
-                // Ouvre et active "Formation / Accompagnement"
-                // Cible spécifiquement le 3e 'toggle' (0=Services, 1=Ressources, 2=Formation)
+                // Ouvre L1 ("Formation") et L2 ("Enseignants")
+                
+                // Cible le 3e 'toggle' (0=Services, 1=Ressources, 2=Formation)
                 const formationToggle = document.querySelectorAll('.side-nav-toggle')[2]; 
                 if(formationToggle) {
                     const submenu = formationToggle.nextElementSibling;
                     const icon = formationToggle.querySelector('.icon-toggle');
                     
-                    formationToggle.classList.add('active'); // Le chapeau est rouge
-                    submenu.classList.remove('hidden'); // Le sous-menu est visible
+                    formationToggle.classList.add('active'); // L1 Chapeau est rouge
+                    submenu.classList.remove('hidden'); // L1 sous-menu est visible
                     if(icon) {
-                        icon.classList.add('rotate-90'); // L'icône est tournée
+                        icon.classList.add('rotate-90'); // L1 icône est tournée
+                    }
+                    
+                    // Cible le L2 'toggle' ("Enseignants / Personnel")
+                    // C'est le 3e 'toggle' *dans* ce sous-menu (0=Etudiants, 1=Doctorants, 2=Enseignants)
+                    const enseignantToggle = submenu.querySelectorAll('.side-nav-toggle')[0]; // [0=Enseignants]
+                    if (enseignantToggle) {
+                         const submenuL2 = enseignantToggle.nextElementSibling;
+                         const iconL2 = enseignantToggle.querySelector('.icon-toggle');
+
+                         enseignantToggle.classList.add('active'); // L2 Chapeau est rouge
+                         submenuL2.classList.remove('hidden'); // L2 sous-menu est visible
+                         if(iconL2) {
+                            iconL2.classList.add('rotate-90'); // L2 icône est tournée
+                         }
+                         
+                         // Active le premier lien L2 ("Pour l'enseignement")
+                         const defaultActiveLink = submenuL2.querySelector('.side-nav-sublink');
+                         if(defaultActiveLink) {
+                            defaultActiveLink.classList.add('active');
+                         }
                     }
                 }
             }
