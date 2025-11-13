@@ -377,6 +377,13 @@ html {
     text-align: center;
 }
 
+/* --- NOUVEAU: Rendre le header principal collant --- */
+#custom-main-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Doit être > au z-index du menu (100) et du contenu */
+}
 
 /* --- NOUVEAU: Styles pour le Mega Menu (Correction) --- */
 /* * MODIFICATION CLÉ: Ces règles sont maintenant enveloppées
