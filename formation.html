@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/menu_de_navigation.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- 2. Script Tailwind CSS (MODIFIÉ: ajout de ?plugins=typography) -->
+    <!-- 2. Script Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
         
     <!-- 3. Lien pour les icônes Google Fonts -->
@@ -324,20 +324,39 @@
                             
                         <!-- Chapeau 4: Accordéon (OUVERT PAR DÉFAUT) -->
                         <div>
-                            <!-- MODIFIÉ: On garde <a> pour le clic, mais on lui ajoute les classes 'active' et 'rotate-90' -->
-                            <a href="#" class="side-nav-toggle active">
+                            <!-- L1 Toggle = ACTIF -->
+                            <button type="button" class="side-nav-toggle active">
                                 <span class="flex items-center">
                                     <span class="material-symbols-outlined">school</span>
                                     <span>Formation / Accompagnement</span>
                                 </span>
+                                <!-- L1 Icon = TOURNÉ -->
                                 <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
-                            </a>
-                            <!-- MODIFIÉ: 'hidden' est supprimé pour qu'il soit ouvert -->
+                            </button>
+                            <!-- L1 Sub-menu (OUVERT) -->
                             <div class="side-nav-submenu"> 
                                 <a href="#formation-etudiants" class="side-nav-sublink">Etudiants</a>
                                 <a href="#formation-doctorants" class="side-nav-sublink">Doctorants</a>
-                                <!-- MODIFIÉ: 'active' est ajouté pour le surlignage par défaut -->
-                                <a href="#formation-enseignants" class="side-nav-sublink active">Enseignants / Enseignants chercheurs / Personnel</a>
+                                
+                                <!-- MODIFIÉ: L1 Item "Enseignants" devient un L2 Accordéon (indenté) -->
+                                <div class="pl-4"> <!-- Indentation -->
+                                    <!-- L2 Toggle = ACTIF PAR DÉFAUT -->
+                                    <button type="button" class="side-nav-toggle active">
+                                        <span class="flex items-center">
+                                            <span>Enseignants / Personnel</span>
+                                        </span>
+                                        <!-- L2 Icon = TOURNÉ -->
+                                        <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
+                                    </button>
+                                    <!-- L2 Sub-menu (OUVERT) -->
+                                    <div class="side-nav-submenu">
+                                        <!-- L2 Link = ACTIF PAR DÉFAUT -->
+                                        <a href="#ens-enseignement" class="side-nav-sublink active">Pour l'enseignement</a>
+                                        <a href="#ens-recherche" class="side-nav-sublink">Pour la recherche</a>
+                                        <a href="#ens-formation-continue" class="side-nav-sublink">Formation continue</a>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 
@@ -392,7 +411,56 @@
                         </ul>
 
 
-                                               
+                        <!-- Sections de la page (pour les ancres) -->
+                        <section id="service-emprunter">
+                            <h2>Emprunter / rendre des documents</h2>
+                            <p>Contenu à venir pour "Emprunter / rendre des documents"...</p>
+                        </section>
+                        
+                        <section id="service-peb" class="mt-8">
+                            <h2>Faire venir un document d'une autre BU</h2>
+                            <p>Contenu à venir pour "Faire venir un document"...</p>
+                        </section>
+                        
+                        <section id="service-prolonger" class="mt-8">
+                            <h2>Prolonger un prêt</h2>
+                            <p>Contenu à venir pour "Prolonger un prêt"...</p>
+                        </section>
+
+                        <section id="service-espace" class="mt-8">
+                            <h2>Trouver un espace de travail</h2>
+                            <p>Contenu à venir pour "Trouver un espace de travail"...</p>
+                        </section>
+
+                        <!-- Section pour "Ressources documentaires" -->
+                        <section id="ressource-droit" class="mt-8">
+                            <h2>Droit</h2>
+                            <p>Contenu à venir pour "Ressources en Droit"...</p>
+                        </section>
+                        
+                        <section id="ressource-sciences" class="mt-8">
+                            <h2>Sciences et techniques</h2>
+                            <p>Contenu à venir pour "Ressources en Sciences et techniques"...</p>
+                        </section>
+                        
+                        <!-- Ajoutez d'autres sections ici... -->
+                        <section id="ressource-eco" class="mt-8">
+                          <h2>Science économique et gestion</h2>
+                          <p>Contenu à venir...</p>
+                        </section>
+                        <section id="ressource-sante" class="mt-8">
+                          <h2>Santé</h2>
+                          <p>Contenu à venir...</p>
+                        </section>
+                        <section id="ressource-shs" class="mt-8">
+                          <h2>SHS et science de l'éducation</h2>
+                          <p>Contenu à venir...</p>
+                        </section>
+                        <section id="ressource-um" class="mt-8">
+                          <h2>Les publications de l'UM</h2>
+                          <p>Contenu à venir...</p>
+                        </section>
+                        
                         <!-- Section pour "Formation" -->
                         <section id="formation-etudiants" class="mt-8">
                             <h2>Pour les étudiants</h2>
@@ -422,145 +490,149 @@
                         </section>
 
                         <section id="formation-doctorants" class="mt-8">
-    <h2>Pour les doctorants</h2>
-    <ul>
-        <li>
-            Les formations du collège doctoral – rubriques « Accompagnement du doctorat » et « Science ouverte » : sur inscription, plusieurs dates dans l’année, plusieurs modalités…
-            <ul>
-                <li>
-                    Thématiques = une page Moodle « boite à outils du Doctorant » à créer avec SOAR (car pas d’accès thématique possible via ADUM ou CD)
-                    <ul>
-                        <li>Optimiser sa recherche bibliographique en SHS / en Sciences-Techniques-Environnement / en Biologie-Santé</li>
-                        <li>Gérer et exploiter ses références bibliographiques avec Zotero 7</li>
-                        <li>Construire une veille informationnelle</li>
-                        <li>Construire et gérer son identité numérique de jeune chercheur</li>
-                        <li>Edition scientifique, Open Access et Science ouverte : des clés pour publier</li>
-                        <li>Données de la recherche et PGD : adopter de bonnes pratiques pour la gestion de ses données</li>
-                    </ul>
-                </li>
-                <li>
-                    Toutes les formations : => liens vers l’ADUM (mais accès uniquement catalogue global – pas d’accès ciblé formation du SCD)
-                </li>
-            </ul>
-        </li>
-    </ul>
+                            <h2>Pour les doctorants</h2>
+                            <ul>
+                                <li>
+                                    Les formations du collège doctoral – rubriques « Accompagnement du doctorat » et « Science ouverte » : sur inscription, plusieurs dates dans l’année, plusieurs modalités…
+                                    <ul>
+                                        <li>
+                                            Thématiques = une page Moodle « boite à outils du Doctorant » à créer avec SOAR (car pas d’accès thématique possible via ADUM ou CD)
+                                            <ul>
+                                                <li>Optimiser sa recherche bibliographique en SHS / en Sciences-Techniques-Environnement / en Biologie-Santé</li>
+                                                <li>Gérer et exploiter ses références bibliographiques avec Zotero 7</li>
+                                                <li>Construire une veille informationnelle</li>
+                                                <li>Construire et gérer son identité numérique de jeune chercheur</li>
+                                                <li>Edition scientifique, Open Access et Science ouverte : des clés pour publier</li>
+                                                <li>Données de la recherche et PGD : adopter de bonnes pratiques pour la gestion de ses données</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Toutes les formations : => liens vers l’ADUM (mais accès uniquement catalogue global – pas d’accès ciblé formation du SCD)
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
 
-    <h3>Pour les internes en Santé</h3>
-    <ul>
-        <li>
-            Les formations : sur inscription, plusieurs dates dans l’année, plusieurs modalités…
-            <ul>
-                <li>
-                    Internes en Médecine
-                    <ul>
-                        <li>Thématiques : à détailler avec liens ?</li>
-                        <li>Toutes les formations => adresse ciblée SCD / SILR</li>
-                    </ul>
-                </li>
-                <li>
-                    Internes en Pharmacie
-                    <ul>
-                        <li>Thématiques : liens cours moodle/inscriptions</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>
-            Ressources en autoformation :
-            <ul>
-                <li>Zotero : lien cours Moodle</li>
-                <li>Revue de littérature : ressources Moodle</li>
-                <li>IA Académiques : ressources Moodle</li>
-            </ul>
-        </li>
-        <li>
-            Un accompagnement personnalisé à la demande
-            <ul>
-                <li>
-                    En fonction des thématiques :
-                    <ul>
-                        <li>Formulaire FUCI</li>
-                        <li>Formulaires SOAR / ECODOR</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</section>
+                            <h3>Pour les internes en Santé</h3>
+                            <ul>
+                                <li>
+                                    Les formations : sur inscription, plusieurs dates dans l’année, plusieurs modalités…
+                                    <ul>
+                                        <li>
+                                            Internes en Médecine
+                                            <ul>
+                                                <li>Thématiques : à détailler avec liens ?</li>
+                                                <li>Toutes les formations => adresse ciblée SCD / SILR</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Internes en Pharmacie
+                                            <ul>
+                                                <li>Thématiques : liens cours moodle/inscriptions</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Ressources en autoformation :
+                                    <ul>
+                                        <li>Zotero : lien cours Moodle</li>
+                                        <li>Revue de littérature : ressources Moodle</li>
+                                        <li>IA Académiques : ressources Moodle</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Un accompagnement personnalisé à la demande
+                                    <ul>
+                                        <li>
+                                            En fonction des thématiques :
+                                            <ul>
+                                                <li>Formulaire FUCI</li>
+                                                <li>Formulaires SOAR / ECODOR</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </section>
 
+                        <!-- MODIFIÉ: L'ID est déplacé du <h2> vers le <section> -->
                         <section id="formation-enseignants" class="mt-8">
-    <h2>Pour les enseignants-chercheurs et personnels</h2>
+                            <h2>Soutien pour Enseignants / Personnel</h2>
 
-    <h3>Pour l’enseignement</h3>
-    <ul>
-        <li>
-            “Outils pour vos enseignements”
-            <ul>
-                <li>Référentiel des compétences informationnelles de l’UM (paragraphe à développer + lien)</li>
-                <li>
-                    Formations continues :
-                    <p>=> Liens directs vers session/inscriptions catalogue UM GEFORP</p>
-                    <ul>
-                        <li>ER34 - Services et ressources des bibliothèques universitaires de l’UM</li>
-                        <li>ER35 - Veille informationnelle sur un sujet d'actualité</li>
-                        <li>ER36 - Savoir utiliser le logiciel Zotero pour organiser et citer ses références bibliographiques</li>
-                        <li>ER18 - Identité numérique du chercheur</li>
-                        <li>ER72 - Publier en Open Access : oui mais comment ?</li>
-                        <li>ER19- Gérer ses données de la recherche</li>
-                    </ul>
-                    <p>Toutes les formations : lien GEFORP > Rubrique Enseignement et recherche</p>
-                </li>
-                <li>Accompagnement perso=> Formulaire FUCI (+SOAR ?) ?</li>
-            </ul>
-        </li>
-        <li>
-            “Pour mes étudiants”
-            <ul>
-                <li>Catalogue de formation du SCD => Lien doc pdf</li>
-                <li>Ressources pédagogiques en accès libre => lien rubrique « Outils » Moodle</li>
-                <li>Demander une formation pour mes étudiants => Formulaire FUCI</li>
-            </ul>
-        </li>
-    </ul>
+                            <!-- NOUVEL ID AJOUTÉ -->
+                            <h3 id="ens-enseignement">Pour l’enseignement</h3>
+                            <ul>
+                                <li>
+                                    “Outils pour vos enseignements”
+                                    <ul>
+                                        <li>Référentiel des compétences informationnelles de l’UM (paragraphe à développer + lien)</li>
+                                        <!-- NOUVEL ID AJOUTÉ -->
+                                        <li id="ens-formation-continue">
+                                            Formations continues :
+                                            <p>=> Liens directs vers session/inscriptions catalogue UM GEFORP</p>
+                                            <ul>
+                                                <li>ER34 - Services et ressources des bibliothèques universitaires de l’UM</li>
+                                                <li>ER35 - Veille informationnelle sur un sujet d'actualité</li>
+                                                <li>ER36 - Savoir utiliser le logiciel Zotero pour organiser et citer ses références bibliographiques</li>
+                                                <li>ER18 - Identité numérique du chercheur</li>
+                                                <li>ER72 - Publier en Open Access : oui mais comment ?</li>
+                                                <li>ER19- Gérer ses données de la recherche</li>
+                                            </ul>
+                                            <p>Toutes les formations : lien GEFORP > Rubrique Enseignement et recherche</p>
+                                        </li>
+                                        <li>Accompagnement perso=> Formulaire FUCI (+SOAR ?) ?</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    “Pour mes étudiants”
+                                    <ul>
+                                        <li>Catalogue de formation du SCD => Lien doc pdf</li>
+                                        <li>Ressources pédagogiques en accès libre => lien rubrique « Outils » Moodle</li>
+                                        <li>Demander une formation pour mes étudiants => Formulaire FUCI</li>
+                                    </ul>
+                                </li>
+                            </ul>
 
-    <h3>Pour la recherche</h3>
-    <p>Pour FUCI : Uniquement dans la rubrique : « Trouver des documents »</p>
-    <ul>
-        <li>
-            “Ressources et bases de données”
-            <p>=>Ressources accès libre / tutos Moodle</p>
-        </li>
-        <li>
-            “Construire une veille”
-            <p>=>Formations continues (lien « Veille… »)</p>
-        </li>
-        <li>
-            A ajouter : Revue de littérature
-            <ul>
-                <li>Lien vers ?</li>
-            </ul>
-        </li>
-        <li>“Accompagnement personnalisé” => Formulaire FUCI</li>
-    </ul>
-    
-    <p>« Publier en accès ouvert » = > SOAR</p>
-    <p>« Valoriser » = > SOAR</p>
-    <p>« Gérer mes données » = > SOAR</p>
-    
-    <ul>
-        <li>Assistance SOAR / guichet unique ECODOR</li>
-    </ul>
-    
-    <p>« Vos outils » :</p>
-    <p>Pour FUCI :</p>
-    <p>“Gérer et rédiger des références biblio avec Zotero ?”</p>
-    <p>=> Liens vers :</p>
-    <ul>
-        <li>Ressources accès libre / tutos Moodle</li>
-        <li>Formations continues (lien direct : « Savoir utiliser le logiciel… »)</li>
-        <li>Accompagnement perso=> Formulaire FUCI</li>
-    </ul>
-</section>
+                            <!-- NOUVEL ID AJOUTÉ -->
+                            <h3 id="ens-recherche">Pour la recherche</h3>
+                            <p>Pour FUCI : Uniquement dans la rubrique : « Trouver des documents »</p>
+                            <ul>
+                                <li>
+                                    “Ressources et bases de données”
+                                    <p>=>Ressources accès libre / tutos Moodle</p>
+                                </li>
+                                <li>
+                                    “Construire une veille”
+                                    <p>=>Formations continues (lien « Veille… »)</p>
+                                </li>
+                                <li>
+                                    A ajouter : Revue de littérature
+                                    <ul>
+                                        <li>Lien vers ?</li>
+                                    </ul>
+                                </li>
+                                <li>“Accompagnement personnalisé” => Formulaire FUCI</li>
+                            </ul>
+                            
+                            <p>« Publier en accès ouvert » = > SOAR</p>
+                            <p>« Valoriser » = > SOAR</p>
+                            <p>« Gérer mes données » = > SOAR</p>
+                            
+                            <ul>
+                                <li>Assistance SOAR / guichet unique ECODOR</li>
+                            </ul>
+                            
+                            <p>« Vos outils » :</p>
+                            <p>Pour FUCI :</p>
+                            <p>“Gérer et rédiger des références biblio avec Zotero ?”</p>
+                            <p>=> Liens vers :</p>
+                            <ul>
+                                <li>Ressources accès libre / tutos Moodle</li>
+                                <li>Formations continues (lien direct : « Savoir utiliser le logiciel… »)</li>
+                                <li>Accompagnement perso=> Formulaire FUCI</li>
+                            </ul>
+                        </section>
 
                     </div>
                 </div>
@@ -644,12 +716,13 @@
     <script src="js/menu_de_navigation.js"></script>
 
     <!-- 
-      SCRIPT CORRIGÉ: Tous les scripts du menu latéral sont regroupés ici 
+      SCRIPT CORRIGÉ ET FINAL: Tous les scripts du menu latéral sont regroupés ici 
     -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             
             // --- SCRIPT 1: Gestion de l'accordéon au clic ---
+            // S'applique à TOUS les .side-nav-toggle, y compris les L2
             const toggles = document.querySelectorAll('.side-nav-toggle');
             toggles.forEach(function (toggle) {
                 toggle.addEventListener('click', function (event) {
@@ -675,7 +748,8 @@
             });
 
             // --- SCRIPT 2: "Scroll-Spy" pour surligner le menu en fonction du défilement ---
-            const sections = document.querySelectorAll('main section[id]');
+            // MODIFIÉ: Observe 'section', 'h3', et 'li' avec des IDs
+            const sections = document.querySelectorAll('main section[id], main h3[id], main li[id]');
             const navLinks = document.querySelectorAll('.side-nav-sublink');
             
             // S'il n'y a pas de sections sur la page, on ne fait rien
@@ -683,68 +757,3 @@
                 const observer = new IntersectionObserver((entries) => {
                     // D'abord, on efface tous les liens actifs
                     navLinks.forEach(link => {
-                        link.classList.remove('active');
-                    });
-
-                    // On trouve la première section visible
-                    const visibleEntry = entries.find(entry => entry.isIntersecting);
-
-                    if (visibleEntry) {
-                        const id = visibleEntry.target.getAttribute('id');
-                        const activeLink = document.querySelector(`.side-nav-sublink[href="#${id}"]`);
-                        
-                        if (activeLink) {
-                            // On active seulement le bon lien
-                            activeLink.classList.add('active');
-                        }
-                    }
-                }, { 
-                    rootMargin: '-40% 0px -60% 0px', // Zone de détection (près du haut)
-                    threshold: 0 
-                });
-
-                sections.forEach(section => {
-                    observer.observe(section);
-                });
-            }
-
-            // --- SCRIPT 3: Ouverture de l'accordéon si on arrive avec une ancre (#) dans l'URL ---
-            // Ce script vérifie SI l'URL a une ancre ET si la page n'est pas "par défaut"
-            // (Nous forçons l'ouverture de 'Formation' par défaut, mais si l'URL est
-            // ...#service-peb, ce script va l'ouvrir à la place)
-            if (window.location.hash) {
-                const hash = window.location.hash;
-                // Trouve le lien qui correspond à l'ancre
-                const targetLink = document.querySelector(`.side-nav-sublink[href="${hash}"]`);
-                
-                if (targetLink) {
-                    // (On efface d'abord les classes "par défaut" de 'Formation')
-                    document.querySelectorAll('.side-nav-toggle.active').forEach(t => t.classList.remove('active'));
-                    document.querySelectorAll('.icon-toggle.rotate-90').forEach(i => i.classList.remove('rotate-90'));
-                    document.querySelectorAll('.side-nav-submenu:not(.hidden)').forEach(s => s.classList.add('hidden'));
-                    document.querySelectorAll('.side-nav-sublink.active').forEach(l => l.classList.remove('active'));
-
-                    // Trouve l'accordéon parent
-                    const submenu = targetLink.closest('.side-nav-submenu');
-                    
-                    if (submenu && submenu.classList.contains('hidden')) {
-                        // Ouvre l'accordéon
-                        const toggle = submenu.previousElementSibling;
-                        const icon = toggle.querySelector('.icon-toggle');
-                        
-                        submenu.classList.remove('hidden');
-                        toggle.classList.add('active');
-                        if (icon) {
-                            icon.classList.add('rotate-90');
-                        }
-                    }
-                    // Active le lien
-                    targetLink.classList.add('active');
-                }
-            }
-
-        });
-    </script>
-
-</body>
-</html>
