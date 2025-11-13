@@ -322,36 +322,36 @@
                             </div>
                         </div>
                             
-                        <!-- Chapeau 4: Accordéon (OUVERT PAR DÉFAUT) -->
+                        <!-- Chapeau 4: Accordéon (OUVERT PAR DÉFAUT, MAIS PAS ACTIF) -->
                         <div>
-                            <!-- L1 Toggle = ACTIF -->
-                            <button type="button" class="side-nav-toggle active">
+                            <!-- MODIFIÉ: 'active' a été supprimé -->
+                            <button type="button" class="side-nav-toggle">
                                 <span class="flex items-center">
                                     <span class="material-symbols-outlined">school</span>
                                     <span>Formation / Accompagnement</span>
                                 </span>
-                                <!-- L1 Icon = TOURNÉ -->
+                                <!-- MODIFIÉ: 'rotate-90' est conservé pour le déploiement -->
                                 <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
                             </button>
-                            <!-- L1 Sub-menu (OUVERT) -->
+                            <!-- MODIFIÉ: 'hidden' est supprimé pour qu'il soit ouvert -->
                             <div class="side-nav-submenu"> 
                                 <a href="#formation-etudiants" class="side-nav-sublink">Etudiants</a>
                                 <a href="#formation-doctorants" class="side-nav-sublink">Doctorants</a>
                                 
                                 <!-- MODIFIÉ: L1 Item "Enseignants" devient un L2 Accordéon (indenté) -->
                                 <div class="pl-4"> <!-- Indentation -->
-                                    <!-- L2 Toggle = ACTIF PAR DÉFAUT -->
-                                    <button type="button" class="side-nav-toggle active">
+                                    <!-- MODIFIÉ: L2 'toggle' est FERMÉ par défaut (pas de 'active') -->
+                                    <button type="button" class="side-nav-toggle">
                                         <span class="flex items-center">
                                             <span>Enseignants / Personnel</span>
                                         </span>
-                                        <!-- L2 Icon = TOURNÉ -->
-                                        <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
+                                        <!-- MODIFIÉ: L2 'icon' est FERMÉ (pas de 'rotate-90') -->
+                                        <span class="material-symbols-outlined icon-toggle">chevron_right</span>
                                     </button>
-                                    <!-- L2 Sub-menu (OUVERT) -->
-                                    <div class="side-nav-submenu">
-                                        <!-- L2 Link = ACTIF PAR DÉFAUT -->
-                                        <a href="#ens-enseignement" class="side-nav-sublink active">Pour l'enseignement</a>
+                                    <!-- MODIFIÉ: L2 'submenu' est FERMÉ ('hidden' est présent) -->
+                                    <div class="side-nav-submenu hidden">
+                                        <!-- MODIFIÉ: L2 Link n'est plus 'active' -->
+                                        <a href="#ens-enseignement" class="side-nav-sublink">Pour l'enseignement</a>
                                         <a href="#ens-recherche" class="side-nav-sublink">Pour la recherche</a>
                                         <a href="#ens-formation-continue" class="side-nav-sublink">Formation continue</a>
                                     </div>
@@ -722,22 +722,19 @@
         document.addEventListener('DOMContentLoaded', function () {
             
             // --- SCRIPT 1: Gestion de l'accordéon au clic ---
-            // S'applique à TOUS les .side-nav-toggle, y compris les L2
             const toggles = document.querySelectorAll('.side-nav-toggle');
             toggles.forEach(function (toggle) {
                 toggle.addEventListener('click', function (event) {
                     
-                    // Si ce n'est PAS un lien (c'est un <button>), on empêche le comportement par défaut
-                    if (this.tagName === 'BUTTON') {
-                        event.preventDefault();
-                    }
                     // Si c'est un lien (<a>), on LAISSE le lien fonctionner (sauter vers le #)
-                    
+                    // SAUF si ce lien a un sous-menu (ce qui est le cas pour "Enseignants / Personnel")
                     const submenu = this.nextElementSibling;
                     const icon = this.querySelector('.icon-toggle');
 
                     // Vérifie que l'élément suivant est bien un sous-menu
                     if (submenu && submenu.classList.contains('side-nav-submenu')) {
+                        // Si c'est un accordéon, on empêche le lien de sauter
+                        event.preventDefault(); 
                         submenu.classList.toggle('hidden');
                         this.classList.toggle('active');
                         if (icon) {
@@ -748,12 +745,78 @@
             });
 
             // --- SCRIPT 2: "Scroll-Spy" pour surligner le menu en fonction du défilement ---
-            // MODIFIÉ: Observe 'section', 'h3', et 'li' avec des IDs
             const sections = document.querySelectorAll('main section[id], main h3[id], main li[id]');
             const navLinks = document.querySelectorAll('.side-nav-sublink');
             
-            // S'il n'y a pas de sections sur la page, on ne fait rien
             if(sections.length > 0 && navLinks.length > 0) {
                 const observer = new IntersectionObserver((entries) => {
-                    // D'abord, on efface tous les liens actifs
                     navLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
+
+                    const visibleEntry = entries.find(entry => entry.isIntersecting);
+
+                    if (visibleEntry) {
+                        const id = visibleEntry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.side-nav-sublink[href="#${id}"]`);
+                        
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                }, { 
+                    rootMargin: '-40% 0px -60% 0px', // Zone de détection (près du haut)
+                    threshold: 0 
+                });
+
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+            }
+
+            // --- SCRIPT 3: Ouverture de TOUS les accordéons parents si on arrive avec une ancre (#) ---
+            if (window.location.hash) {
+                const hash = window.location.hash;
+                const targetLink = document.querySelector(`.side-nav-sublink[href="${hash}"]`);
+                
+                if (targetLink) {
+                    // Boucle pour remonter et ouvrir tous les parents
+                    let current = targetLink;
+                    while (current = current.closest('.side-nav-submenu')) {
+                        if (current.classList.contains('hidden')) {
+                            const toggle = current.previousElementSibling;
+                            const icon = toggle.querySelector('.icon-toggle');
+                            
+                            current.classList.remove('hidden');
+                            toggle.classList.add('active');
+                            if (icon) {
+                                icon.classList.add('rotate-90');
+                            }
+                        }
+                        current = current.parentElement; 
+                    }
+                    targetLink.classList.add('active');
+                }
+            } else {
+                // --- COMPORTEMENT PAR DÉFAUT (SI PAS D'ANCRE) ---
+                // Ouvre et active "Formation / Accompagnement"
+                const defaultToggle = document.querySelector('.side-nav-toggle'); // Simplifié, cible le premier
+                // Cible spécifiquement le 4e item (Formation)
+                const formationToggle = document.querySelectorAll('.side-nav-toggle')[2]; // [0=Services, 1=Ressources, 2=Formation]
+                if(formationToggle) {
+                    const submenu = formationToggle.nextElementSibling;
+                    const icon = formationToggle.querySelector('.icon-toggle');
+                    
+                    formationToggle.classList.add('active'); // Le chapeau est rouge
+                    submenu.classList.remove('hidden'); // Le sous-menu est visible
+                    if(icon) {
+                        icon.classList.add('rotate-90'); // L'icône est tournée
+                    }
+                }
+            }
+
+        });
+    </script>
+
+</body>
+</html>
