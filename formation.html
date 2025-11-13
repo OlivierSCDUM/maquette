@@ -322,9 +322,9 @@
                             </div>
                         </div>
                             
-                        <!-- Chapeau 4: Accordéon (OUVERT PAR DÉFAUT) -->
+                        <!-- Chapeau 4: Accordéon (CORRIGÉ: OUVERT PAR DÉFAUT, L1 ACTIF) -->
                         <div>
-                            <!-- L1 Toggle = ACTIF et TOURNÉ -->
+                            <!-- L1 Toggle = ACTIF (rouge) et TOURNÉ -->
                             <button type="button" class="side-nav-toggle active">
                                 <span class="flex items-center">
                                     <span class="material-symbols-outlined">school</span>
@@ -337,19 +337,20 @@
                                 <a href="#formation-etudiants" class="side-nav-sublink">Etudiants</a>
                                 <a href="#formation-doctorants" class="side-nav-sublink">Doctorants</a>
                                 
-                                <!-- MODIFIÉ: L1 Item "Enseignants" devient un L2 Accordéon (indenté) -->
+                                <!-- L2 Accordéon (indenté) -->
                                 <div class="pl-4"> <!-- Indentation -->
-                                    <!-- L2 Toggle = ACTIF et TOURNÉ -->
-                                    <button type="button" class="side-nav-toggle active">
+                                    <!-- L2 Toggle = PAS 'active' (pas rouge) -->
+                                    <button type="button" class="side-nav-toggle">
                                         <span class="flex items-center">
                                             <span>Enseignants / Personnel</span>
                                         </span>
+                                        <!-- L2 Icon = TOURNÉ (ouvert) -->
                                         <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
                                     </button>
                                     <!-- L2 Sub-menu (OUVERT) -->
                                     <div class="side-nav-submenu">
-                                        <!-- L2 Link = ACTIF PAR DÉFAUT -->
-                                        <a href="#ens-enseignement" class="side-nav-sublink active">Pour l'enseignement</a>
+                                        <!-- L2 Link = PAS 'active' -->
+                                        <a href="#ens-enseignement" class="side-nav-sublink">Pour l'enseignement</a>
                                         <a href="#ens-recherche" class="side-nav-sublink">Pour la recherche</a>
                                         <a href="#ens-formation-continue" class="side-nav-sublink">Formation continue</a>
                                     </div>
@@ -554,32 +555,17 @@
                             </ul>
                         </section>
 
-                        <!-- ** CORRIGÉ: L'ID 'formation-enseignants' est retiré d'ici ** -->
+                        <!-- ** CORRIGÉ: ID "formation-enseignants" SUPPRIMÉ d'ici ** -->
                         <section class="mt-8">
                             <h2>Soutien pour Enseignants / Personnel</h2>
 
-                            <!-- L'ID est ici sur le <h3> -->
+                            <!-- ** CORRIGÉ: ID et structure de contenu ** -->
                             <h3 id="ens-enseignement">Pour l’enseignement</h3>
                             <ul>
                                 <li>
                                     “Outils pour vos enseignements”
                                     <ul>
                                         <li>Référentiel des compétences informationnelles de l’UM (paragraphe à développer + lien)</li>
-                                        <!-- L'ID est ici sur le <li> -->
-                                        <!-- ** CONTENU RESTAURÉ CI-DESSOUS ** -->
-                                        <li id="ens-formation-continue">
-                                            Formations continues :
-                                            <p>=> Liens directs vers session/inscriptions catalogue UM GEFORP</p>
-                                            <ul>
-                                                <li>ER34 - Services et ressources des bibliothèques universitaires de l’UM</li>
-                                                <li>ER35 - Veille informationnelle sur un sujet d'actualité</li>
-                                                <li>ER36 - Savoir utiliser le logiciel Zotero pour organiser et citer ses références bibliographiques</li>
-                                                <li>ER18 - Identité numérique du chercheur</li>
-                                                <li>ER72 - Publier en Open Access : oui mais comment ?</li>
-                                                <li>ER19- Gérer ses données de la recherche</li>
-                                            </ul>
-                                            <p>Toutes les formations : lien GEFORP > Rubrique Enseignement et recherche</p>
-                                        </li>
                                         <li>Accompagnement perso=> Formulaire FUCI (+SOAR ?) ?</li>
                                     </ul>
                                 </li>
@@ -593,7 +579,7 @@
                                 </li>
                             </ul>
 
-                            <!-- L'ID est ici sur le <h3> -->
+                            <!-- ** CORRIGÉ: ID et structure de contenu ** -->
                             <h3 id="ens-recherche">Pour la recherche</h3>
                             <p>Pour FUCI : Uniquement dans la rubrique : « Trouver des documents »</p>
                             <ul>
@@ -631,8 +617,21 @@
                                 <li>Formations continues (lien direct : « Savoir utiliser le logiciel… »)</li>
                                 <li>Accompagnement perso=> Formulaire FUCI</li>
                             </ul>
+
+                            <!-- ** CORRIGÉ: ID et structure de contenu ** -->
+                            <h3 id="ens-formation-continue">Formations continues</h3>
+                            <p>=> Liens directs vers session/inscriptions catalogue UM GEFORP</p>
+                            <ul>
+                                <li>ER34 - Services et ressources des bibliothèques universitaires de l’UM</li>
+                                <li>ER35 - Veille informationnelle sur un sujet d'actualité</li>
+                                <li>ER36 - Savoir utiliser le logiciel Zotero pour organiser et citer ses références bibliographiques</li>
+                                <li>ER18 - Identité numérique du chercheur</li>
+                                <li>ER72 - Publier en Open Access : oui mais comment ?</li>
+                                <li>ER19- Gérer ses données de la recherche</li>
+                            </ul>
+                            <p>Toutes les formations : lien GEFORP > Rubrique Enseignement et recherche</p>
                         </section>
-                        <!-- ** FIN DU CONTENU RESTAURÉ ** -->
+                        <!-- ** FIN DU CONTENU CORRIGÉ ** -->
 
                     </div>
                 </div>
@@ -721,8 +720,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             
-            // --- SCRIPT 1: Gestion de l'accordéon au clic ---
             const toggles = document.querySelectorAll('.side-nav-toggle');
+            const navLinks = document.querySelectorAll('.side-nav-sublink');
+            const sections = document.querySelectorAll('main [id]');
+
+            // --- SCRIPT 1: Gestion de l'accordéon au clic ---
             toggles.forEach(function (toggle) {
                 toggle.addEventListener('click', function (event) {
                     
@@ -739,23 +741,25 @@
                             icon.classList.toggle('rotate-90');
                         }
                     }
-                    // Si ce n'est pas un accordéon (pas de sous-menu), le <a> fonctionne normalement
                 });
             });
 
             // --- SCRIPT 2: "Scroll-Spy" pour surligner le menu en fonction du défilement ---
-            const navLinks = document.querySelectorAll('.side-nav-sublink');
-            // ** CORRIGÉ: On observe TOUS les [id] dans <main> **
-            const sections = document.querySelectorAll('main [id]');
-            
             if(sections.length > 0 && navLinks.length > 0) {
                 const observer = new IntersectionObserver((entries) => {
-                    // D'abord, on efface tous les liens actifs
+                    // D'abord, on efface tous les liens actifs (L3)
                     navLinks.forEach(link => {
                         link.classList.remove('active');
                     });
+                    // ET on efface tous les 'toggles' actifs (L1, L2)
+                    // SAUF celui qui est actif par défaut (le L1 'Formation')
+                    toggles.forEach(toggle => {
+                        // Ne pas retirer 'active' du toggle L1 'Formation'
+                        if (!toggle.classList.contains('default-active')) {
+                            toggle.classList.remove('active');
+                        }
+                    });
 
-                    // On trouve la dernière entrée visible (la plus basse à l'écran)
                     const visibleEntries = entries.filter(entry => entry.isIntersecting);
                     const lastVisibleEntry = visibleEntries[visibleEntries.length - 1];
 
@@ -764,15 +768,21 @@
                         const activeLink = document.querySelector(`.side-nav-sublink[href="#${id}"]`);
                         
                         if (activeLink) {
+                            // 1. Activer le lien L3
                             activeLink.classList.add('active');
+                            
+                            // 2. Activer le parent L2
+                            const l2Toggle = activeLink.closest('.side-nav-submenu').previousElementSibling;
+                            if (l2Toggle && l2Toggle.classList.contains('side-nav-toggle')) {
+                                l2Toggle.classList.add('active');
+                            }
                         }
                     }
                 }, { 
-                    rootMargin: '-40% 0px -55% 0px', // Zone de détection (une bande de 5% au milieu)
+                    rootMargin: '-40% 0px -55% 0px', // Zone de détection (milieu)
                     threshold: 0
                 });
 
-                // On observe TOUTES les sections
                 sections.forEach(section => {
                     observer.observe(section);
                 });
@@ -784,6 +794,11 @@
                 const targetLink = document.querySelector(`.side-nav-sublink[href="${hash}"]`);
                 
                 if (targetLink) {
+                    // (On efface d'abord les classes "par défaut" codées en dur)
+                    document.querySelectorAll('.side-nav-toggle.active').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.icon-toggle.rotate-90').forEach(i => i.classList.remove('rotate-90'));
+                    document.querySelectorAll('.side-nav-submenu:not(.hidden)').forEach(s => s.classList.add('hidden'));
+
                     // Boucle pour remonter et ouvrir tous les parents
                     let current = targetLink;
                     while (current = current.closest('.side-nav-submenu')) {
@@ -799,12 +814,11 @@
                         }
                         current = current.parentElement; 
                     }
-                    // Active le lien sur lequel on a cliqué
                     targetLink.classList.add('active');
                 }
             } else {
                 // --- COMPORTEMENT PAR DÉFAUT (SI PAS D'ANCRE) ---
-                // Ouvre L1 ("Formation") et L2 ("Enseignants")
+                // Ouvre L1 ("Formation") et L2 ("Enseignants") mais SANS les activer (pas de rouge)
                 
                 // Cible le 3e 'toggle' (0=Services, 1=Ressources, 2=Formation)
                 const formationToggle = document.querySelectorAll('.side-nav-toggle')[2]; 
@@ -813,28 +827,24 @@
                     const icon = formationToggle.querySelector('.icon-toggle');
                     
                     formationToggle.classList.add('active'); // L1 Chapeau est rouge
-                    submenu.classList.remove('hidden'); // L1 sous-menu est visible
+                    // Ajoute une classe spéciale pour que le Scroll-Spy ne l'efface pas
+                    formationToggle.classList.add('default-active'); 
+                    
+                    submenu.classList.remove('hidden'); // Le sous-menu est visible
                     if(icon) {
-                        icon.classList.add('rotate-90'); // L1 icône est tournée
+                        icon.classList.add('rotate-90'); // L'icône est tournée
                     }
                     
                     // Cible le L2 'toggle' ("Enseignants / Personnel")
-                    // C'est le 3e 'toggle' *dans* ce sous-menu (0=Etudiants, 1=Doctorants, 2=Enseignants)
                     const enseignantToggle = submenu.querySelectorAll('.side-nav-toggle')[0]; // [0=Enseignants]
                     if (enseignantToggle) {
                          const submenuL2 = enseignantToggle.nextElementSibling;
                          const iconL2 = enseignantToggle.querySelector('.icon-toggle');
 
-                         enseignantToggle.classList.add('active'); // L2 Chapeau est rouge
+                         // ON N'AJOUTE PAS '.active' AU CHAPEAU L2
                          submenuL2.classList.remove('hidden'); // L2 sous-menu est visible
                          if(iconL2) {
                             iconL2.classList.add('rotate-90'); // L2 icône est tournée
-                         }
-                         
-                         // Active le premier lien L2 ("Pour l'enseignement")
-                         const defaultActiveLink = submenuL2.querySelector('.side-nav-sublink');
-                         if(defaultActiveLink) {
-                            defaultActiveLink.classList.add('active');
                          }
                     }
                 }
