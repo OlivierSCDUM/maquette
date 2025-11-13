@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/menu_de_navigation.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- 2. Script Tailwind CSS (MODIFIÉ: ajout de ?plugins=typography) -->
+    <!-- 2. Script Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
         
     <!-- 3. Lien pour les icônes Google Fonts -->
@@ -322,23 +322,20 @@
                             </div>
                         </div>
                             
-                        <!-- Chapeau 4: Accordéon -->
-                        <!-- NOTE: Les classes 'active' et 'rotate-90' sont supprimées -->
-                        <!-- Le script les ajoutera dynamiquement -->
+                        <!-- Chapeau 4: Accordéon (OUVERT PAR DÉFAUT) -->
                         <div>
-                            <button type="button" class="side-nav-toggle">
+                            <button type="button" class="side-nav-toggle active"> 
                                 <span class_group="flex items-center">
                                     <span class="material-symbols-outlined">school</span>
                                     <span>Formation / Accompagnement</span>
                                 </span>
-                                <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                                <!-- 2. 'rotate-90' AJOUTÉ -->
+                                <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
                             </button>
-                            <!-- Sous-menu (caché par défaut) -->
-                            <div class="side-nav-submenu hidden"> 
+                                <div class="side-nav-submenu"> 
                                 <a href="#formation-etudiants" class="side-nav-sublink">Etudiants</a>
                                 <a href="#formation-doctorants" class="side-nav-sublink">Doctorants</a>
-                                <!-- NOTE: La classe 'active' est supprimée d'ici -->
-                                <a href="#formation-enseignants" class="side-nav-sublink">Enseignants / Personnel</a>
+                                <a href="#formation-enseignants" class="side-nav-sublink">Enseignants-Enseignants chercheurs-Personnel</a>
                             </div>
                         </div>
 
@@ -352,6 +349,7 @@
                 </aside>
 
                 <!-- COLONNE DE DROITE (CONTENU) -->
+                <!-- MODIFIÉ: Suppression de .side-nav-panel pour un fond blanc -->
                 <div class="lg:col-span-3">
                     
                     <!-- 1. BANDEAU TITRE -->
@@ -363,125 +361,37 @@
                         </h1>
                     </div>
 
-                    <!-- 2. ZONE DE CONTENU (FOND BLANC) -->
+                    <!-- 2. CADRE DE CONTENU -->
                     <!-- 'prose' stylise le texte (h2, p, ul, etc.) -->
                     <!-- 'max-w-none' annule la limite de largeur de 'prose' -->
                     <div class="prose max-w-none">
                         
-                        <!-- CONTENU LIBRE ICI (Bien formaté) -->
+                        <img src="https://innovationbibliothequeuniversitaire.wordpress.com/wp-content/uploads/2017/05/463130-projet-lilliad-a-l-universite-lille-1-hall-central-auer-weber-vise-580x310.jpg">
                         
                         <h3>Encart de présentation générale</h3>
 
-                        <p>Le SCD accompagne les activités de formation et de recherche….</p>
+<p>Le SCD accompagne les activités de formation et de recherche….</p>
 
-                        <ul>
-                            <li>
-                                Des formations à destination de toute la communauté de l’Université de Montpellier : étudiants de 1er et 2e cycle dans toutes les disciplines, doctorants, les DU/DIU et internes en Santé , enseignants et enseignants-chercheurs, personnels administratifs.
-                                <!-- Liste imbriquée pour les sous-items -->
-                                <ul>
-                                    <li>Dans les cursus pour les étudiants 1er/2e cycle…</li>
-                                    <li>Des formations sur inscriptions pour les 3e cycle, EC et personnels …</li>
-                                </ul>
-                            </li>
-                            <li>
-                                Des ressources en accès libre => Lien rubrique « Outils » dans Moodle
-                            </li>
-                            <li>
-                                Un accompagnement personnalisé à la demande,  via des formulaires dédiés = pas de lien à ce niveau, on distinguera selon les profils, plus bas
-                            </li>
-                            <li>
-                                Autre chose pour SOAR ?
-                            </li>
-                        </ul>
+<ul>
+    <li>
+        Des formations à destination de toute la communauté de l’Université de Montpellier : étudiants de 1er et 2e cycle dans toutes les disciplines, doctorants, les DU/DIU et internes en Santé , enseignants et enseignants-chercheurs, personnels administratifs.
+        <!-- Liste imbriquée pour les sous-items -->
+        <ul>
+            <li>Dans les cursus pour les étudiants 1er/2e cycle…</li>
+            <li>Des formations sur inscriptions pour les 3e cycle, EC et personnels …</li>
+        </ul>
+    </li>
+    <li>
+        Des ressources en accès libre => Lien rubrique « Outils » dans Moodle
+    </li>
+    <li>
+        Un accompagnement personnalisé à la demande,  via des formulaires dédiés = pas de lien à ce niveau, on distinguera selon les profils, plus bas
+    </li>
+    <li>
+        Autre chose pour SOAR ?
+    </li>
+</ul>
 
-
-                        <!-- Sections de la page (pour les ancres) -->
-                        <section id="service-emprunter">
-                            <h2>Emprunter / rendre des documents</h2>
-                            <p>Contenu à venir pour "Emprunter / rendre des documents"...</p>
-                        </section>
-                        
-                        <section id="service-peb" class="mt-8">
-                            <h2>Faire venir un document d'une autre BU</h2>
-                            <p>Contenu à venir pour "Faire venir un document"...</p>
-                        </section>
-                        
-                        <section id="service-prolonger" class="mt-8">
-                            <h2>Prolonger un prêt</h2>
-                            <p>Contenu à venir pour "Prolonger un prêt"...</p>
-                        </section>
-
-                        <section id="service-espace" class="mt-8">
-                            <h2>Trouver un espace de travail</h2>
-                            <p>Contenu à venir pour "Trouver un espace de travail"...</p>
-                        </section>
-
-                        <!-- Section pour "Ressources documentaires" -->
-                        <section id="ressource-droit" class="mt-8">
-                            <h2>Droit</h2>
-                            <p>Contenu à venir pour "Ressources en Droit"...</p>
-                        </section>
-                        
-                        <section id="ressource-sciences" class="mt-8">
-                            <h2>Sciences et techniques</h2>
-                            <p>Contenu à venir pour "Ressources en Sciences et techniques"...</p>
-                        </section>
-                        
-                        <!-- Ajoutez d'autres sections ici... -->
-                        <section id="ressource-eco" class="mt-8">
-                          <h2>Science économique et gestion</h2>
-                          <p>Contenu à venir...</p>
-                        </section>
-                        <section id="ressource-sante" class="mt-8">
-                          <h2>Santé</h2>
-                          <p>Contenu à venir...</p>
-                        </section>
-                        <section id="ressource-shs" class="mt-8">
-                          <h2>SHS et science de l'éducation</h2>
-                          <p>Contenu à venir...</p>
-                        </section>
-                        <section id="ressource-um" class="mt-8">
-                          <h2>Les publications de l'UM</h2>
-                          <p>Contenu à venir...</p>
-                        </section>
-                        
-                        <!-- Section pour "Formation" -->
-                        <section id="formation-etudiants" class="mt-8">
-                            <h2>Pour les étudiants</h2>
-                            <ul>
-                                <li>
-                                    Des formations dans certains cursus = « Reportez vous à votre programme d’enseignement..» ;
-                                </li>
-                                <li>
-                                    “Ressources en autoformation, en accès libre” :
-                                    <ul>
-                                        <li>
-                                            A éditorialiser par thématiques avec lien vers ressources Moodle ou liens externes :
-                                            <ul>
-                                                <li>Ressources et bases de données</li>
-                                                <li>Tutoriels méthodologie</li>
-                                                <li>Gestion des références bibliographiques</li>
-                                                <li>Vademecum Dumas</li>
-                                                <li>............</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    Un accompagnement personnalisé à la demande = formulaire FUCI
-                                </li>
-                            </ul>
-                        </section>
-
-                        <section id="formation-doctorants" class="mt-8">
-                            <h2>Accompagnement pour Doctorants</h2>
-                            <p>Contenu à venir pour "Accompagnement Doctorants"...</p>
-                        </section>
-
-                        <section id="formation-enseignants" class="mt-8">
-                            <h2>Soutien pour Enseignants / Personnel</h2>
-                            <p>Contenu à venir pour "Soutien Enseignants"...</p>
-                        </section>
 
                     </div>
                 </div>
@@ -503,7 +413,7 @@
 
                 <!-- Colonne 1: Logo & Adresse -->
                 <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                    <img src="monurl" alt="Logo Université" class="h-16 mb-6 bg-white p-2 rounded-lg">
+                    <img src="https://upload.wikimedia.org/wikipedia/fr/archive/2/2d/20250730152353%21Logo_universit%C3%A9_montpellier.png" alt="Logo Université" class="h-16 mb-6 bg-white p-2 rounded-lg">
                     <p class="text-sm text-rose-100">
                         <strong>Service Commun de Documentation</strong><br>
                         Adresse postale...<br>
@@ -563,18 +473,26 @@
     <!-- Script pour le menu (original) -->
     <script src="js/menu_de_navigation.js"></script>
 
-    <!-- Script 1: Gestion de l'accordéon au clic -->
+    <!-- NOUVEAU: Script pour l'accordéon du menu latéral -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Sélectionne tous les boutons qui ouvrent/ferment un sous-menu
             const toggles = document.querySelectorAll('.side-nav-toggle');
 
             toggles.forEach(function (toggle) {
                 toggle.addEventListener('click', function () {
+                    // Trouve le panneau de sous-menu (c'est l'élément juste après le bouton)
                     const submenu = this.nextElementSibling;
+                    // Trouve l'icône chevron dans le bouton
                     const icon = this.querySelector('.icon-toggle');
 
+                    // Bascule la classe 'hidden' sur le sous-menu
                     submenu.classList.toggle('hidden');
+
+                    // Bascule la classe 'active' sur le bouton (pour le style)
                     this.classList.toggle('active');
+
+                    // Fait tourner l'icône (optionnel)
                     if (icon) {
                         icon.classList.toggle('rotate-90');
                     }
@@ -583,24 +501,5 @@
         });
     </script>
 
-    <!-- Script 2: "Scroll-Spy" pour surligner le menu en fonction du défilement -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('main section[id]');
-            const navLinks = document.querySelectorAll('.side-nav-sublink');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Retire 'active' de tous les liens
-                        navLinks.forEach(link => link.classList.remove('active'));
-                        
-                        // Ajoute 'active' au lien correspondant
-                        const id = entry.target.getAttribute('id');
-                        const activeLink = document.querySelector(`.side-nav-sublink[href="#${id}"]`);
-                        
-                        if (activeLink) {
-                            activeLink.classList.add('active');
-                            
-                            // Ouvre l'accordéon parent s'il est fermé
-                            const submenu = activeLink.closest('.side-
+</body>
+</html>
