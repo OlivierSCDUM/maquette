@@ -286,7 +286,6 @@
 
                         <!-- Chapeau 2: Accordéon -->
                         <div>
-                            <!-- CORRIGÉ: "class_group" remplacé par "class" -->
                             <button type="button" class="side-nav-toggle">
                                 <span class="flex items-center">
                                     <span class="material-symbols-outlined">design_services</span>
@@ -303,27 +302,42 @@
                             </div>
                         </div>
 
-                        <!-- Chapeau 3: Lien direct (MODIFIÉ) -->
-                        <a href="ressources-documentaires.html" class="side-nav-item">
-                            <span class="material-symbols-outlined">collections_bookmark</span>
-                            <span>Ressources documentaires</span>
-                        </a>
-                            
-                        <!-- Chapeau 4: Accordéon (MODIFIÉ) -->
+                        <!-- Chapeau 3: Accordéon (RESTAURÉ) -->
                         <div>
-                            <!-- MODIFIÉ: <button> devient <a> avec href="#" -->
-                            <a href="#" class="side-nav-toggle">
+                            <button type="button" class="side-nav-toggle">
+                                <span class="flex items-center">
+                                    <span class="material-symbols-outlined">collections_bookmark</span>
+                                    <span>Ressources documentaires</span>
+                                </span>
+                                <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                            </button>
+                            <!-- Sous-menu (caché par défaut) -->
+                            <div class="side-nav-submenu hidden">
+                                <a href="#ressource-droit" class="side-nav-sublink">Droit</a>
+                                <a href="#ressource-sciences" class="side-nav-sublink">Sciences et techniques</a>
+                                <a href="#ressource-eco" class="side-nav-sublink">Science économique et gestion</a>
+                                <a href="#ressource-sante" class="side-nav-sublink">Santé</a>
+                                <a href="#ressource-shs" class="side-nav-sublink">SHS et science de l'éducation</a>
+                                <a href="#ressource-um" class="side-nav-sublink">Les publications de l'UM</a>
+                            </div>
+                        </div>
+                            
+                        <!-- Chapeau 4: Accordéon (OUVERT PAR DÉFAUT) -->
+                        <div>
+                            <!-- MODIFIÉ: On garde <a> pour le clic, mais on lui ajoute les classes 'active' et 'rotate-90' -->
+                            <a href="#" class="side-nav-toggle active">
                                 <span class="flex items-center">
                                     <span class="material-symbols-outlined">school</span>
                                     <span>Formation / Accompagnement</span>
                                 </span>
-                                <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                                <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
                             </a>
-                            <!-- Sous-menu (caché par défaut) -->
-                            <div class="side-nav-submenu hidden"> 
+                            <!-- MODIFIÉ: 'hidden' est supprimé pour qu'il soit ouvert -->
+                            <div class="side-nav-submenu"> 
                                 <a href="#formation-etudiants" class="side-nav-sublink">Etudiants</a>
                                 <a href="#formation-doctorants" class="side-nav-sublink">Doctorants</a>
-                                <a href="#formation-enseignants" class="side-nav-sublink">Enseignants / Personnel</a>
+                                <!-- MODIFIÉ: 'active' est ajouté pour le surlignage par défaut -->
+                                <a href="#formation-enseignants" class="side-nav-sublink active">Enseignants / Personnel</a>
                             </div>
                         </div>
 
@@ -351,6 +365,7 @@
                     <div class="prose max-w-none">
                         
                         <!-- CONTENU LIBRE ICI (Bien formaté) -->
+                        <img src="https://innovationbibliothequeuniversitaire.wordpress.com/wp-content/uploads/2017/05/463130-projet-lilliad-a-l-universite-lille-1-hall-central-auer-weber-vise-580x310.jpg">
                         
                         <h3>Encart de présentation générale</h3>
 
@@ -485,6 +500,7 @@
 
                 <!-- Colonne 1: Logo & Adresse -->
                 <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <!-- Votre URL corrigée pour l'image -->
                     <img src="https://upload.wikimedia.org/wikipedia/fr/archive/2/2d/20250730152353%21Logo_universit%C3%A9_montpellier.png" alt="Logo Université" class="h-16 mb-6 bg-white p-2 rounded-lg">
                     <p class="text-sm text-rose-100">
                         <strong>Service Commun de Documentation</strong><br>
@@ -565,6 +581,7 @@
                     const submenu = this.nextElementSibling;
                     const icon = this.querySelector('.icon-toggle');
 
+                    // Vérifie que l'élément suivant est bien un sous-menu
                     if (submenu && submenu.classList.contains('side-nav-submenu')) {
                         submenu.classList.toggle('hidden');
                         this.classList.toggle('active');
@@ -580,42 +597,51 @@
             const navLinks = document.querySelectorAll('.side-nav-sublink');
             
             // S'il n'y a pas de sections sur la page, on ne fait rien
-            if(sections.length === 0 || navLinks.length === 0) return;
+            if(sections.length > 0 && navLinks.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    // D'abord, on efface tous les liens actifs
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
 
-            const observer = new IntersectionObserver((entries) => {
-                // D'abord, on efface tous les liens actifs
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
+                    // On trouve la première section visible
+                    const visibleEntry = entries.find(entry => entry.isIntersecting);
+
+                    if (visibleEntry) {
+                        const id = visibleEntry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.side-nav-sublink[href="#${id}"]`);
+                        
+                        if (activeLink) {
+                            // On active seulement le bon lien
+                            activeLink.classList.add('active');
+                        }
+                    }
+                }, { 
+                    rootMargin: '-40% 0px -60% 0px', // Zone de détection (près du haut)
+                    threshold: 0 
                 });
 
-                // On trouve la première section visible
-                const visibleEntry = entries.find(entry => entry.isIntersecting);
-
-                if (visibleEntry) {
-                    const id = visibleEntry.target.getAttribute('id');
-                    const activeLink = document.querySelector(`.side-nav-sublink[href="#${id}"]`);
-                    
-                    if (activeLink) {
-                        // On active seulement le bon lien
-                        activeLink.classList.add('active');
-                    }
-                }
-            }, { 
-                rootMargin: '-40% 0px -60% 0px', // Zone de détection (près du haut)
-                threshold: 0 
-            });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+            }
 
             // --- SCRIPT 3: Ouverture de l'accordéon si on arrive avec une ancre (#) dans l'URL ---
+            // Ce script vérifie SI l'URL a une ancre ET si la page n'est pas "par défaut"
+            // (Nous forçons l'ouverture de 'Formation' par défaut, mais si l'URL est
+            // ...#service-peb, ce script va l'ouvrir à la place)
             if (window.location.hash) {
                 const hash = window.location.hash;
                 // Trouve le lien qui correspond à l'ancre
                 const targetLink = document.querySelector(`.side-nav-sublink[href="${hash}"]`);
                 
                 if (targetLink) {
+                    // (On efface d'abord les classes "par défaut" de 'Formation')
+                    document.querySelectorAll('.side-nav-toggle.active').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.icon-toggle.rotate-90').forEach(i => i.classList.remove('rotate-90'));
+                    document.querySelectorAll('.side-nav-submenu:not(.hidden)').forEach(s => s.classList.add('hidden'));
+                    document.querySelectorAll('.side-nav-sublink.active').forEach(l => l.classList.remove('active'));
+
                     // Trouve l'accordéon parent
                     const submenu = targetLink.closest('.side-nav-submenu');
                     
@@ -630,6 +656,8 @@
                             icon.classList.add('rotate-90');
                         }
                     }
+                    // Active le lien
+                    targetLink.classList.add('active');
                 }
             }
 
