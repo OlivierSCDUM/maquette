@@ -286,6 +286,7 @@
 
                         <!-- Chapeau 2: Accordéon -->
                         <div>
+                            <!-- ** CORRIGÉ: class_group -> class ** -->
                             <button type="button" class="side-nav-toggle">
                                 <span class="flex items-center">
                                     <span class="material-symbols-outlined">design_services</span>
@@ -304,6 +305,7 @@
 
                         <!-- Chapeau 3: Accordéon (RESTAURÉ) -->
                         <div>
+                            <!-- ** CORRIGÉ: class_group -> class ** -->
                             <button type="button" class="side-nav-toggle">
                                 <span class="flex items-center">
                                     <span class="material-symbols-outlined">collections_bookmark</span>
@@ -322,35 +324,32 @@
                             </div>
                         </div>
                             
-                        <!-- Chapeau 4: Accordéon (OUVERT PAR DÉFAUT, MAIS PAS ACTIF) -->
+                        <!-- Chapeau 4: Accordéon (CORRIGÉ POUR L'ÉTAT PAR DÉFAUT) -->
                         <div>
-                            <!-- MODIFIÉ: 'active' a été supprimé -->
+                            <!-- MODIFIÉ: 'active' est supprimé (sera ajouté par script) -->
                             <button type="button" class="side-nav-toggle">
                                 <span class="flex items-center">
                                     <span class="material-symbols-outlined">school</span>
                                     <span>Formation / Accompagnement</span>
                                 </span>
-                                <!-- MODIFIÉ: 'rotate-90' est conservé pour le déploiement -->
-                                <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
+                                <!-- MODIFIÉ: 'rotate-90' est supprimé -->
+                                <span class="material-symbols-outlined icon-toggle">chevron_right</span>
                             </button>
-                            <!-- MODIFIÉ: 'hidden' est supprimé pour qu'il soit ouvert -->
-                            <div class="side-nav-submenu"> 
+                            <!-- MODIFIÉ: 'hidden' est ajouté pour être fermé par défaut -->
+                            <div class="side-nav-submenu hidden"> 
                                 <a href="#formation-etudiants" class="side-nav-sublink">Etudiants</a>
                                 <a href="#formation-doctorants" class="side-nav-sublink">Doctorants</a>
                                 
-                                <!-- MODIFIÉ: L1 Item "Enseignants" devient un L2 Accordéon (indenté) -->
+                                <!-- L2 Accordéon (indenté) -->
                                 <div class="pl-4"> <!-- Indentation -->
-                                    <!-- MODIFIÉ: L2 'toggle' est FERMÉ par défaut (pas de 'active') -->
                                     <button type="button" class="side-nav-toggle">
                                         <span class="flex items-center">
                                             <span>Enseignants / Personnel</span>
                                         </span>
-                                        <!-- MODIFIÉ: L2 'icon' est ouvert rotate-90 -->
-                                        <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
+                                        <span class="material-symbols-outlined icon-toggle">chevron_right</span>
                                     </button>
-                                    <!-- MODIFIÉ: L2 'submenu' est ouvert-->
-                                    <div class="side-nav-submenu ">
-                                        <!-- MODIFIÉ: L2 Link n'est plus 'active' -->
+                                    <!-- L2 'submenu' est FERMÉ ('hidden' est présent) -->
+                                    <div class="side-nav-submenu hidden">
                                         <a href="#ens-enseignement" class="side-nav-sublink">Pour l'enseignement</a>
                                         <a href="#ens-recherche" class="side-nav-sublink">Pour la recherche</a>
                                         <a href="#ens-formation-continue" class="side-nav-sublink">Formation continue</a>
@@ -556,18 +555,18 @@
                             </ul>
                         </section>
 
-                        <!-- MODIFIÉ: L'ID est déplacé du <h2> vers le <section> -->
+                        <!-- L'ID est ici sur la <section> parente -->
                         <section id="formation-enseignants" class="mt-8">
                             <h2>Soutien pour Enseignants / Personnel</h2>
 
-                            <!-- NOUVEL ID AJOUTÉ -->
+                            <!-- L'ID est ici sur le <h3> -->
                             <h3 id="ens-enseignement">Pour l’enseignement</h3>
                             <ul>
                                 <li>
                                     “Outils pour vos enseignements”
                                     <ul>
                                         <li>Référentiel des compétences informationnelles de l’UM (paragraphe à développer + lien)</li>
-                                        <!-- NOUVEL ID AJOUTÉ -->
+                                        <!-- L'ID est ici sur le <li> -->
                                         <li id="ens-formation-continue">
                                             Formations continues :
                                             <p>=> Liens directs vers session/inscriptions catalogue UM GEFORP</p>
@@ -594,7 +593,7 @@
                                 </li>
                             </ul>
 
-                            <!-- NOUVEL ID AJOUTÉ -->
+                            <!-- L'ID est ici sur le <h3> -->
                             <h3 id="ens-recherche">Pour la recherche</h3>
                             <p>Pour FUCI : Uniquement dans la rubrique : « Trouver des documents »</p>
                             <ul>
@@ -726,8 +725,6 @@
             toggles.forEach(function (toggle) {
                 toggle.addEventListener('click', function (event) {
                     
-                    // Si c'est un lien (<a>), on LAISSE le lien fonctionner (sauter vers le #)
-                    // SAUF si ce lien a un sous-menu (ce qui est le cas pour "Enseignants / Personnel")
                     const submenu = this.nextElementSibling;
                     const icon = this.querySelector('.icon-toggle');
 
@@ -741,12 +738,24 @@
                             icon.classList.toggle('rotate-90');
                         }
                     }
+                    // Si ce n'est pas un accordéon (pas de sous-menu), le <a> fonctionne normalement
                 });
             });
 
             // --- SCRIPT 2: "Scroll-Spy" pour surligner le menu en fonction du défilement ---
-            const sections = document.querySelectorAll('main section[id], main h3[id], main li[id]');
+            // **CORRIGÉ: N'observe que les sections qui ont un lien dans le menu**
             const navLinks = document.querySelectorAll('.side-nav-sublink');
+            const sections = [];
+            
+            navLinks.forEach(link => {
+                const id = link.getAttribute('href');
+                if (id.startsWith('#')) {
+                    const section = document.querySelector(id);
+                    if (section) {
+                        sections.push(section);
+                    }
+                }
+            });
             
             if(sections.length > 0 && navLinks.length > 0) {
                 const observer = new IntersectionObserver((entries) => {
@@ -754,6 +763,8 @@
                         link.classList.remove('active');
                     });
 
+                    // On trouve la première entrée visible
+                    // (find est OK car on ne suit que les sections valides)
                     const visibleEntry = entries.find(entry => entry.isIntersecting);
 
                     if (visibleEntry) {
@@ -765,10 +776,11 @@
                         }
                     }
                 }, { 
-                    rootMargin: '-40% 0px -60% 0px', // Zone de détection (près du haut)
+                    rootMargin: '-40% 0px -60% 0px', // Zone de détection (milieu)
                     threshold: 0 
                 });
 
+                // On observe UNIQUEMENT les sections qui ont un lien
                 sections.forEach(section => {
                     observer.observe(section);
                 });
@@ -800,9 +812,8 @@
             } else {
                 // --- COMPORTEMENT PAR DÉFAUT (SI PAS D'ANCRE) ---
                 // Ouvre et active "Formation / Accompagnement"
-                const defaultToggle = document.querySelector('.side-nav-toggle'); // Simplifié, cible le premier
-                // Cible spécifiquement le 4e item (Formation)
-                const formationToggle = document.querySelectorAll('.side-nav-toggle')[2]; // [0=Services, 1=Ressources, 2=Formation]
+                // Cible spécifiquement le 3e 'toggle' (0=Services, 1=Ressources, 2=Formation)
+                const formationToggle = document.querySelectorAll('.side-nav-toggle')[2]; 
                 if(formationToggle) {
                     const submenu = formationToggle.nextElementSibling;
                     const icon = formationToggle.querySelector('.icon-toggle');
