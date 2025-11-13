@@ -7,10 +7,16 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-/* NOUVEAU: Ajout pour le défilement fluide des ancres */
+/* NOUVEAU: Ajout pour le défilement fluide ET la marge du header sticky */
 html {
     scroll-behavior: smooth;
 }
+
+/* Cible toutes les sections avec un ID dans le <main> */
+main section[id] {
+    scroll-margin-top: 100px; /* Laisse 100px d'espace au-dessus de l'ancre */
+}
+
 
 /* --- Styles pour les vignettes "Missions" --- */
 .card {
