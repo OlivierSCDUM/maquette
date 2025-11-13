@@ -316,7 +316,7 @@
                             </div>
                         <!-- Chapeau 4: Accordéon (MODIFIÉ POUR ÊTRE OUVERT PAR DÉFAUT) -->
                         <div>
-                            <button type="button" class="side-nav-toggle"> <!-- 1. 'active' AJOUTÉ -->
+                            <button type="button" class="side-nav-toggle active"> <!-- 1. 'active' AJOUTÉ -->
                                 <span class_group="flex items-center">
                                     <span class="material-symbols-outlined">school</span>
                                     <span>Formation / Accompagnement</span>
@@ -329,7 +329,7 @@
                                 <a href="#formation-etudiants" class="side-nav-sublink">Etudiants</a>
                                 <a href="#formation-doctorants" class="side-nav-sublink">Doctorants</a>
                                 <!-- 4. 'active' AJOUTÉ ICI -->
-                                <a href="#formation-enseignants" class="side-nav-sublink">Enseignants / Personnel</a>
+                                <a href="#formation-enseignants" class="side-nav-sublink active">Enseignants / Personnel</a>
                             </div>
                         </div>
 
@@ -343,25 +343,25 @@
                 </aside>
 
                 <!-- COLONNE DE DROITE (CONTENU LIBRE) -->
-                <!-- 'prose' est une classe Tailwind qui stylise joliment le texte (paragraphes, listes, etc.) -->
-                <div class="lg:col-span-3 mt-12 lg:mt-0 prose max-w-none">
+                <!-- MODIFIÉ: 'prose' et 'max-w-none' sont retirés d'ici et 'space-y-6' est ajouté -->
+                <div class="lg:col-span-3 mt-12 lg:mt-0 space-y-6">
                     
-                    <h1>Titre de votre contenu</h1>
-                    <p>
-                        Ceci est la zone de contenu libre. Vous pouvez y placer ce que vous voulez. Les liens du menu de gauche
-                        pointeront vers les sections ci-dessous grâce à leurs IDs.
-                    </p>
+                    <!-- NOUVEAU: Bandeau Titre (style du menu de gauche) -->
+                    <div class="side-nav-panel flex items-center gap-3">
+                        <span class="material-symbols-outlined text-rose-600 text-3xl">
+                            school <!-- Icône pour 'Formation' -->
+                        </span>
+                        <h1 class="text-2xl font-bold text-gray-800">
+                            Accompagnement - Formation
+                        </h1>
+                    </div>
 
-                    <!-- Section pour "Services en BU" -->
-                    <section id="service-emprunter">
-                        <h2>Emprunter / rendre des documents</h2>
-                        <p>Contenu à venir pour "Emprunter / rendre des documents"...</p>
-                    </section>
-                    
-                    <section id="service-peb" class="mt-8">
-                        <h2>Faire venir un document d'une autre BU</h2>
-                        <p>Contenu à venir pour "Faire venir un document"...</p>
-                    </section>
+                    <!-- NOUVEAU: Cadre de contenu (style 'prose' pour le texte + panneau) -->
+                    <div class="side-nav-panel prose max-w-none">
+                
+                        <!-- L'ancien contenu est maintenant à l'intérieur de ce cadre -->
+                        <h1>Titre de votre contenu</h1>
+                        <p>
                     
                     <section id="service-prolonger" class="mt-8">
                         <h2>Prolonger un prêt</h2>
@@ -399,12 +399,12 @@
                     <section id="formation-doctorants" class="mt-8">
                         <h2>Accompagnement pour Doctorants</h2>
                         <p>Contenu à venir pour "Accompagnement Doctorants"...</p>
-                    </section>
+                        <section id="formation-enseignants" class="mt-8">
+                            <h2>Soutien pour Enseignants / Personnel</h2>
+                            <p>Contenu à venir pour "Soutien Enseignants"...</p>
+                        </section>
 
-                    <section id="formation-enseignants" class="mt-8">
-                        <h2>Soutien pour Enseignants / Personnel</h2>
-                        <p>Contenu à venir pour "Soutien Enseignants"...</p>
-                    </section>
+                    </div> <!-- FIN du nouveau cadre de contenu -->
 
                 </div>
             </div>
