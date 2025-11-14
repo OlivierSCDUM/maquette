@@ -58,6 +58,58 @@ main section[id] {
     text-decoration: none; /* Ajout pour garantir l'absence de soulignement */
 }
 
+/* ================================================= */
+/* MODIFIÉ: Règles pour les vignettes "Missions"     */
+/* (spécifiques pour battre .prose)         */
+/* ================================================= */
+
+/* Cible la carte (le lien <a>) quand elle est DANS .prose */
+.prose .card {
+    background-color: #fff;
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+    padding: 1.5rem; /* p-6 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    /* Force l'absence de soulignement sur le lien <a> */
+    text-decoration: none !important; 
+}
+
+/* Cible le survol de la carte DANS .prose */
+.prose .card:hover {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); /* shadow-2xl */
+    transform: translateY(-0.5rem); /* -translate-y-2 */
+    /* S'assure qu'il n'y a pas de soulignement au survol */
+    text-decoration: none !important; 
+}
+
+/* Cible l'icône DANS .prose .card */
+.prose .card .card-icon {
+    font-size: 4rem; /* 64px (plus gros) */
+    line-height: 1;
+    color: #E11D48; /* Couleur "rouge rose" (Tailwind rose-600) */
+    transition: transform 0.3s ease;
+}
+
+.prose .card:hover .card-icon {
+    transform: scale(1.1);
+}
+
+/* Cible le titre (<h3>) DANS .prose .card */
+.prose .card .card-title {
+    margin-top: 1rem; /* mt-4 */
+    font-size: 1rem; /* 16px (plus petit) */
+    line-height: 1.5rem;
+    font-weight: 600; /* font-semibold */
+    color: rgb(17 24 39); /* text-gray-900 */
+    /* Force l'absence de soulignement sur le titre <h3> */
+    text-decoration: none !important; 
+}
 
 /* --- Styles pour le formulaire Alma --- */
 /* ... (code alma inchangé) ... */
