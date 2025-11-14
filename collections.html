@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Titre de la nouvelle page -->
+    <title>Page de Contenu - SCD</title>
+
+    <!-- 1. Fichiers CSS -->
+    <link rel="stylesheet" href="css/menu_de_navigation.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- 2. Script Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+        
+    <!-- 3. Lien pour les icônes Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+</head>
+<!-- MODIFIÉ: Fond de page beige ENCORE PLUS clair -->
+<body class="bg-gray-50">
+    
+    <!-- ============================================= -->
+    <!--     HEADER (NE PAS MODIFIER)                  -->
+    <!-- ============================================= -->
+    <header id="custom-main-header" class="sticky top-0 z-[1000]">
+      <a class="logo-link" href="https://olivierscdum.github.io/maquette/">
+        <img src="images/library-logo3.png" alt="Logo de la bibliothèque">
+      </a>
+      <button class="burger-menu" id="burger-menu-trigger" aria-label="Ouvrir le menu">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+      <nav id="main-nav">
+        <ul>
+          <li class="mega-menu-item">
+            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-bu">
+              Vos BU
+            </button>
+            <div class="mega-menu-content w-full left-0" id="mega-menu-panel-bu">
+              <div class="mega-menu-grid grid-3-cols">
+                <div class="mega-menu-column">
+                  <h4>Les bibliothèques</h4>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Les Services</h4>
+                  <ul>
+                    <li><a href="#">Imprimer</a></li>
+                    <li><a href="#">Prêt entre bibliothèques</a></li>
+                    <li><a href="#">Tous les services</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Besoin d'aide ?</h4>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="mega-menu-item">
+            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-etudiants">
+              Etudiants
+            </button>
+            <div class="mega-menu-content w-full left-0" id="mega-menu-panel-etudiants">
+              <div class="mega-menu-grid grid-4-cols">
+                <div class="mega-menu-column">
+                  <h4>Etudier en BU</h4>
+                  <ul>
+                    <li><a href="#">Trouver un espace de travail</a></li>
+                    <li><a href="#">Salles de travail en groupes</a></li>
+                    <li><a href="#">Horaires des BU</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Trouver des documents</h4>
+                  <ul>
+                    <li><a href="#">Guide par discipline</a></li>
+                    <li><a href="#">Pour des recherches documentaires efficaces</a></li>
+                    <li><a href="#">Préparer un concours / une certification</a></li>
+                    <li><a href="#">Vous ne trouvez pas ?</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Rédiger un mémoire ou un travail universitaire</h4>
+                  <ul>
+                    <li><a href="#">Principes bibliographiques / normes de citations</a></li>
+                    <li><a href="#">Utiliser le logiciel Zotero</a></li>
+                    <li><a href="#">Demande d'accompagnement</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Assistance / nous contacter</h4>
+                  <ul>
+                    <li><a href="#">Une question ?</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="mega-menu-item">
+            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-doctorants">
+              Doctorants
+            </button>
+            <div class="mega-menu-content w-full left-0" id="mega-menu-panel-doctorants">
+              <div class="mega-menu-grid grid-5-cols">
+                <div class="mega-menu-column">
+                  <h4>Trouver des documents</h4>
+                  <ul>
+                    <li><a href="#">Bases de données AZ ou par discipline</a></li>
+                    <li><a href="#">Trouver des thèses</a></li>
+                    <li><a href="#">Thèses d'exercices</a></li>
+                    <li><a href="#">The metanews</a></li>
+                    <li><a href="#">Vous ne trouvez pas ?</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Préparer ma thèse</h4>
+                  <ul>
+                    <li><a href="#">Thèse de doctorat</a></li>
+                    <li><a href="#">Thèse d'exercice</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Gérer mes activités de chercheur</h4>
+                  <ul>
+                    <li><a href="#">Identité numéirque</a></li>
+                    <li><a href="#">Publier</a></li>
+                    <li><a href="#">Gérer mes données</a></li>
+                    <li><a href="#">Droit d'auteur / Plagiat</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Mes outils</h4>
+                  <ul>
+                    <li><a href="#">Click & read / Google scholar / Ophirofox</a></li>
+                    <li><a href="#">Revue de littérature</a></li>
+                    <li><a href="#">Zotero</a></li>
+                    <li><a href="#">ia académiques et TDM</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Assistance / Nous contacter</h4>
+                  <ul>
+                    <li><a href="#">Une question ?</a></li>
+                    <li><a href="#">Suggérer un achat</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="mega-menu-item">
+            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-enseignement">
+              Pour l'enseignement
+            </button>
+            <div class="mega-menu-content w-full left-0" id="mega-menu-panel-enseignement">
+              <div class="mega-menu-grid grid-4-cols">
+                <div class="mega-menu-column">
+                  <h4>Pour vos enseignements</h4>
+                  <ul>
+                    <li><a href="#">Intégrer un lien vers un doc électronique depuis moodle</a></li>
+                    <li><a href="#">Référentiel compétence informationnelle</a></li>
+                    <li><a href="#">Formation continue</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Pour vos étudiants</h4>
+                  <ul>
+                    <li><a href="#">Catalogue de formation du SCD</a></li>
+                    <li><a href="#">Ressources pédagogiques en libre accès</a></li>
+                    <li><a href="#">Intégrer Dumas pour mes étudiants</a></li>
+                    <li><a href="#">Demander une formation pour mes étudiants</a></li>
+                    <li><a href="#">Transmettre une bibliographie</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Trouver des ressources documentaires</h4>
+                  <ul>
+                    <li><a href="#">Bases de données par discipline ou AZ</a></li>
+                    <li><a href="#">Vous ne trouvez pas un document / un article</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Assistance</h4>
+                  <ul>
+                    <li><a href="#">Une question ?</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="mega-menu-item">
+            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-recherche">
+              Pour la recherche
+            </button>
+            <div class="mega-menu-content w-full left-0" id="mega-menu-panel-recherche">
+              <div class="mega-menu-grid grid-6-cols">
+                <div class="mega-menu-column">
+                  <h4>Publier en accès ouvert</h4>
+                  <ul>
+                    <li><a href="#">Voies de publication</a></li>
+                    <li><a href="#">Déposer dans Hal</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Valoriser</h4>
+                  <ul>
+                    <li><a href="#">Identité Numérique</a></li>
+                    <li><a href="#">Production scientifiques de l'UM</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Gérer mes données</h4>
+                  <ul>
+                    <li><a href="#">Ecodor</a></li>
+                    <li><a href="#">Gérer ses données à l'UM</a></li>
+                    <li><a href="#">Cahiers de laboratoire électroniques</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Trouver des documents</h4>
+                  <ul>
+                    <li><a href="#">Bases de données par discipline ou base AZ</a></li>
+                    <li><a href="#">Revue de littérature</a></li>
+                    <li><a href="#">Construire une veille</a></li>
+                    <li><a href="#">Patrimoine écrit</a></li>
+                    <li><a href="#">Vous ne trouvez pas ?</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Vos outils</h4>
+                  <ul>
+                    <li><a href="#">Click & Read / Google scholar / ophirofox</a></li>
+                    <li><a href="#">Zotero</a></li>
+                    <li><a href="#">TDM avec nos abonnements</a></li>
+                    <li><a href="#">IA avec nos abonnements</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Assistance / accompagnement</h4>
+                  <ul>
+                    <li><a href="#">Contactez-nous</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- ============================================= -->
+    <!--     FIN DU HEADER                             -->
+    <!-- ============================================= -->
+
+
+    <!-- ============================================= -->
+    <!--     DÉBUT DU CONTENU DE LA PAGE (MODIFIABLE)  -->
+    <!-- ============================================= -->
+    
+    <!-- MODIFIÉ: Grille en 5 colonnes, pleine largeur avec padding -->
+    <div class="w-full py-12 px-4 sm:px-6 lg:px-40">
+        <!-- MODIFIÉ: Grille à 5 colonnes -->
+        <div class="lg:grid lg:grid-cols-5 lg:gap-8">
+
+            <!-- COLONNE DE GAUCHE (MENU) -->
+            <!-- MODIFIÉ: Prend 1/5 de la largeur -->
+            <aside class="lg:col-span-1 mb-12 lg:mb-0">
+                <!-- 'sticky' : le menu reste visible au scroll -->
+                <!-- MODIFIÉ: 'bg-stone-200' (beige foncé) -->
+                <nav id="side-nav" class="sticky top-24 space-y-2 bg-stone-200 rounded-lg p-4">
+                    
+                    <!-- Chapeau 1: Lien direct -->
+                    <a href="page-des-bus.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">domain</span>
+                        <span>Les BUs</span>
+                    </a>
+
+                    <!-- Chapeau 2: Accordéon -->
+                    <div>
+                        <button type="button" class="side-nav-toggle">
+                            <span class="flex items-center">
+                                <span class="material-symbols-outlined">design_services</span>
+                                <span>Services en BU</span>
+                            </span>
+                            <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                        </button>
+                        <!-- Sous-menu (caché par défaut) -->
+                        <div class="side-nav-submenu hidden">
+                            <a href="#service-emprunter" class="side-nav-sublink">Emprunter / rendre</a>
+                            <a href="#service-peb" class="side-nav-sublink">Faire venir un document</a>
+                            <a href="#service-prolonger" class="side-nav-sublink">Prolonger un prêt</a>
+                            <a href="#service-espace" class="side-nav-sublink">Trouver un espace de travail</a>
+                        </div>
+                    </div>
+
+                    <!-- Chapeau 3: Accordéon -->
+                    <div>
+                        <button type="button" class="side-nav-toggle">
+                            <span class="flex items-center">
+                                <span class="material-symbols-outlined">collections_bookmark</span>
+                                <span>Ressources documentaires</span>
+                            </span>
+                            <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                        </button>
+                        <!-- Sous-menu (caché par défaut) -->
+                        <div class="side-nav-submenu hidden">
+                            <a href="#ressource-droit" class="side-nav-sublink">Droit</a>
+                            <a href="#ressource-sciences" class="side-nav-sublink">Sciences et techniques</a>
+                            <a href="#ressource-eco" class="side-nav-sublink">Science économique et gestion</a>
+                            <a href="#ressource-sante" class="side-nav-sublink">Santé</a>
+                            <a href="#ressource-shs" class="side-nav-sublink">SHS et science de l'éducation</a>
+                            <a href="#ressource-um" class="side-nav-sublink">Les publications de l'UM</a>
+                        </div>
+                    </div>
+                        
+                    <!-- Chapeau 4: Accordéon (OUVERT PAR DÉFAUT, L1 ACTIF) -->
+                    <div>
+                        <!-- L1 Toggle = ACTIF (rouge) et TOURNÉ -->
+                        <button type="button" class="side-nav-toggle active" data-default-active="true"> <!-- Ajout de 'data-default-active' -->
+                            <span class="flex items-center">
+                                <span class="material-symbols-outlined">school</span>
+                                <span>Formation / Accompagnement</span>
+                            </span>
+                            <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
+                        </button>
+                        <!-- L1 Sub-menu (OUVERT) -->
+                        <div class="side-nav-submenu"> 
+                            <a href="#formation-etudiants" class="side-nav-sublink">Etudiants</a>
+                            <a href="#formation-doctorants" class="side-nav-sublink">Doctorants</a>
+                            
+                            <!-- L2 Accordéon (indenté) -->
+                            <div class="pl-4"> <!-- Indentation -->
+                                <!-- L2 Toggle = PAS 'active' (pas rouge) -->
+                                <button type="button" class="side-nav-toggle">
+                                    <span class="flex items-center">
+                                        <span>Enseignants / Personnel</span>
+                                    </span>
+                                    <!-- L2 Icon = TOURNÉ (ouvert) -->
+                                    <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
+                                </button>
+                                <!-- L2 Sub-menu (OUVERT) -->
+                                <div class="side-nav-submenu">
+                                    <!-- L2 Link = PAS 'active' -->
+                                    <a href="#ens-enseignement" class="side-nav-sublink">Pour l'enseignement</a>
+                                    <a href="#ens-recherche" class="side-nav-sublink">Pour la recherche</a>
+                                    <a href="#ens-formation-continue" class="side-nav-sublink">Formation continue</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Chapeau 5: Lien direct -->
+                    <a href="page-appui-recherche.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">science</span>
+                        <span>Appui à la recherche</span>
+                    </a>
+
+                </nav>
+            </aside>
+
+            <!-- COLONNE DE DROITE (CONTENU) -->
+            <!-- MODIFIÉ: Prend 4/5 (80%) de la largeur -->
+            <main class="lg:col-span-4 bg-white rounded-xl shadow-lg p-6 sm:p-8">
+                
+                <!-- 1. BANDEAU TITRE (MODIFIÉ: Ajout de sticky) -->
+                <!-- Il se collera à 96px (top-24) du HAUT, juste sous le header principal -->
+                <div class="sticky top-20 z-10 bg-white mb-8 border-b border-gray-200 pb-6 -mt-6 -mx-6 sm:-mt-8 sm:-mx-8 px-6 sm:px-8 rounded-t-xl">
+                    <h1 class="text-3xl font-bold text-gray-800 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-4xl text-rose-600">school</span>
+                        <span>Accompagnement - Formation</span>
+                    </h1>
+                </div>
+
+                <!-- 2. ZONE DE CONTENU (FOND BLANC) -->
+                <div class="prose max-w-none">
+                    
+                    <!-- CONTENU LIBRE ICI (Bien formaté) -->
+                    <img src="https://innovationbibliothequeuniversitaire.wordpress.com/wp-content/uploads/2017/05/463130-projet-lilliad-a-l-universite-lille-1-hall-central-auer-weber-vise-580x310.jpg">
+                    
+                    <h3>Encart de présentation générale</h3>
+
+                    <p>Le SCD accompagne les activités de formation et de recherche….</p>
+
+                    <ul>
+                        <li>
+                            Des formations à destination de toute la communauté de l’Université de Montpellier : étudiants de 1er et 2e cycle dans toutes les disciplines, doctorants, les DU/DIU et internes en Santé , enseignants et enseignants-chercheurs, personnels administratifs.
+                            <!-- Liste imbriquée pour les sous-items -->
+                            <ul>
+                                <li>Dans les cursus pour les étudiants 1er/2e cycle…</li>
+                                <li>Des formations sur inscriptions pour les 3e cycle, EC et personnels …</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Des ressources en accès libre => Lien rubrique « Outils » dans Moodle
+                        </li>
+                        <li>
+                            Un accompagnement personnalisé à la demande,  via des formulaires dédiés = pas de lien à ce niveau, on distinguera selon les profils, plus bas
+                        </li>
+                        <li>
+                            Autre chose pour SOAR ?
+                        </li>
+                    </ul>
+                    
+                    <!-- Section pour "Formation" -->
+                    <section id="formation-etudiants" class="mt-8">
+                        <h2>Pour les étudiants</h2>
+                        <ul>
+                            <li>
+                                Des formations dans certains cursus = « Reportez vous à votre programme d’enseignement..» ;
+                            </li>
+                            <li>
+                                “Ressources en autoformation, en accès libre” :
+                                <ul>
+                                    <li>
+                                        A éditorialiser par thématiques avec lien vers ressources Moodle ou liens externes :
+                                        <ul>
+                                            <li>Ressources et bases de données</li>
+                                            <li>Tutoriels méthodologie</li>
+                                            <li>Gestion des références bibliographiques</li>
+                                            <li>Vademecum Dumas</li>
+                                            <li>............</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Un accompagnement personnalisé à la demande = formulaire FUCI
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section id="formation-doctorants" class="mt-8">
+                        <h2>Pour les doctorants</h2>
+                        <ul>
+                            <li>
+                                Les formations du collège doctoral – rubriques « Accompagnement du doctorat » et « Science ouverte » : sur inscription, plusieurs dates dans l’année, plusieurs modalités…
+                                <ul>
+                                    <li>
+                                        Thématiques = une page Moodle « boite à outils du Doctorant » à créer avec SOAR (car pas d’accès thématique possible via ADUM ou CD)
+                                        <ul>
+                                            <li>Optimiser sa recherche bibliographique en SHS / en Sciences-Techniques-Environnement / en Biologie-Santé</li>
+                                            <li>Gérer et exploiter ses références bibliographiques avec Zotero 7</li>
+                                            <li>Construire une veille informationnelle</li>
+                                            <li>Construire et gérer son identité numérique de jeune chercheur</li>
+                                            <li>Edition scientifique, Open Access et Science ouverte : des clés pour publier</li>
+                                            <li>Données de la recherche et PGD : adopter de bonnes pratiques pour la gestion de ses données</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Toutes les formations : => liens vers l’ADUM (mais accès uniquement catalogue global – pas d’accès ciblé formation du SCD)
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- MODIFIÉ: ID ajouté ici -->
+                        <h3 id="formation-internes">Pour les internes en Santé</h3>
+                        <ul>
+                            <li>
+                                Les formations : sur inscription, plusieurs dates dans l’année, plusieurs modalités…
+                                <ul>
+                                    <li>
+                                        Internes en Médecine
+                                        <ul>
+                                            <li>Thématiques : à détailler avec liens ?</li>
+                                            <li>Toutes les formations => adresse ciblée SCD / SILR</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Internes en Pharmacie
+                                        <ul>
+                                            <li>Thématiques : liens cours moodle/inscriptions</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Ressources en autoformation :
+                                <ul>
+                                    <li>Zotero : lien cours Moodle</li>
+                                    <li>Revue de littérature : ressources Moodle</li>
+                                    <li>IA Académiques : ressources Moodle</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Un accompagnement personnalisé à la demande
+                                <ul>
+                                    <li>
+                                        En fonction des thématiques :
+                                        <ul>
+                                            <li>Formulaire FUCI</li>
+                                            <li>Formulaires SOAR / ECODOR</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- SECTION "ENSEIGNANTS / PERSONNEL" -->
+                    <section class="mt-8">
+                        <h2>Soutien pour Enseignants / Personnel</h2>
+
+                        <!-- SOUS-SECTION: POUR L'ENSEIGNEMENT -->
+                        <section id="ens-enseignement">
+                            <h3>Pour l’enseignement</h3>
+                            <ul>
+                                <li>
+                                    “Outils pour vos enseignements”
+                                    <ul>
+                                        <li>Référentiel des compétences informationnelles de l’UM (paragraphe à développer + lien)</li>
+                                        <li>Accompagnement perso=> Formulaire FUCI (+SOAR ?) ?</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    “Pour mes étudiants”
+                                    <ul>
+                                        <li>Catalogue de formation du SCD => Lien doc pdf</li>
+                                        <li>Ressources pédagogiques en accès libre => lien rubrique « Outils » Moodle</li>
+                                        <li>Demander une formation pour mes étudiants => Formulaire FUCI</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- SOUS-SECTION: POUR LA RECHERCHE -->
+                        <section id="ens-recherche" class="mt-8">
+                            <h3>Pour la recherche</h3>
+                            <p>Pour FUCI : Uniquement dans la rubrique : « Trouver des documents »</p>
+                            <ul>
+                                <li>
+                                    “Ressources et bases de données”
+                                    <p>=>Ressources accès libre / tutos Moodle</p>
+                                </li>
+                                <li>
+                                    “Construire une veille”
+                                    <p>=>Formations continues (lien « Veille… »)</p>
+                                </li>
+                                <li>
+                                    A ajouter : Revue de littérature
+                                    <ul>
+                                        <li>Lien vers ?</li>
+                                    </ul>
+                                </li>
+                                <li>“Accompagnement personnalisé” => Formulaire FUCI</li>
+                            </ul>
+                            
+                            <p>« Publier en accès ouvert » = > SOAR</p>
+                            <p>« Valoriser » = > SOAR</p>
+                            <p>« Gérer mes données » = > SOAR</p>
+                            
+                            <ul>
+                                <li>Assistance SOAR / guichet unique ECODOR</li>
+                            </ul>
+                            
+                            <p>« Vos outils » :</p>
+                            <p>Pour FUCI :</p>
+                            <p>“Gérer et rédiger des références biblio avec Zotero ?”</p>
+                            <p>=> Liens vers :</p>
+                            <ul>
+                                <li>Ressources accès libre / tutos Moodle</li>
+                                <li>Formations continues (lien direct : « Savoir utiliser le logiciel… »)</li>
+                                <li>Accompagnement perso=> Formulaire FUCI</li>
+                            </ul>
+                        </section>
+                        
+                        <!-- SOUS-SECTION: FORMATION CONTINUE -->
+                        <section id="ens-formation-continue" class="mt-8">
+                            <h3>Formations continues</h3>
+                            <p>=> Liens directs vers session/inscriptions catalogue UM GEFORP</p>
+                            <ul>
+                                <li>ER34 - Services et ressources des bibliothèques universitaires de l’UM</li>
+                                <li>ER35 - Veille informationnelle sur un sujet d'actualité</li>
+                                <li>ER36 - Savoir utiliser le logiciel Zotero pour organiser et citer ses références bibliographiques</li>
+                                <li>ER18 - Identité numérique du chercheur</li>
+                                <li>ER72 - Publier en Open Access : oui mais comment ?</li>
+                                <li>ER19- Gérer ses données de la recherche</li>
+                            </ul>
+                            <p>Toutes les formations : lien GEFORP > Rubrique Enseignement et recherche</p>
+                        </section>
+                    </section>
+
+                </div>
+            </main> <!-- Fin du cadre blanc -->
+
+        </div>
+    </div> <!-- Fin du container/grid -->
+
+    <!-- ============================================= -->
+    <!--     FIN DU CONTENU DE LA PAGE                 -->
+    <!-- ============================================= -->
+
+
+    <!-- ============================================= -->
+    <!--     FOOTER (PLEINE LARGEUR)                   -->
+    <!-- ============================================= -->
+    <footer class="w-full bg-rose-600 text-white py-12 shadow-inner">
+        <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+                <!-- Colonne 1: Logo & Adresse -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <!-- Votre URL corrigée pour l'image -->
+                    <img src="https://upload.wikimedia.org/wikipedia/fr/archive/2/2d/20250730152353%21Logo_universit%C3%A9_montpellier.png" alt="Logo Université" class="h-16 mb-6 bg-white p-2 rounded-lg">
+                    <p class="text-sm text-rose-100">
+                        <strong>Service Commun de Documentation</strong><br>
+                        Adresse postale...<br>
+                        34000 Montpellier
+                    </p>
+                </div>
+
+                <!-- Colonne 2: Plan du site -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="text-lg font-semibold mb-4">Plan du site</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link">Vos BU</a></li>
+                        <li><a href="#" class="footer-link">Étudiants</a></li>
+                        <li><a href="#" class="footer-link">Doctorants</a></li>
+                        <li><a href="#" class="footer-link">Enseignement & Recherche</a></li>
+                        <li><a href="#" class="footer-link">Toutes les actualités</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 3: Appli & Réseaux -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="text-lg font-semibold mb-4">Suivez-nous</h4>
+                    
+                    <div class="flex flex-col sm:flex-row md:flex-col gap-3 mb-6">
+                        <a href="#" class="store-button" title="Télécharger sur l'App Store">
+                            <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
+                            <span class="store-text">
+                                <span class="store-text-small">Télécharger sur</span>
+                                <span class="store-text-large">App Store</span>
+                            </span>
+                        </a>
+                        <a href="#" class="store-button" title="Disponible sur Google Play">
+                            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34.3 0 24.1 10.5 24.1 23.5v465c0 13 10.2 23.5 22.9 23.5h.2c.5 0 1 .1 1.5.1L104.6 48l280.8-161.2L47 0zm435.2 225.4l-131.2-75.5L460.7 256l-131.2 75.5 131.2-75.5c1.7-1 2.7-2.7 2.7-4.5s-1-3.5-2.7-4.5zM104.6 464l280.8-161.2-60.1-60.1L104.6 464z"></path></svg>
+                            <span class="store-text">
+                                <span class="store-text-small">DISPONIBLE SUR</span>
+                                <span class="store-text-large">Google Play</span>
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <div class="flex gap-6">
+                        <a href="#" class="social-icon-link" title="Suivez-nous sur X (Twitter)">
+                            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg>
+                        </a>
+                        <a href="#" class="social-icon-link" title="Suivez-nous sur Instagram">
+                            <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.3 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ============================================= -->
+    <!--     FIN DU FOOTER                             -->
+    <!-- ============================================= -->
+    
+    <!-- Script pour le menu (original) -->
+    <script src="js/menu_de_navigation.js"></script>
+
+    <!-- 
+      SCRIPT CORRIGÉ ET FINAL: Tous les scripts du menu latéral sont regroupés ici 
+    -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const toggles = document.querySelectorAll('.side-nav-toggle');
+            const navLinks = document.querySelectorAll('.side-nav-sublink');
+            // ** CORRIGÉ: On observe que les <section> avec ID **
+            const sections = document.querySelectorAll('main section[id]');
+
+            // --- SCRIPT 1: Gestion de l'accordéon au clic ---
+            toggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function (event) {
+                    
+                    const submenu = this.nextElementSibling;
+                    const icon = this.querySelector('.icon-toggle');
+
+                    // Vérifie que l'élément suivant est bien un sous-menu
+                    if (submenu && submenu.classList.contains('side-nav-submenu')) {
+                        event.preventDefault(); 
+                        submenu.classList.toggle('hidden');
+                        this.classList.toggle('active');
+                        if (icon) {
+                            icon.classList.toggle('rotate-90');
+                        }
+                    }
+                });
+            });
+
+            // --- SCRIPT 2: "Scroll-Spy" pour surligner le menu en fonction du défilement ---
+            if(sections.length > 0 && navLinks.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    // D'abord, on efface tous les liens actifs (L3)
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    
+                    // On efface tous les 'toggles' L2 actifs
+                    document.querySelectorAll('.side-nav-toggle.active').forEach(toggle => {
+                        // On ne retire pas 'active' du L1 (Formation) qui est actif par défaut
+                        if (!toggle.hasAttribute('data-default-active')) {
+                            toggle.classList.remove('active');
+                        }
+                    });
+
+                    // On trouve la dernière entrée visible (la plus basse à l'écran)
+                    const visibleEntries = entries.filter(entry => entry.isIntersecting);
+                    const lastVisibleEntry = visibleEntries[visibleEntries.length - 1];
+
+                    if (lastVisibleEntry) {
+                        const id = lastVisibleEntry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.side-nav-sublink[href="#${id}"]`);
+                        
+                        if (activeLink) {
+                            // 1. Activer le lien L3
+                            activeLink.classList.add('active');
+                            
+                            // 2. Activer le parent L2 (s'il existe)
+                            const l2Submenu = activeLink.closest('.side-nav-submenu');
+                            if (l2Submenu) {
+                                const l2Toggle = l2Submenu.previousElementSibling;
+                                if (l2Toggle && l2Toggle.classList.contains('side-nav-toggle')) {
+                                    l2Toggle.classList.add('active');
+                                }
+                            }
+                        }
+                    }
+                }, { 
+                    rootMargin: '-20% 0px -75% 0px', // Une "tripwire" à 20% du haut
+                    threshold: 0
+                });
+
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+            }
+
+            // --- SCRIPT 3: Ouverture de TOUS les accordéons parents si on arrive avec une ancre (#) ---
+            if (window.location.hash) {
+                const hash = window.location.hash;
+                const targetLink = document.querySelector(`.side-nav-sublink[href="${hash}"]`);
+                
+                if (targetLink) {
+                    // (On efface d'abord les classes "par défaut" codées en dur)
+                    document.querySelectorAll('.side-nav-toggle.active').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.icon-toggle.rotate-90').forEach(i => i.classList.remove('rotate-90'));
+                    document.querySelectorAll('.side-nav-submenu:not(.hidden)').forEach(s => s.classList.add('hidden'));
+
+                    // Boucle pour remonter et ouvrir tous les parents
+                    let current = targetLink;
+                    while (current = current.closest('.side-nav-submenu')) {
+                        if (current.classList.contains('hidden')) {
+                            const toggle = current.previousElementSibling;
+                            const icon = toggle.querySelector('.icon-toggle');
+                            
+                            current.classList.remove('hidden');
+                            toggle.classList.add('active'); // Ouvre et met en rouge le parent
+                            if (icon) {
+                                icon.classList.add('rotate-90');
+                            }
+                        }
+                        current = current.parentElement; 
+                    }
+                    targetLink.classList.add('active');
+                }
+            } else {
+                // --- COMPORTEMENT PAR DÉFAUT (SI PAS D'ANCRE) ---
+                // Ouvre L1 ("Formation") et L2 ("Enseignants")
+                
+                // Cible le 3e 'toggle' (0=Services, 1=Ressources, 2=Formation)
+                const formationToggle = document.querySelectorAll('.side-nav-toggle')[2]; 
+                if(formationToggle) {
+                    const submenu = formationToggle.nextElementSibling;
+                    const icon = formationToggle.querySelector('.icon-toggle');
+                    
+                    formationToggle.classList.add('active'); // L1 Chapeau est ROUGE
+                    formationToggle.setAttribute('data-default-active', 'true'); // Marqueur pour le Script 2
+                    
+                    submenu.classList.remove('hidden'); // L1 sous-menu est visible
+                    if(icon) {
+                        icon.classList.add('rotate-90'); // L1 icône est tournée
+                    }
+                    
+                    // Cible le L2 'toggle' ("Enseignants / Personnel")
+                    const enseignantToggle = submenu.querySelectorAll('.side-nav-toggle')[0]; // [0=Enseignants]
+                    if (enseignantToggle) {
+                         const submenuL2 = enseignantToggle.nextElementSibling;
+                         const iconL2 = enseignantToggle.querySelector('.icon-toggle');
+
+                         // L2 N'EST PAS ROUGE
+                         submenuL2.classList.remove('hidden'); // L2 sous-menu est visible
+                         if(iconL2) {
+                            iconL2.classList.add('rotate-90'); // L2 icône est tournée
+                         }
+                    }
+                }
+            }
+
+        });
+    </script>
+
+</body>
+</html>
