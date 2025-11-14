@@ -38,7 +38,7 @@ main section[id] {
     transform: translateY(-0.5rem); /* -translate-y-2 */
 }
 
-.card-icon {
+.card .card-icon {
     font-size: 4rem; /* 64px */
     line-height: 1;
     color: #E11D48; /* Couleur "rouge rose" (Tailwind rose-600) */
@@ -49,7 +49,7 @@ main section[id] {
     transform: scale(1.1);
 }
 
-.card-title {
+.card .card-title {
     margin-top: 1rem; /* mt-4 */
     font-size: 1rem; /* text-lg */
     line-height: 1.5rem;
