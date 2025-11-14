@@ -517,6 +517,47 @@ main section[id] {
        ce padding va donc s'ajouter parfaitement. */
 }
 
+/* --- NOUVEAU: Styles pour le Menu Latéral (Thème Sombre) --- */
+.side-nav-dark.side-nav-panel {
+    background-color: #1f2937; /* bg-gray-800 */
+    border-color: #374151; /* border-gray-700 */
+}
+.side-nav-dark .side-nav-item {
+    color: #D1D5DB; /* text-gray-300 */
+}
+.side-nav-dark .side-nav-item:hover {
+    background-color: #374151; /* bg-gray-700 */
+    color: #FFFFFF; /* text-white */
+}
+.side-nav-dark .side-nav-toggle {
+    color: #D1D5DB; /* text-gray-300 */
+}
+.side-nav-dark .side-nav-toggle:hover {
+    background-color: #374151; /* bg-gray-700 */
+    color: #FFFFFF; /* text-white */
+}
+/* Style "Chapeau Actif" (ROUGE) */
+.side-nav-dark .side-nav-toggle.active {
+    background-color: #374151; /* bg-gray-700 */
+    color: #E11D48; /* text-rose-600 */
+}
+.side-nav-dark .side-nav-submenu {
+    border-left-color: #374151; /* border-gray-700 */
+}
+.side-nav-dark .side-nav-sublink {
+    color: #9CA3AF; /* text-gray-400 */
+}
+.side-nav-dark .side-nav-sublink:hover {
+    background-color: #374151; /* bg-gray-700 */
+    color: #FFFFFF; /* text-white */
+}
+/* Style "Lien Actif" (ROUGE) */
+.side-nav-dark .side-nav-sublink.active {
+    font-weight: 600;
+    color: #E11D48; /* text-rose-600 */
+    background-color: transparent;
+}
+
 /* --- Styles pour le Footer --- */
 
 /* Liens de texte dans le footer */
