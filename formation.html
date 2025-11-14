@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
 </head>
-<!-- MODIFIÉ: Fond de page beige clair -->
-<body class="bg-stone-100">
+<!-- MODIFIÉ: Fond de page beige ENCORE PLUS clair -->
+<body class="bg-gray-50">
     
     <!-- ============================================= -->
     <!--     HEADER (NE PAS MODIFIER)                  -->
@@ -261,15 +261,16 @@
     <!--     DÉBUT DU CONTENU DE LA PAGE (MODIFIABLE)  -->
     <!-- ============================================= -->
     
-    <!-- MODIFIÉ: Nouvelle structure de grille. <main> est supprimé d'ici -->
-    <!-- MODIFIÉ: max-w-7xl -> max-w-screen-xl pour plus de largeur -->
+    <!-- MODIFIÉ: max-w-7xl -> max-w-screen-xl (plus large) -->
     <div class="container max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div class="lg:grid lg:grid-cols-4 lg:gap-8">
+        <!-- MODIFIÉ: lg:grid-cols-4 -> lg:grid-cols-5 -->
+        <div class="lg:grid lg:grid-cols-5 lg:gap-8">
 
             <!-- COLONNE DE GAUCHE (MENU) -->
+            <!-- MODIFIÉ: Reste lg:col-span-1 (prend 1/5) -->
             <aside class="lg:col-span-1 mb-12 lg:mb-0">
                 <!-- 'sticky' : le menu reste visible au scroll -->
-                <!-- MODIFIÉ: 'top-24', nouveau style 'bg-stone-200' (beige foncé), 'side-nav-panel' supprimé -->
+                <!-- MODIFIÉ: 'bg-stone-200' (beige foncé) -->
                 <nav id="side-nav" class="sticky top-24 space-y-2 bg-stone-200 rounded-lg p-4">
                     
                     <!-- Chapeau 1: Lien direct -->
@@ -316,7 +317,7 @@
                         </div>
                     </div>
                         
-                    <!-- Chapeau 4: Accordéon (CORRIGÉ: OUVERT PAR DÉFAUT, L1 ACTIF) -->
+                    <!-- Chapeau 4: Accordéon (OUVERT PAR DÉFAUT, L1 ACTIF) -->
                     <div>
                         <!-- L1 Toggle = ACTIF (rouge) et TOURNÉ -->
                         <button type="button" class="side-nav-toggle active" data-default-active="true"> <!-- Ajout de 'data-default-active' -->
@@ -363,8 +364,8 @@
             </aside>
 
             <!-- COLONNE DE DROITE (CONTENU) -->
-            <!-- MODIFIÉ: <main> est maintenant le cadre blanc -->
-            <main class="lg:col-span-3 bg-white rounded-xl shadow-lg p-6 sm:p-8">
+            <!-- MODIFIÉ: lg:col-span-3 -> lg:col-span-4 (prend 4/5) -->
+            <main class="lg:col-span-4 bg-white rounded-xl shadow-lg p-6 sm:p-8">
                 
                 <!-- 1. BANDEAU TITRE (maintenant à l'intérieur du cadre blanc) -->
                 <div class="mb-8 border-b border-gray-200 pb-6">
@@ -584,8 +585,6 @@
                             <p>Toutes les formations : lien GEFORP > Rubrique Enseignement et recherche</p>
                         </section>
                     </section>
-                    
-                    <!-- ** MODIFIÉ: CONTENU INUTILE SUPPRIMÉ D'ICI ** -->
 
                 </div>
             </main> <!-- Fin du cadre blanc -->
@@ -676,7 +675,7 @@
             
             const toggles = document.querySelectorAll('.side-nav-toggle');
             const navLinks = document.querySelectorAll('.side-nav-sublink');
-            // On observe que les <section> avec ID
+            // ** CORRIGÉ: On observe que les <section> avec ID **
             const sections = document.querySelectorAll('main section[id]');
 
             // --- SCRIPT 1: Gestion de l'accordéon au clic ---
