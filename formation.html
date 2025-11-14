@@ -263,14 +263,15 @@
     
     <!-- MODIFIÉ: Nouvelle structure de grille en 6 colonnes, sans conteneur central -->
     <div class="w-full py-12">
-        <div class="lg:grid lg:grid-cols-6 lg:gap-8">
+        <!-- MODIFIÉ: Grille à 6 colonnes -->
+        <div class="lg:grid lg:grid-cols-6 lg:gap-8 px-4 sm:px-6 lg:px-8">
 
             <!-- Marge de gauche (vide sur petit écran) -->
             <div class="hidden lg:block lg:col-span-1"></div>
 
             <!-- COLONNE DE GAUCHE (MENU) -->
             <!-- MODIFIÉ: Prend 1/6 de la largeur -->
-            <aside class="lg:col-span-1 mb-12 lg:mb-0 px-4 lg:px-0">
+            <aside class="lg:col-span-1 mb-12 lg:mb-0">
                 <!-- 'sticky' : le menu reste visible au scroll -->
                 <!-- MODIFIÉ: 'bg-stone-200' (beige foncé) -->
                 <nav id="side-nav" class="sticky top-24 space-y-2 bg-stone-200 rounded-lg p-4">
@@ -367,7 +368,7 @@
 
             <!-- COLONNE DE DROITE (CONTENU) -->
             <!-- MODIFIÉ: Prend 4/6 (donc 2/3) de la largeur -->
-            <main class="lg:col-span-4 bg-white rounded-xl shadow-lg p-6 sm:p-8 mx-4 lg:mx-0">
+            <main class="lg:col-span-4 bg-white rounded-xl shadow-lg p-6 sm:p-8">
                 
                 <!-- 1. BANDEAU TITRE (maintenant à l'intérieur du cadre blanc) -->
                 <div class="mb-8 border-b border-gray-200 pb-6">
@@ -588,6 +589,8 @@
                         </section>
                     </section>
                     
+                    <!-- ** MODIFIÉ: CONTENU INUTILE SUPPRIMÉ D'ICI ** -->
+
                 </div>
             </main> <!-- Fin du cadre blanc -->
 
