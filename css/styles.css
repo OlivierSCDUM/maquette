@@ -337,13 +337,15 @@ main section[id] {
 
 /* --- Styles pour le Menu Latéral (Thème Clair) --- */
 /* MODIFIÉ: .side-nav-panel a été supprimé */
+/* MODIFIÉ: Font-size et font-weight réduits */
 .side-nav-item {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
-    font-weight: 600;
+    font-weight: 500; /* réduit de 600 */
+    font-size: 0.9rem; /* 14.4px */
     color: #374151; /* text-gray-700 (Texte noir par défaut) */
     text-decoration: none;
     transition: all 0.2s ease;
@@ -360,7 +362,8 @@ main section[id] {
     gap: 0.75rem;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
-    font-weight: 600;
+    font-weight: 500; /* réduit de 600 */
+    font-size: 0.9rem; /* 14.4px */
     color: #374151; /* Texte noir par défaut */
     text-decoration: none;
     transition: all 0.2s ease;
@@ -377,6 +380,7 @@ main section[id] {
 .side-nav-toggle.active {
     background-color: #FEF2F2; /* bg-rose-50 */
     color: #E11D48; /* text-rose-600 */
+    font-weight: 600; /* On le remet en gras quand il est actif */
 }
 .icon-toggle {
     transition: transform 0.2s ease;
@@ -397,7 +401,7 @@ main section[id] {
     display: block;
     padding: 0.5rem 1rem;
     border-radius: 0.375rem;
-    font-size: 0.875rem;
+    font-size: 0.85rem; /* 13.6px */
     color: #4B5563; /* text-gray-600 */
     text-decoration: none;
     transition: all 0.2s ease;
