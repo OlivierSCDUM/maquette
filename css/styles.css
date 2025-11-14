@@ -103,9 +103,9 @@ main section[id] {
 /* Cible le titre (<h3>) DANS .prose .card */
 .prose .card .card-title {
     margin-top: 1rem; /* mt-4 */
-    font-size: 0.5rem; /* 16px (plus petit) */
+    font-size: 0.75rem; /* 16px (plus petit) */
     line-height: 1.5rem;
-    font-weight: 300; /* font-semibold */
+    font-weight: 400; /* font-semibold */
     color: rgb(17 24 39); /* text-gray-900 */
     /* Force l'absence de soulignement sur le titre <h3> */
     text-decoration: none !important; 
