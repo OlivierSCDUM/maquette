@@ -39,7 +39,7 @@ main section[id] {
 }
 
 .card-icon {
-    font-size: 3rem; /* 48px */
+    font-size: 4rem; /* 64px */
     line-height: 1;
     color: #E11D48; /* Couleur "rouge rose" (Tailwind rose-600) */
     transition: transform 0.3s ease;
@@ -51,10 +51,11 @@ main section[id] {
 
 .card-title {
     margin-top: 1rem; /* mt-4 */
-    font-size: 1.125rem; /* text-lg */
-    line-height: 1.75rem;
+    font-size: 1rem; /* text-lg */
+    line-height: 1.5rem;
     font-weight: 600; /* font-semibold */
     color: rgb(17 24 39); /* text-gray-900 */
+    text-decoration: none; /* Ajout pour garantir l'absence de soulignement */
 }
 
 
