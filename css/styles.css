@@ -349,7 +349,7 @@ main section[id] {
     transition: all 0.2s ease;
 }
 .side-nav-item:hover {
-    background-color: #F3F4F6; /* bg-gray-100 */
+    background-color: #e0dedc; /* Un peu plus foncé que stone-200 */
     color: #1F2937; /* text-gray-900 */
 }
 .side-nav-toggle {
@@ -370,7 +370,7 @@ main section[id] {
     text-align: left;
 }
 .side-nav-toggle:hover {
-    background-color: #F3F4F6; /* bg-gray-100 */
+    background-color: #e0dedc; /* Un peu plus foncé que stone-200 */
     color: #1F2937; /* text-gray-900 */
 }
 /* Style "Chapeau Actif" (ROUGE) */
@@ -403,7 +403,7 @@ main section[id] {
     transition: all 0.2s ease;
 }
 .side-nav-sublink:hover {
-    background-color: #F3F4F6; /* bg-gray-100 */
+    background-color: #e0dedc; /* Un peu plus foncé que stone-200 */
     color: #1F2937; /* text-gray-900 */
 }
 /* Style "Lien Actif" (ROUGE) */
