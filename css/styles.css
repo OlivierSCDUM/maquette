@@ -105,7 +105,7 @@ main section[id] {
     margin-top: 1rem; /* mt-4 */
     font-size: 0.75rem; /* 16px (plus petit) */
     line-height: 1.5rem;
-    font-weight: 400; /* font-semibold */
+    font-weight: 600; /* font-semibold */
     color: rgb(17 24 39); /* text-gray-900 */
     /* Force l'absence de soulignement sur le titre <h3> */
     text-decoration: none !important; 
