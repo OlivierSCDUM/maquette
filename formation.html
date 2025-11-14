@@ -262,7 +262,7 @@
     <!-- ============================================= -->
     
     <!-- MODIFIÉ: Grille en 5 colonnes, pleine largeur avec padding -->
-    <div class="w-full py-12 px-8 sm:px-12 lg:px-48">
+    <div class="w-full py-12 px-4 sm:px-6 lg:px-8">
         <!-- MODIFIÉ: Grille à 5 colonnes -->
         <div class="lg:grid lg:grid-cols-5 lg:gap-8">
 
@@ -273,31 +273,42 @@
                 <!-- MODIFIÉ: 'bg-stone-200' (beige foncé) -->
                 <nav id="side-nav" class="sticky top-24 space-y-2 bg-stone-200 rounded-lg p-4">
                     
-                    <!-- Chapeau 1: Lien direct -->
+                    <!-- Chapeau 1: Lien direct (ACTIF) -->
                     <a href="page-des-bus.html" class="side-nav-item">
                         <span class="material-symbols-outlined">domain</span>
                         <span>Les BUs</span>
                     </a>
+                    <!-- Chapeau 1: Version Accordéon (en commentaire pour copier-coller) -->
+                    <!-- 
+                    <div>
+                        <button type="button" class="side-nav-toggle" data-default-active="true">
+                            <span class="flex items-center">
+                                <span class="material-symbols-outlined">domain</span>
+                                <span>Les BUs</span>
+                            </span>
+                            <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                        </button>
+                        <div class="side-nav-submenu hidden"> 
+                            <a href="#ancre1" class="side-nav-sublink">Sous-menu BU 1</a>
+                        </div>
+                    </div>
+                    -->
 
-                   
-                    
-                    <!-- Chapeau 2: Lien direct-->
+                    <!-- Chapeau 2: Lien direct (ACTIF) -->
                     <a href="services.html" class="side-nav-item">
                         <span class="material-symbols-outlined">design_services</span>
                         <span>Services en BU</span>
                     </a>
-                    
-                    <!-- Chapeau 2: Accordéon 
+                    <!-- Chapeau 2: Version Accordéon (en commentaire pour copier-coller) -->
+                    <!-- 
                     <div>
-                        <button type="button" class="side-nav-toggle">
+                        <button type="button" class="side-nav-toggle" data-default-active="true">
                             <span class="flex items-center">
                                 <span class="material-symbols-outlined">design_services</span>
                                 <span>Services en BU</span>
                             </span>
                             <span class="material-symbols-outlined icon-toggle">chevron_right</span>
                         </button>
-                    -->
-                        <!-- Sous-menu (caché par défaut) 
                         <div class="side-nav-submenu hidden">
                             <a href="#service-emprunter" class="side-nav-sublink">Emprunter / rendre</a>
                             <a href="#service-peb" class="side-nav-sublink">Faire venir un document</a>
@@ -307,16 +318,21 @@
                     </div>
                     -->
 
-                    <!-- Chapeau 3: Accordéon -->
+                    <!-- Chapeau 3: Lien direct (ACTIF) -->
+                    <a href="ressources.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">collections_bookmark</span>
+                        <span>Ressources documentaires</span>
+                    </a>
+                    <!-- Chapeau 3: Version Accordéon (en commentaire pour copier-coller) -->
+                    <!-- 
                     <div>
-                        <button type="button" class="side-nav-toggle">
+                        <button type="button" class="side-nav-toggle" data-default-active="true">
                             <span class="flex items-center">
                                 <span class="material-symbols-outlined">collections_bookmark</span>
                                 <span>Ressources documentaires</span>
                             </span>
                             <span class="material-symbols-outlined icon-toggle">chevron_right</span>
                         </button>
-                        <!-- Sous-menu (caché par défaut) -->
                         <div class="side-nav-submenu hidden">
                             <a href="#ressource-droit" class="side-nav-sublink">Droit</a>
                             <a href="#ressource-sciences" class="side-nav-sublink">Sciences et techniques</a>
@@ -326,8 +342,9 @@
                             <a href="#ressource-um" class="side-nav-sublink">Les publications de l'UM</a>
                         </div>
                     </div>
+                    -->
                         
-                    <!-- Chapeau 4: Accordéon (OUVERT PAR DÉFAUT, L1 ACTIF) -->
+                    <!-- Chapeau 4: Accordéon (PAGE ACTIVE) -->
                     <div>
                         <!-- L1 Toggle = ACTIF (rouge) et TOURNÉ -->
                         <button type="button" class="side-nav-toggle active" data-default-active="true"> <!-- Ajout de 'data-default-active' -->
@@ -363,12 +380,34 @@
 
                         </div>
                     </div>
+                    <!-- Chapeau 4: Version Lien (en commentaire pour copier-coller) -->
+                    <!--
+                    <a href="page_avec_menu.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">school</span>
+                        <span>Formation / Accompagnement</span>
+                    </a>
+                    -->
 
-                    <!-- Chapeau 5: Lien direct -->
+                    <!-- Chapeau 5: Lien direct (ACTIF) -->
                     <a href="page-appui-recherche.html" class="side-nav-item">
                         <span class="material-symbols-outlined">science</span>
                         <span>Appui à la recherche</span>
                     </a>
+                    <!-- Chapeau 5: Version Accordéon (en commentaire pour copier-coller) -->
+                    <!--
+                    <div>
+                        <button type="button" class="side-nav-toggle" data-default-active="true">
+                            <span class="flex items-center">
+                                <span class="material-symbols-outlined">science</span>
+                                <span>Appui à la recherche</span>
+                            </span>
+                            <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                        </button>
+                        <div class="side-nav-submenu hidden"> 
+                            ... (sous-menu ici) ...
+                        </div>
+                    </div>
+                    -->
 
                 </nav>
             </aside>
@@ -596,8 +635,6 @@
                         </section>
                     </section>
                     
-                    <!-- ** MODIFIÉ: CONTENU INUTILE SUPPRIMÉ D'ICI ** -->
-
                 </div>
             </main> <!-- Fin du cadre blanc -->
 
@@ -682,7 +719,7 @@
     <!-- 
       SCRIPT CORRIGÉ ET FINAL: Tous les scripts du menu latéral sont regroupés ici 
     -->
-   <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             
             const toggles = document.querySelectorAll('.side-nav-toggle');
