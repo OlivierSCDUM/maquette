@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
 </head>
-<!-- MODIFIÉ: Fond de page beige ENCORE PLUS clair -->
-<body class="bg-gray-50">
+<!-- MODIFIÉ: Fond de page beige clair -->
+<body class="bg-stone-100">
     
     <!-- ============================================= -->
     <!--     HEADER (NE PAS MODIFIER)                  -->
@@ -40,6 +40,7 @@
               Vos BU
             </button>
             <div class="mega-menu-content w-full left-0" id="mega-menu-panel-bu">
+              <!-- NOUVELLE CLASSE: .grid-3-cols pour forcer l'espacement -->
               <div class="mega-menu-grid grid-3-cols">
                 <div class="mega-menu-column">
                   <h4>Les bibliothèques</h4>
@@ -64,6 +65,7 @@
               Etudiants
             </button>
             <div class="mega-menu-content w-full left-0" id="mega-menu-panel-etudiants">
+              <!-- NOUVELLE CLASSE: .grid-4-cols -->
               <div class="mega-menu-grid grid-4-cols">
                 <div class="mega-menu-column">
                   <h4>Etudier en BU</h4>
@@ -105,6 +107,7 @@
               Doctorants
             </button>
             <div class="mega-menu-content w-full left-0" id="mega-menu-panel-doctorants">
+              <!-- NOUVELLE CLASSE: .grid-5-cols -->
               <div class="mega-menu-grid grid-5-cols">
                 <div class="mega-menu-column">
                   <h4>Trouver des documents</h4>
@@ -157,6 +160,7 @@
               Pour l'enseignement
             </button>
             <div class="mega-menu-content w-full left-0" id="mega-menu-panel-enseignement">
+              <!-- NOUVELLE CLASSE: .grid-4-cols -->
               <div class="mega-menu-grid grid-4-cols">
                 <div class="mega-menu-column">
                   <h4>Pour vos enseignements</h4>
@@ -198,6 +202,7 @@
               Pour la recherche
             </button>
             <div class="mega-menu-content w-full left-0" id="mega-menu-panel-recherche">
+              <!-- La classe par défaut .mega-menu-grid (6 colonnes) est utilisée ici -->
               <div class="mega-menu-grid grid-6-cols">
                 <div class="mega-menu-column">
                   <h4>Publier en accès ouvert</h4>
@@ -261,7 +266,8 @@
     <!--     DÉBUT DU CONTENU DE LA PAGE (MODIFIABLE)  -->
     <!-- ============================================= -->
     
-    <!-- MODIFIÉ: max-w-7xl -> max-w-screen-xl (plus large) -->
+    <!-- MODIFIÉ: Nouvelle structure de grille. <main> est supprimé d'ici -->
+    <!-- MODIFIÉ: max-w-7xl -> max-w-screen-xl pour plus de largeur -->
     <div class="container max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <!-- MODIFIÉ: lg:grid-cols-4 -> lg:grid-cols-5 -->
         <div class="lg:grid lg:grid-cols-5 lg:gap-8">
@@ -317,7 +323,7 @@
                         </div>
                     </div>
                         
-                    <!-- Chapeau 4: Accordéon (OUVERT PAR DÉFAUT, L1 ACTIF) -->
+                    <!-- Chapeau 4: Accordéon (CORRIGÉ: OUVERT PAR DÉFAUT, L1 ACTIF) -->
                     <div>
                         <!-- L1 Toggle = ACTIF (rouge) et TOURNÉ -->
                         <button type="button" class="side-nav-toggle active" data-default-active="true"> <!-- Ajout de 'data-default-active' -->
@@ -585,6 +591,8 @@
                             <p>Toutes les formations : lien GEFORP > Rubrique Enseignement et recherche</p>
                         </section>
                     </section>
+                    
+                    <!-- ** MODIFIÉ: CONTENU INUTILE SUPPRIMÉ D'ICI ** -->
 
                 </div>
             </main> <!-- Fin du cadre blanc -->
