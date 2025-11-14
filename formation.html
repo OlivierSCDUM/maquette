@@ -265,379 +265,378 @@
     <!-- ============================================= -->
     <!--     DÉBUT DU CONTENU DE LA PAGE (MODIFIABLE)  -->
     <!-- ============================================= -->
-    
-    <!-- MODIFIÉ: La balise <main> est déplacée pour envelopper la grille -->
-    <main class="container max-w-7xl mx-auto py-12 lg:grid lg:grid-cols-4 lg:gap-8">
-            
-        <!-- COLONNE DE GAUCHE (MENU) -->
-        <aside class="lg:col-span-1 mb-12 lg:mb-0">
-            <!-- 'sticky' : le menu reste visible au scroll -->
-            <!-- Le .side-nav-panel est conservé ici pour s'asseoir sur le fond beige -->
-            <nav id="side-nav" class="sticky top-24 space-y-2 side-nav-panel">
-                
-                <!-- Chapeau 1: Lien direct -->
-                <a href="page-des-bus.html" class="side-nav-item">
-                    <span class="material-symbols-outlined">domain</span>
-                    <span>Les BUs</span>
-                </a>
+    <!-- MODIFIÉ: Nouvelle structure de grille pleine largeur -->
+    <div class="container max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-4 lg:gap-8">
 
-                <!-- Chapeau 2: Accordéon -->
-                <div>
-                    <button type="button" class="side-nav-toggle">
-                        <span class="flex items-center">
-                            <span class="material-symbols-outlined">design_services</span>
-                            <span>Services en BU</span>
-                        </span>
-                        <span class="material-symbols-outlined icon-toggle">chevron_right</span>
-                    </button>
-                    <!-- Sous-menu (caché par défaut) -->
-                    <div class="side-nav-submenu hidden">
-                        <a href="#service-emprunter" class="side-nav-sublink">Emprunter / rendre</a>
-                        <a href="#service-peb" class="side-nav-sublink">Faire venir un document</a>
-                        <a href="#service-prolonger" class="side-nav-sublink">Prolonger un prêt</a>
-                        <a href="#service-espace" class="side-nav-sublink">Trouver un espace de travail</a>
-                    </div>
-                </div>
-
-                <!-- Chapeau 3: Accordéon (RESTAURÉ) -->
-                <div>
-                    <button type="button" class="side-nav-toggle">
-                        <span class="flex items-center">
-                            <span class="material-symbols-outlined">collections_bookmark</span>
-                            <span>Ressources documentaires</span>
-                        </span>
-                        <span class="material-symbols-outlined icon-toggle">chevron_right</span>
-                    </button>
-                    <!-- Sous-menu (caché par défaut) -->
-                    <div class="side-nav-submenu hidden">
-                        <a href="#ressource-droit" class="side-nav-sublink">Droit</a>
-                        <a href="#ressource-sciences" class="side-nav-sublink">Sciences et techniques</a>
-                        <a href="#ressource-eco" class="side-nav-sublink">Science économique et gestion</a>
-                        <a href="#ressource-sante" class="side-nav-sublink">Santé</a>
-                        <a href="#ressource-shs" class="side-nav-sublink">SHS et science de l'éducation</a>
-                        <a href="#ressource-um" class="side-nav-sublink">Les publications de l'UM</a>
-                    </div>
-                </div>
+            <!-- COLONNE DE GAUCHE (MENU) -->
+            <aside class="lg:col-span-1 mb-12 lg:mb-0">
+                <!-- 'sticky' : le menu reste visible au scroll -->
+                <!-- MODIFIÉ: 'top-24' pour être sous le header sticky -->
+                <!-- MODIFIÉ: Ajout de 'side-nav-dark' pour le nouveau thème -->
+                <nav id="side-nav" class="sticky top-24 space-y-2 side-nav-panel side-nav-dark">
                     
-                <!-- Chapeau 4: Accordéon (CORRIGÉ: OUVERT PAR DÉFAUT, L1 ACTIF) -->
-                <div>
-                    <!-- L1 Toggle = ACTIF (rouge) et TOURNÉ -->
-                    <button type="button" class="side-nav-toggle active" data-default-active="true"> <!-- Ajout de 'data-default-active' -->
-                        <span class="flex items-center">
-                            <span class="material-symbols-outlined">school</span>
-                            <span>Formation / Accompagnement</span>
-                        </span>
-                        <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
-                    </button>
-                    <!-- L1 Sub-menu (OUVERT) -->
-                    <div class="side-nav-submenu"> 
-                        <a href="#formation-etudiants" class="side-nav-sublink">Etudiants</a>
-                        <a href="#formation-doctorants" class="side-nav-sublink">Doctorants</a>
-                        
-                        <!-- L2 Accordéon (indenté) -->
-                        <div class="pl-4"> <!-- Indentation -->
-                            <!-- L2 Toggle = PAS 'active' (pas rouge) -->
-                            <button type="button" class="side-nav-toggle">
-                                <span class="flex items-center">
-                                    <span>Enseignants / Personnel</span>
-                                </span>
-                                <!-- L2 Icon = TOURNÉ (ouvert) -->
-                                <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
-                            </button>
-                            <!-- L2 Sub-menu (OUVERT) -->
-                            <div class="side-nav-submenu">
-                                <!-- L2 Link = PAS 'active' -->
-                                <a href="#ens-enseignement" class="side-nav-sublink">Pour l'enseignement</a>
-                                <a href="#ens-recherche" class="side-nav-sublink">Pour la recherche</a>
-                                <a href="#ens-formation-continue" class="side-nav-sublink">Formation continue</a>
-                            </div>
+                    <!-- Chapeau 1: Lien direct -->
+                    <a href="page-des-bus.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">domain</span>
+                        <span>Les BUs</span>
+                    </a>
+
+                    <!-- Chapeau 2: Accordéon -->
+                    <div>
+                        <button type="button" class="side-nav-toggle">
+                            <span class="flex items-center">
+                                <span class="material-symbols-outlined">design_services</span>
+                                <span>Services en BU</span>
+                            </span>
+                            <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                        </button>
+                        <!-- Sous-menu (caché par défaut) -->
+                        <div class="side-nav-submenu hidden">
+                            <a href="#service-emprunter" class="side-nav-sublink">Emprunter / rendre</a>
+                            <a href="#service-peb" class="side-nav-sublink">Faire venir un document</a>
+                            <a href="#service-prolonger" class="side-nav-sublink">Prolonger un prêt</a>
+                            <a href="#service-espace" class="side-nav-sublink">Trouver un espace de travail</a>
                         </div>
-
                     </div>
-                </div>
 
-                <!-- Chapeau 5: Lien direct -->
-                <a href="page-appui-recherche.html" class="side-nav-item">
-                    <span class="material-symbols-outlined">science</span>
-                    <span>Appui à la recherche</span>
-                </a>
+                    <!-- Chapeau 3: Accordéon (RESTAURÉ) -->
+                    <div>
+                        <button type="button" class="side-nav-toggle">
+                            <span class="flex items-center">
+                                <span class="material-symbols-outlined">collections_bookmark</span>
+                                <span>Ressources documentaires</span>
+                            </span>
+                            <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                        </button>
+                        <!-- Sous-menu (caché par défaut) -->
+                        <div class="side-nav-submenu hidden">
+                            <a href="#ressource-droit" class="side-nav-sublink">Droit</a>
+                            <a href="#ressource-sciences" class="side-nav-sublink">Sciences et techniques</a>
+                            <a href="#ressource-eco" class="side-nav-sublink">Science économique et gestion</a>
+                            <a href="#ressource-sante" class="side-nav-sublink">Santé</a>
+                            <a href="#ressource-shs" class="side-nav-sublink">SHS et science de l'éducation</a>
+                            <a href="#ressource-um" class="side-nav-sublink">Les publications de l'UM</a>
+                        </div>
+                    </div>
+                        
+                    <!-- Chapeau 4: Accordéon (CORRIGÉ: OUVERT PAR DÉFAUT, L1 ACTIF) -->
+                    <div>
+                        <!-- L1 Toggle = ACTIF (rouge) et TOURNÉ -->
+                        <button type="button" class="side-nav-toggle active" data-default-active="true"> <!-- Ajout de 'data-default-active' -->
+                            <span class="flex items-center">
+                                <span class="material-symbols-outlined">school</span>
+                                <span>Formation / Accompagnement</span>
+                            </span>
+                            <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
+                        </button>
+                        <!-- L1 Sub-menu (OUVERT) -->
+                        <div class="side-nav-submenu"> 
+                            <a href="#formation-etudiants" class="side-nav-sublink">Etudiants</a>
+                            <a href="#formation-doctorants" class="side-nav-sublink">Doctorants</a>
+                            
+                            <!-- L2 Accordéon (indenté) -->
+                            <div class="pl-4"> <!-- Indentation -->
+                                <!-- L2 Toggle = PAS 'active' (pas rouge) -->
+                                <button type="button" class="side-nav-toggle">
+                                    <span class="flex items-center">
+                                        <span>Enseignants / Personnel</span>
+                                    </span>
+                                    <!-- L2 Icon = TOURNÉ (ouvert) -->
+                                    <span class="material-symbols-outlined icon-toggle rotate-90">chevron_right</span>
+                                </button>
+                                <!-- L2 Sub-menu (OUVERT) -->
+                                <div class="side-nav-submenu">
+                                    <!-- L2 Link = PAS 'active' -->
+                                    <a href="#ens-enseignement" class="side-nav-sublink">Pour l'enseignement</a>
+                                    <a href="#ens-recherche" class="side-nav-sublink">Pour la recherche</a>
+                                    <a href="#ens-formation-continue" class="side-nav-sublink">Formation continue</a>
+                                </div>
+                            </div>
 
-            </nav>
-        </aside>
+                        </div>
+                    </div>
 
-        <!-- COLONNE DE DROITE (CONTENU) -->
-        <!-- MODIFIÉ: <main> est déplacé pour envelopper la grille -->
-        <div class="lg:col-span-3">
-            
-            <!-- NOUVEAU: Cadre blanc pour tout le contenu de droite -->
-            <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8">
+                    <!-- Chapeau 5: Lien direct -->
+                    <a href="page-appui-recherche.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">science</span>
+                        <span>Appui à la recherche</span>
+                    </a>
 
-                <!-- 1. BANDEAU TITRE (conserve son style) -->
-                <div class="side-nav-panel mb-8">
-                    <h1 class="text-3xl font-bold text-gray-800 flex items-center gap-3">
-                        <span class="material-symbols-outlined text-4xl text-rose-600">school</span>
-                        <span>Accompagnement - Formation</span>
-                    </h1>
-                </div>
+                </nav>
+            </aside>
 
-                <!-- 2. ZONE DE CONTENU (FOND BLANC) -->
-                <div class="prose max-w-none">
-                    
-                    <!-- CONTENU LIBRE ICI (Bien formaté) -->
-                    <img src="https://innovationbibliothequeuniversitaire.wordpress.com/wp-content/uploads/2017/05/463130-projet-lilliad-a-l-universite-lille-1-hall-central-auer-weber-vise-580x310.jpg">
-                    
-                    <h3>Encart de présentation générale</h3>
+            <!-- COLONNE DE DROITE (CONTENU) -->
+            <!-- MODIFIÉ: <main> devient un <div>, le contenu est dans un cadre blanc -->
+            <div class="lg:col-span-3">
+                
+                <!-- NOUVEAU: Cadre blanc pour tout le contenu de droite -->
+                <main class="bg-white rounded-xl shadow-lg p-6 sm:p-8">
+                
+                    <!-- 1. BANDEAU TITRE (maintenant à l'intérieur du cadre blanc) -->
+                    <div class="mb-8 border-b border-gray-200 pb-6">
+                        <h1 class="text-3xl font-bold text-gray-800 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-4xl text-rose-600">school</span>
+                            <span>Accompagnement - Formation</span>
+                        </h1>
+                    </div>
 
-                    <p>Le SCD accompagne les activités de formation et de recherche….</p>
+                    <!-- 2. ZONE DE CONTENU (FOND BLANC) -->
+                    <div class="prose max-w-none">
+                        
+                        <!-- CONTENU LIBRE ICI (Bien formaté) -->
+                        <img src="https://innovationbibliothequeuniversitaire.wordpress.com/wp-content/uploads/2017/05/463130-projet-lilliad-a-l-universite-lille-1-hall-central-auer-weber-vise-580x310.jpg">
+                        
+                        <h3>Encart de présentation générale</h3>
 
-                    <ul>
-                        <li>
-                            Des formations à destination de toute la communauté de l’Université de Montpellier : étudiants de 1er et 2e cycle dans toutes les disciplines, doctorants, les DU/DIU et internes en Santé , enseignants et enseignants-chercheurs, personnels administratifs.
-                            <!-- Liste imbriquée pour les sous-items -->
-                            <ul>
-                                <li>Dans les cursus pour les étudiants 1er/2e cycle…</li>
-                                <li>Des formations sur inscriptions pour les 3e cycle, EC et personnels …</li>
-                            </ul>
-                        </li>
-                        <li>
-                            Des ressources en accès libre => Lien rubrique « Outils » dans Moodle
-                        </li>
-                        <li>
-                            Un accompagnement personnalisé à la demande,  via des formulaires dédiés = pas de lien à ce niveau, on distinguera selon les profils, plus bas
-                        </li>
-                        <li>
-                            Autre chose pour SOAR ?
-                        </li>
-                    </ul>
-                    
-                    <!-- Section pour "Formation" -->
-                    <section id="formation-etudiants" class="mt-8">
-                        <h2>Pour les étudiants</h2>
+                        <p>Le SCD accompagne les activités de formation et de recherche….</p>
+
                         <ul>
                             <li>
-                                Des formations dans certains cursus = « Reportez vous à votre programme d’enseignement..» ;
-                            </li>
-                            <li>
-                                “Ressources en autoformation, en accès libre” :
+                                Des formations à destination de toute la communauté de l’Université de Montpellier : étudiants de 1er et 2e cycle dans toutes les disciplines, doctorants, les DU/DIU et internes en Santé , enseignants et enseignants-chercheurs, personnels administratifs.
+                                <!-- Liste imbriquée pour les sous-items -->
                                 <ul>
-                                    <li>
-                                        A éditorialiser par thématiques avec lien vers ressources Moodle ou liens externes :
-                                        <ul>
-                                            <li>Ressources et bases de données</li>
-                                            <li>Tutoriels méthodologie</li>
-                                            <li>Gestion des références bibliographiques</li>
-                                            <li>Vademecum Dumas</li>
-                                            <li>............</li>
-                                        </ul>
-                                    </li>
+                                    <li>Dans les cursus pour les étudiants 1er/2e cycle…</li>
+                                    <li>Des formations sur inscriptions pour les 3e cycle, EC et personnels …</li>
                                 </ul>
                             </li>
                             <li>
-                                Un accompagnement personnalisé à la demande = formulaire FUCI
+                                Des ressources en accès libre => Lien rubrique « Outils » dans Moodle
+                            </li>
+                            <li>
+                                Un accompagnement personnalisé à la demande,  via des formulaires dédiés = pas de lien à ce niveau, on distinguera selon les profils, plus bas
+                            </li>
+                            <li>
+                                Autre chose pour SOAR ?
                             </li>
                         </ul>
-                    </section>
-
-                    <section id="formation-doctorants" class="mt-8">
-                        <h2>Pour les doctorants</h2>
-                        <ul>
-                            <li>
-                                Les formations du collège doctoral – rubriques « Accompagnement du doctorat » et « Science ouverte » : sur inscription, plusieurs dates dans l’année, plusieurs modalités…
-                                <ul>
-                                    <li>
-                                        Thématiques = une page Moodle « boite à outils du Doctorant » à créer avec SOAR (car pas d’accès thématique possible via ADUM ou CD)
-                                        <ul>
-                                            <li>Optimiser sa recherche bibliographique en SHS / en Sciences-Techniques-Environnement / en Biologie-Santé</li>
-                                            <li>Gérer et exploiter ses références bibliographiques avec Zotero 7</li>
-                                            <li>Construire une veille informationnelle</li>
-                                            <li>Construire et gérer son identité numérique de jeune chercheur</li>
-                                            <li>Edition scientifique, Open Access et Science ouverte : des clés pour publier</li>
-                                            <li>Données de la recherche et PGD : adopter de bonnes pratiques pour la gestion de ses données</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        Toutes les formations : => liens vers l’ADUM (mais accès uniquement catalogue global – pas d’accès ciblé formation du SCD)
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <!-- MODIFIÉ: ID ajouté ici -->
-                        <h3 id="formation-internes">Pour les internes en Santé</h3>
-                        <ul>
-                            <li>
-                                Les formations : sur inscription, plusieurs dates dans l’année, plusieurs modalités…
-                                <ul>
-                                    <li>
-                                        Internes en Médecine
-                                        <ul>
-                                            <li>Thématiques : à détailler avec liens ?</li>
-                                            <li>Toutes les formations => adresse ciblée SCD / SILR</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        Internes en Pharmacie
-                                        <ul>
-                                            <li>Thématiques : liens cours moodle/inscriptions</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                Ressources en autoformation :
-                                <ul>
-                                    <li>Zotero : lien cours Moodle</li>
-                                    <li>Revue de littérature : ressources Moodle</li>
-                                    <li>IA Académiques : ressources Moodle</li>
-                                </ul>
-                            </li>
-                            <li>
-                                Un accompagnement personnalisé à la demande
-                                <ul>
-                                    <li>
-                                        En fonction des thématiques :
-                                        <ul>
-                                            <li>Formulaire FUCI</li>
-                                            <li>Formulaires SOAR / ECODOR</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <!-- ** CORRIGÉ: ID "formation-enseignants" SUPPRIMÉ ** -->
-                    <section class="mt-8">
-                        <h2>Soutien pour Enseignants / Personnel</h2>
-
-                        <!-- ** CORRIGÉ: "ens-enseignement" est maintenant une SECTION ** -->
-                        <section id="ens-enseignement">
-                            <h3>Pour l’enseignement</h3>
+                        
+                        <!-- Section pour "Formation" -->
+                        <section id="formation-etudiants" class="mt-8">
+                            <h2>Pour les étudiants</h2>
                             <ul>
                                 <li>
-                                    “Outils pour vos enseignements”
+                                    Des formations dans certains cursus = « Reportez vous à votre programme d’enseignement..» ;
+                                </li>
+                                <li>
+                                    “Ressources en autoformation, en accès libre” :
                                     <ul>
-                                        <li>Référentiel des compétences informationnelles de l’UM (paragraphe à développer + lien)</li>
-                                        <li>Accompagnement perso=> Formulaire FUCI (+SOAR ?) ?</li>
+                                        <li>
+                                            A éditorialiser par thématiques avec lien vers ressources Moodle ou liens externes :
+                                            <ul>
+                                                <li>Ressources et bases de données</li>
+                                                <li>Tutoriels méthodologie</li>
+                                                <li>Gestion des références bibliographiques</li>
+                                                <li>Vademecum Dumas</li>
+                                                <li>............</li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    “Pour mes étudiants”
+                                    Un accompagnement personnalisé à la demande = formulaire FUCI
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section id="formation-doctorants" class="mt-8">
+                            <h2>Pour les doctorants</h2>
+                            <ul>
+                                <li>
+                                    Les formations du collège doctoral – rubriques « Accompagnement du doctorat » et « Science ouverte » : sur inscription, plusieurs dates dans l’année, plusieurs modalités…
                                     <ul>
-                                        <li>Catalogue de formation du SCD => Lien doc pdf</li>
-                                        <li>Ressources pédagogiques en accès libre => lien rubrique « Outils » Moodle</li>
-                                        <li>Demander une formation pour mes étudiants => Formulaire FUCI</li>
+                                        <li>
+                                            Thématiques = une page Moodle « boite à outils du Doctorant » à créer avec SOAR (car pas d’accès thématique possible via ADUM ou CD)
+                                            <ul>
+                                                <li>Optimiser sa recherche bibliographique en SHS / en Sciences-Techniques-Environnement / en Biologie-Santé</li>
+                                                <li>Gérer et exploiter ses références bibliographiques avec Zotero 7</li>
+                                                <li>Construire une veille informationnelle</li>
+                                                <li>Construire et gérer son identité numérique de jeune chercheur</li>
+                                                <li>Edition scientifique, Open Access et Science ouverte : des clés pour publier</li>
+                                                <li>Données de la recherche et PGD : adopter de bonnes pratiques pour la gestion de ses données</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Toutes les formations : => liens vers l’ADUM (mais accès uniquement catalogue global – pas d’accès ciblé formation du SCD)
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <!-- MODIFIÉ: ID ajouté ici -->
+                            <h3 id="formation-internes">Pour les internes en Santé</h3>
+                            <ul>
+                                <li>
+                                    Les formations : sur inscription, plusieurs dates dans l’année, plusieurs modalités…
+                                    <ul>
+                                        <li>
+                                            Internes en Médecine
+                                            <ul>
+                                                <li>Thématiques : à détailler avec liens ?</li>
+                                                <li>Toutes les formations => adresse ciblée SCD / SILR</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Internes en Pharmacie
+                                            <ul>
+                                                <li>Thématiques : liens cours moodle/inscriptions</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Ressources en autoformation :
+                                    <ul>
+                                        <li>Zotero : lien cours Moodle</li>
+                                        <li>Revue de littérature : ressources Moodle</li>
+                                        <li>IA Académiques : ressources Moodle</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Un accompagnement personnalisé à la demande
+                                    <ul>
+                                        <li>
+                                            En fonction des thématiques :
+                                            <ul>
+                                                <li>Formulaire FUCI</li>
+                                                <li>Formulaires SOAR / ECODOR</li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
                         </section>
 
-                        <!-- ** CORRIGÉ: "ens-recherche" est maintenant une SECTION ** -->
-                        <section id="ens-recherche" class="mt-8">
-                            <h3>Pour la recherche</h3>
-                            <p>Pour FUCI : Uniquement dans la rubrique : « Trouver des documents »</p>
-                            <ul>
-                                <li>
-                                    “Ressources et bases de données”
-                                    <p>=>Ressources accès libre / tutos Moodle</p>
-                                </li>
-                                <li>
-                                    “Construire une veille”
-                                    <p>=>Formations continues (lien « Veille… »)</p>
-                                </li>
-                                <li>
-                                    A ajouter : Revue de littérature
-                                    <ul>
-                                        <li>Lien vers ?</li>
-                                    </ul>
-                                </li>
-                                <li>“Accompagnement personnalisé” => Formulaire FUCI</li>
-                            </ul>
+                        <!-- ** CORRIGÉ: ID "formation-enseignants" SUPPRIMÉ ** -->
+                        <section class="mt-8">
+                            <h2>Soutien pour Enseignants / Personnel</h2>
+
+                            <!-- ** CORRIGÉ: "ens-enseignement" est maintenant une SECTION ** -->
+                            <section id="ens-enseignement">
+                                <h3>Pour l’enseignement</h3>
+                                <ul>
+                                    <li>
+                                        “Outils pour vos enseignements”
+                                        <ul>
+                                            <li>Référentiel des compétences informationnelles de l’UM (paragraphe à développer + lien)</li>
+                                            <li>Accompagnement perso=> Formulaire FUCI (+SOAR ?) ?</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        “Pour mes étudiants”
+                                        <ul>
+                                            <li>Catalogue de formation du SCD => Lien doc pdf</li>
+                                            <li>Ressources pédagogiques en accès libre => lien rubrique « Outils » Moodle</li>
+                                            <li>Demander une formation pour mes étudiants => Formulaire FUCI</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <!-- ** CORRIGÉ: "ens-recherche" est maintenant une SECTION ** -->
+                            <section id="ens-recherche" class="mt-8">
+                                <h3>Pour la recherche</h3>
+                                <p>Pour FUCI : Uniquement dans la rubrique : « Trouver des documents »</p>
+                                <ul>
+                                    <li>
+                                        “Ressources et bases de données”
+                                        <p>=>Ressources accès libre / tutos Moodle</p>
+                                    </li>
+                                    <li>
+                                        “Construire une veille”
+                                        <p>=>Formations continues (lien « Veille… »)</p>
+                                    </li>
+                                    <li>
+                                        A ajouter : Revue de littérature
+                                        <ul>
+                                            <li>Lien vers ?</li>
+                                        </ul>
+                                    </li>
+                                    <li>“Accompagnement personnalisé” => Formulaire FUCI</li>
+                                </ul>
+                                
+                                <p>« Publier en accès ouvert » = > SOAR</p>
+                                <p>« Valoriser » = > SOAR</p>
+                                <p>« Gérer mes données » = > SOAR</p>
+                                
+                                <ul>
+                                    <li>Assistance SOAR / guichet unique ECODOR</li>
+                                </ul>
+                                
+                                <p>« Vos outils » :</p>
+                                <p>Pour FUCI :</p>
+                                <p>“Gérer et rédiger des références biblio avec Zotero ?”</p>
+                                <p>=> Liens vers :</p>
+                                <ul>
+                                    <li>Ressources accès libre / tutos Moodle</li>
+                                    <li>Formations continues (lien direct : « Savoir utiliser le logiciel… »)</li>
+                                    <li>Accompagnement perso=> Formulaire FUCI</li>
+                                </ul>
+                            </section>
                             
-                            <p>« Publier en accès ouvert » = > SOAR</p>
-                            <p>« Valoriser » = > SOAR</p>
-                            <p>« Gérer mes données » = > SOAR</p>
-                            
-                            <ul>
-                                <li>Assistance SOAR / guichet unique ECODOR</li>
-                            </ul>
-                            
-                            <p>« Vos outils » :</p>
-                            <p>Pour FUCI :</p>
-                            <p>“Gérer et rédiger des références biblio avec Zotero ?”</p>
-                            <p>=> Liens vers :</p>
-                            <ul>
-                                <li>Ressources accès libre / tutos Moodle</li>
-                                <li>Formations continues (lien direct : « Savoir utiliser le logiciel… »)</li>
-                                <li>Accompagnement perso=> Formulaire FUCI</li>
-                            </ul>
+                            <!-- ** CORRIGÉ: "ens-formation-continue" est maintenant une SECTION ** -->
+                            <section id="ens-formation-continue" class="mt-8">
+                                <h3>Formations continues</h3>
+                                <p>=> Liens directs vers session/inscriptions catalogue UM GEFORP</p>
+                                <ul>
+                                    <li>ER34 - Services et ressources des bibliothèques universitaires de l’UM</li>
+                                    <li>ER35 - Veille informationnelle sur un sujet d'actualité</li>
+                                    <li>ER36 - Savoir utiliser le logiciel Zotero pour organiser et citer ses références bibliographiques</li>
+                                    <li>ER18 - Identité numérique du chercheur</li>
+                                    <li>ER72 - Publier en Open Access : oui mais comment ?</li>
+                                    <li>ER19- Gérer ses données de la recherche</li>
+                                </ul>
+                                <p>Toutes les formations : lien GEFORP > Rubrique Enseignement et recherche</p>
+                            </section>
                         </section>
                         
-                        <!-- ** CORRIGÉ: "ens-formation-continue" est maintenant une SECTION ** -->
-                        <section id="ens-formation-continue" class="mt-8">
-                            <h3>Formations continues</h3>
-                            <p>=> Liens directs vers session/inscriptions catalogue UM GEFORP</p>
-                            <ul>
-                                <li>ER34 - Services et ressources des bibliothèques universitaires de l’UM</li>
-                                <li>ER35 - Veille informationnelle sur un sujet d'actualité</li>
-                                <li>ER36 - Savoir utiliser le logiciel Zotero pour organiser et citer ses références bibliographiques</li>
-                                <li>ER18 - Identité numérique du chercheur</li>
-                                <li>ER72 - Publier en Open Access : oui mais comment ?</li>
-                                <li>ER19- Gérer ses données de la recherche</li>
-                            </ul>
-                            <p>Toutes les formations : lien GEFORP > Rubrique Enseignement et recherche</p>
+                        <!-- Sections pour les ancres du menu de gauche (vides pour le moment) -->
+                        <section id="service-emprunter" class="mt-8">
+                            <h2>Emprunter / rendre des documents</h2>
+                            <p>Contenu à venir...</p>
                         </section>
-                    </section>
-                    
-                    <!-- Sections pour les ancres du menu de gauche (vides pour le moment) -->
-                    <section id="service-emprunter" class="mt-8">
-                        <h2>Emprunter / rendre des documents</h2>
-                        <p>Contenu à venir...</p>
-                    </section>
-                    <section id="service-peb" class="mt-8">
-                         <h2>Faire venir un document</h2>
-                        <p>Contenu à venir...</p>
-                    </section>
-                    <section id="service-prolonger" class="mt-8">
-                         <h2>Prolonger un prêt</h2>
-                        <p>Contenu à venir...</p>
-                    </section>
-                    <section id="service-espace" class="mt-8">
-                         <h2>Trouver un espace de travail</h2>
-                        <p>Contenu à venir...</p>
-                    </section>
-                    <section id="ressource-droit" class="mt-8">
-                         <h2>Ressources: Droit</h2>
-                        <p>Contenu à venir...</p>
-                    </section>
-                    <section id="ressource-sciences" class="mt-8">
-                         <h2>Ressources: Sciences</h2>
-                        <p>Contenu à venir...</p>
-                    </section>
-                    <section id="ressource-eco" class="mt-8">
-                         <h2>Ressources: Économie</h2>
-                        <p>Contenu à venir...</p>
-                    </section>
-                    <section id="ressource-sante" class="mt-8">
-                         <h2>Ressources: Santé</h2>
-                        <p>Contenu à venir...</p>
-                    </section>
-                    <section id="ressource-shs" class="mt-8">
-                         <h2>Ressources: SHS</h2>
-                        <p>Contenu à venir...</p>
-                    </section>
-                    <section id="ressource-um" class="mt-8">
-                         <h2>Ressources: Publications UM</h2>
-                        <p>Contenu à venir...</p>
-F                    </section>
+                        <section id="service-peb" class="mt-8">
+                             <h2>Faire venir un document</h2>
+                            <p>Contenu à venir...</p>
+                        </section>
+                        <section id="service-prolonger" class="mt-8">
+                             <h2>Prolonger un prêt</h2>
+                            <p>Contenu à venir...</p>
+                        </section>
+                        <section id="service-espace" class="mt-8">
+                             <h2>Trouver un espace de travail</h2>
+                            <p>Contenu à venir...</p>
+                        </section>
+                        <section id="ressource-droit" class="mt-8">
+                             <h2>Ressources: Droit</h2>
+                            <p>Contenu à venir...</p>
+                        </section>
+                        <section id="ressource-sciences" class="mt-8">
+                             <h2>Ressources: Sciences</h2>
+                            <p>Contenu à venir...</p>
+                        </section>
+                        <section id="ressource-eco" class="mt-8">
+                             <h2>Ressources: Économie</h2>
+                            <p>Contenu à venir...</p>
+                        </section>
+                        <section id="ressource-sante" class="mt-8">
+                             <h2>Ressources: Santé</h2>
+                            <p>Contenu à venir...</p>
+                        </section>
+                        <section id="ressource-shs" class="mt-8">
+                             <h2>Ressources: SHS</h2>
+                            <p>Contenu à venir...</p>
+                        </section>
+                        <section id="ressource-um" class="mt-8">
+                             <h2>Ressources: Publications UM</h2>
+                            <p>Contenu à venir...</p>
+                        </section>
 
-                </div>
+                    </div>
+                </main> <!-- Fin du cadre blanc -->
 
-            </div> <!-- Fin du cadre blanc -->
-
-        </main> <!-- Fin de <main> -->
-
-    </div> <!-- Fin du container/grid -->
+            </div>
+        </div> <!-- Fin du container/grid -->
 
 
     <!-- ============================================= -->
