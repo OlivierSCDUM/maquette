@@ -740,7 +740,7 @@
             const toggles = document.querySelectorAll('.side-nav-toggle');
             const navLinks = document.querySelectorAll('.side-nav-sublink');
             // ** CORRIGÉ: On observe que les <section> avec ID **
-            const sections = document.querySelectorAll('main section[id]');
+            const sections = document.querySelectorAll('main [id]');
 
             // --- SCRIPT 1: Gestion de l'accordéon au clic ---
             toggles.forEach(function (toggle) {
