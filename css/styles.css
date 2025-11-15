@@ -13,7 +13,7 @@ html {
 }
 /* Cible toutes les sections avec un ID dans le <main> */
 main [id] {
-    scroll-margin-top: 180px; /* Laisse 180px d'espace au-dessus de l'ancre */
+    scroll-margin-top: 170px; /* Laisse 180px d'espace au-dessus de l'ancre */
 }
 
 
