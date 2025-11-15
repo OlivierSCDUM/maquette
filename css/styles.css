@@ -12,7 +12,7 @@ html {
     scroll-behavior: smooth;
 }
 /* Cible toutes les sections avec un ID dans le <main> */
-main section[id] {
+main [id] {
     scroll-margin-top: 180px; /* Laisse 180px d'espace au-dessus de l'ancre */
 }
 
