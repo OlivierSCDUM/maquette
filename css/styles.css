@@ -111,6 +111,32 @@ main [id] {
     text-decoration: none !important; 
 }
 
+/* ================================================= */
+/* NOUVEAU: Règles pour les vignettes-logos (Dalloz) */
+/* (spécifiques pour battre .prose)              */
+/* ================================================= */
+
+/* Cible le lien <a> (la vignette entière) quand elle est DANS .prose */
+.prose .logo-vignette {
+    /* Force la suppression du soulignement sur le lien <a> lui-même */
+    text-decoration: none !important; 
+}
+
+/* Cible le titre <h3> à l'intérieur de la vignette */
+.prose .logo-vignette h3 {
+    /* Force la suppression du soulignement sur le titre h3 */
+    text-decoration: none !important; 
+    /* Force le centrage du texte (le .prose peut le mettre à gauche) */
+    text-align: center;
+    /* .prose ajoute des marges, on les enlève */
+    margin: 0; 
+}
+
+/* S'assure qu'au survol, rien n'est souligné non plus */
+.prose .logo-vignette:hover,
+.prose .logo-vignette:hover h3 {
+    text-decoration: none !important;
+}
 /* --- Styles pour le formulaire Alma --- */
 /* ... (code alma inchangé) ... */
 .alma-form-wrapper {
