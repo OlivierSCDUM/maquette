@@ -496,6 +496,28 @@ main [id] {
     background-color: #FEF2F2; /* bg-rose-50 */
 }
 
+/* ================================================= */
+/* NOUVEAU: Style pour le conteneur du carrousel   */
+/* ================================================= */
+
+.carousel-wrapper {
+    /* Ajoute une ombre subtile (style Tailwind "shadow-lg") */
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    
+    /* Ajoute des coins arrondis (style Tailwind "rounded-xl") */
+    border-radius: 0.75rem; 
+    
+    /* Assure que le carrousel (qui est "carré") respecte les coins arrondis */
+    overflow: hidden; 
+
+    /* Ajoute une bordure très légère pour la finition */
+    border: 1px solid #e5e7eb; /* border-gray-200 */
+
+    /* Met le fond en blanc (au cas où il serait transparent) */
+    background-color: #ffffff;
+}
+
+
 /* --- Styles pour le Footer --- */
 /* ... (code footer inchangé) ... */
 .footer-link {
