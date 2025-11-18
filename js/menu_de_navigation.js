@@ -1,3 +1,14 @@
+/*	----------floating libchat-----------*/
+(function() {
+var chat = document.createElement('script');
+chat.type = 'text/javascript';
+chat.async = 'true';
+chat.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'ubib.libanswers.com/load_chat.php?hash=f510ead3b82121573988017daae7c49f';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(chat, s);
+})();
+	/*---------------libchat code ends here---------------*/
+
 /*---------------Test du menu header commence ici---------------*/
         document.addEventListener('click', function(event) {
             
@@ -126,3 +137,4 @@
             }
         });
 /*---------------Test du menu header termine ici---------------*/
+
