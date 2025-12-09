@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Nos Bibliothèques - SCD</title>
+
+    <link rel="stylesheet" href="css/menu_de_navigation.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+        
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <style>
+        /* Petit ajustement pour le tableau des horaires pour qu'il ne soit pas trop large */
+        .hours-table td {
+            padding-bottom: 2px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    
+    <header id="custom-main-header">
+      <a class="logo-link" href="https://olivierscdum.github.io/maquette/">
+        <img src="images/library-logo3.png" alt="Logo de la bibliothèque">
+      </a>
+      <button class="burger-menu" id="burger-menu-trigger" aria-label="Ouvrir le menu">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+      <nav id="main-nav">
+        <ul>
+          <li class="mega-menu-item">
+            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-bu">
+              Vos BU
+            </button>
+            <div class="mega-menu-content w-full left-0" id="mega-menu-panel-bu">
+                <div class="mega-menu-grid grid-3-cols">
+                    <div class="mega-menu-column">
+                        <h4>Les bibliothèques</h4>
+                        <ul><li><a href="#">Tous les BU</a></li></ul>  
+                    </div>
+                    <div class="mega-menu-column">
+                        <h4>Les Services</h4>
+                        <ul>
+                            <li><a href="#">Imprimer</a></li>
+                            <li><a href="#">Prêt entre bibliothèques</a></li>
+                            <li><a href="#">Tous les services</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-column">
+                        <h4>Assistance</h4>
+                        <ul><li><a href="https://ubib.libanswers.com/contactez-nous/">Une question ?</a></li></ul>                    
+                </div>
+            </div>
+           </div>
+          </li>
+          
+          <li class="mega-menu-item">
+            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-etudiants">Etudiants</button>
+            <div class="mega-menu-content w-full left-0" id="mega-menu-panel-etudiants">
+                <div class="mega-menu-grid grid-4-cols">
+                    <div class="mega-menu-column">
+                        <h4>Etudier en BU</h4>
+                        <ul>
+                            <li><a href="#">Trouver un espace de travail</a></li>
+                            <li><a href="#">Horaires des BU</a></li>
+                        </ul>
+                    </div>
+                    </div>
+            </div>
+          </li>
+          </ul>
+      </nav>
+    </header>
+
+
+    <div class="w-full py-12 px-4 sm:px-6 lg:px-40">
+        <div class="lg:grid lg:grid-cols-5 lg:gap-8">
+
+            <aside class="lg:col-span-1 mb-12 lg:mb-0">
+                <nav id="side-nav" class="sticky top-24 space-y-2 bg-stone-200 rounded-lg p-4">
+                    
+                    <a href="#" class="side-nav-item bg-white shadow-sm text-rose-600 rounded-md">
+                        <span class="material-symbols-outlined">domain</span>
+                        <span class="font-bold">Les BUs</span>
+                    </a>
+
+                    <a href="#" class="side-nav-item">
+                        <span class="material-symbols-outlined">design_services</span>
+                        <span>Services en BU</span>
+                    </a>
+
+                    <a href="https://olivierscdum.github.io/maquette/collections.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">collections_bookmark</span>
+                        <span>Ressources documentaires</span>
+                    </a>
+
+                    <div>
+                        <button type="button" class="side-nav-toggle"> 
+                            <span class="flex items-center">
+                                <span class="material-symbols-outlined">school</span>
+                                <span>Formation / Accompagnement</span>
+                            </span>
+                            <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                        </button>
+                        
+                        <div class="side-nav-submenu hidden"> 
+                            <a href="#" class="side-nav-sublink">Etudiants</a>
+                            <a href="#" class="side-nav-sublink">Doctorants</a>
+                            <div>
+                                <button type="button" class="side-nav-toggle">
+                                    <span class="flex items-center">
+                                        <span>Enseignants / Personnel</span>
+                                    </span>
+                                    <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                                </button>
+                                <div class="side-nav-submenu hidden">
+                                    <a href="#" class="side-nav-sublink">Pour l'enseignement</a>
+                                    <a href="#" class="side-nav-sublink">Pour la recherche</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="page-appui-recherche.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">science</span>
+                        <span>Appui à la recherche</span>
+                    </a>
+
+                </nav>
+            </aside>
+
+            <main class="lg:col-span-4 bg-white rounded-xl shadow-lg p-6 sm:p-8">
+                
+                <div class="sticky top-20 z-10 bg-white mb-8 border-b border-gray-200 pb-6 -mt-6 -mx-6 sm:-mt-8 sm:-mx-8 px-6 sm:px-8 rounded-t-xl">
+                    <h1 class="text-3xl font-bold text-gray-800 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-4xl text-rose-600">domain</span>
+                        <span>Vos Bibliothèques</span>
+                    </h1>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
+
+                    <div class="group bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://innovationbibliothequeuniversitaire.wordpress.com/wp-content/uploads/2017/05/463130-projet-lilliad-a-l-universite-lille-1-hall-central-auer-weber-vise-580x310.jpg" 
+                                 alt="BU Sciences" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-2 right-2 bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded">Ouvert</div>
+                        </div>
+                        
+                        <div class="p-4 flex flex-col xl:flex-row gap-4 justify-between h-full">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-800 group-hover:text-rose-600 transition-colors mb-2">BU Sciences</h3>
+                                <p class="text-sm text-gray-500 mb-2">Campus Triolet, Place Eugène Bataillon</p>
+                                <a href="#" class="text-sm text-rose-600 hover:underline font-medium">Voir la fiche &rarr;</a>
+                            </div>
+
+                            <div class="bg-gray-50 p-2 rounded text-xs text-gray-600 min-w-[140px]">
+                                <table class="w-full hours-table">
+                                    <tr>
+                                        <td class="font-semibold text-gray-800">Lun</td>
+                                        <td class="text-right">8:00 - 22:30</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-semibold text-gray-800">Mar</td>
+                                        <td class="text-right">8:00 - 22:30</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-semibold text-gray-800">Mer</td>
+                                        <td class="text-right">8:00 - 22:30</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-semibold text-gray-800">Jeu</td>
+                                        <td class="text-right">8:00 - 22:30</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-semibold text-gray-800">Ven</td>
+                                        <td class="text-right">8:00 - 22:30</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Biblioth%C3%A8que_M%C3%A9decine_Montpellier.jpg/1200px-Biblioth%C3%A8que_M%C3%A9decine_Montpellier.jpg" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col xl:flex-row gap-4 justify-between h-full">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-800 group-hover:text-rose-600 transition-colors mb-2">BU Médecine</h3>
+                                <p class="text-sm text-gray-500 mb-2">Campus Arnaud de Villeneuve</p>
+                                <a href="#" class="text-sm text-rose-600 hover:underline font-medium">Voir la fiche &rarr;</a>
+                            </div>
+                            <div class="bg-gray-50 p-2 rounded text-xs text-gray-600 min-w-[140px]">
+                                <table class="w-full hours-table">
+                                    <tr><td>Lun</td><td class="text-right">8:30 - 22:00</td></tr>
+                                    <tr><td>Mar</td><td class="text-right">8:30 - 22:00</td></tr>
+                                    <tr><td>Mer</td><td class="text-right">8:30 - 22:00</td></tr>
+                                    <tr><td>Jeu</td><td class="text-right">8:30 - 22:00</td></tr>
+                                    <tr><td>Ven</td><td class="text-right">8:30 - 22:00</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://www.montpellier.archi.fr/wp-content/uploads/2021/03/BU-Richter-1.jpg" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col xl:flex-row gap-4 justify-between h-full">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-800 group-hover:text-rose-600 transition-colors mb-2">BU Odontologie</h3>
+                                <p class="text-sm text-gray-500 mb-2">Euromédecine</p>
+                                <a href="#" class="text-sm text-rose-600 hover:underline font-medium">Voir la fiche &rarr;</a>
+                            </div>
+                            <div class="bg-gray-50 p-2 rounded text-xs text-gray-600 min-w-[140px]">
+                                <table class="w-full hours-table">
+                                    <tr><td>Lun</td><td class="text-right">8:00 - 19:00</td></tr>
+                                    <tr><td>Mar</td><td class="text-right">8:00 - 19:00</td></tr>
+                                    <tr><td>Mer</td><td class="text-right">8:00 - 19:00</td></tr>
+                                    <tr><td>Jeu</td><td class="text-right">8:00 - 19:00</td></tr>
+                                    <tr><td>Ven</td><td class="text-right">8:00 - 19:00</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Biblioth%C3%A8que_Universitaire_Richter.jpg" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col xl:flex-row gap-4 justify-between h-full">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-800 group-hover:text-rose-600 transition-colors mb-2">BU Richter</h3>
+                                <p class="text-sm text-gray-500 mb-2">Droit, Éco, Gestion</p>
+                                <a href="#" class="text-sm text-rose-600 hover:underline font-medium">Voir la fiche &rarr;</a>
+                            </div>
+                            <div class="bg-gray-50 p-2 rounded text-xs text-gray-600 min-w-[140px]">
+                                <table class="w-full hours-table">
+                                    <tr><td>Lun</td><td class="text-right">8:30 - 20:00</td></tr>
+                                    <tr><td>Mar</td><td class="text-right">8:30 - 20:00</td></tr>
+                                    <tr><td>Mer</td><td class="text-right">8:30 - 20:00</td></tr>
+                                    <tr><td>Jeu</td><td class="text-right">8:30 - 20:00</td></tr>
+                                    <tr><td>Ven</td><td class="text-right">8:30 - 20:00</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000&auto=format&fit=crop" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col xl:flex-row gap-4 justify-between h-full">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-800 group-hover:text-rose-600 transition-colors mb-2">BU Pharmacie</h3>
+                                <p class="text-sm text-gray-500 mb-2">Avenue Charles Flahault</p>
+                                <a href="#" class="text-sm text-rose-600 hover:underline font-medium">Voir la fiche &rarr;</a>
+                            </div>
+                            <div class="bg-gray-50 p-2 rounded text-xs text-gray-600 min-w-[140px]">
+                                <table class="w-full hours-table">
+                                    <tr><td>Lun</td><td class="text-right">8:30 - 19:30</td></tr>
+                                    <tr><td>Mar</td><td class="text-right">8:30 - 19:30</td></tr>
+                                    <tr><td>Mer</td><td class="text-right">8:30 - 19:30</td></tr>
+                                    <tr><td>Jeu</td><td class="text-right">8:30 - 19:30</td></tr>
+                                    <tr><td>Ven</td><td class="text-right">8:30 - 19:30</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=1000&auto=format&fit=crop" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col xl:flex-row gap-4 justify-between h-full">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-800 group-hover:text-rose-600 transition-colors mb-2">BU Historique</h3>
+                                <p class="text-sm text-gray-500 mb-2">Centre Ville</p>
+                                <a href="#" class="text-sm text-rose-600 hover:underline font-medium">Voir la fiche &rarr;</a>
+                            </div>
+                            <div class="bg-gray-50 p-2 rounded text-xs text-gray-600 min-w-[140px]">
+                                <table class="w-full hours-table">
+                                    <tr><td>Lun</td><td class="text-right">9:00 - 18:00</td></tr>
+                                    <tr><td>Mar</td><td class="text-right">9:00 - 18:00</td></tr>
+                                    <tr><td>Mer</td><td class="text-right">9:00 - 18:00</td></tr>
+                                    <tr><td>Jeu</td><td class="text-right">9:00 - 18:00</td></tr>
+                                    <tr><td>Ven</td><td class="text-right">9:00 - 18:00</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://innovationbibliothequeuniversitaire.wordpress.com/wp-content/uploads/2017/05/463130-projet-lilliad-a-l-universite-lille-1-hall-central-auer-weber-vise-580x310.jpg" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col xl:flex-row gap-4 justify-between h-full">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-800 group-hover:text-rose-600 transition-colors mb-2">BU IUT Montpellier</h3>
+                                <p class="text-sm text-gray-500 mb-2">Occitanie</p>
+                            </div>
+                            <div class="bg-gray-50 p-2 rounded text-xs text-gray-600 min-w-[140px]">
+                                <table class="w-full hours-table"><tr><td>Lun-Ven</td><td class="text-right">8:00 - 19:00</td></tr></table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://www.montpellier.archi.fr/wp-content/uploads/2021/03/BU-Richter-1.jpg" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col xl:flex-row gap-4 justify-between h-full">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-800 group-hover:text-rose-600 transition-colors mb-2">BU IUT Béziers</h3>
+                                <p class="text-sm text-gray-500 mb-2">Béziers</p>
+                            </div>
+                            <div class="bg-gray-50 p-2 rounded text-xs text-gray-600 min-w-[140px]">
+                                <table class="w-full hours-table"><tr><td>Lun-Ven</td><td class="text-right">8:00 - 18:00</td></tr></table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Biblioth%C3%A8que_Universitaire_Richter.jpg" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col xl:flex-row gap-4 justify-between h-full">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-800 group-hover:text-rose-600 transition-colors mb-2">BU IUT Nîmes</h3>
+                                <p class="text-sm text-gray-500 mb-2">Nîmes</p>
+                            </div>
+                            <div class="bg-gray-50 p-2 rounded text-xs text-gray-600 min-w-[140px]">
+                                <table class="w-full hours-table"><tr><td>Lun-Ven</td><td class="text-right">8:30 - 18:30</td></tr></table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col xl:flex-row gap-4 justify-between h-full">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-800 group-hover:text-rose-600 transition-colors mb-2">BU Polytech</h3>
+                                <p class="text-sm text-gray-500 mb-2">Campus Triolet</p>
+                            </div>
+                            <div class="bg-gray-50 p-2 rounded text-xs text-gray-600 min-w-[140px]">
+                                <table class="w-full hours-table"><tr><td>Lun-Ven</td><td class="text-right">9:00 - 17:00</td></tr></table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col xl:flex-row gap-4 justify-between h-full">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-800 group-hover:text-rose-600 transition-colors mb-2">BU Staps</h3>
+                                <p class="text-sm text-gray-500 mb-2">Veyrassi</p>
+                            </div>
+                            <div class="bg-gray-50 p-2 rounded text-xs text-gray-600 min-w-[140px]">
+                                <table class="w-full hours-table"><tr><td>Lun-Ven</td><td class="text-right">8:30 - 18:30</td></tr></table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Biblioth%C3%A8que_M%C3%A9decine_Montpellier.jpg/1200px-Biblioth%C3%A8que_M%C3%A9decine_Montpellier.jpg" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col xl:flex-row gap-4 justify-between h-full">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-800 group-hover:text-rose-600 transition-colors mb-2">BU Éducation</h3>
+                                <p class="text-sm text-gray-500 mb-2">Place de la Révolution</p>
+                            </div>
+                            <div class="bg-gray-50 p-2 rounded text-xs text-gray-600 min-w-[140px]">
+                                <table class="w-full hours-table"><tr><td>Lun-Ven</td><td class="text-right">8:30 - 18:30</td></tr></table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+    <footer class="w-full bg-rose-600 text-white py-12 shadow-inner">
+        <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <p class="font-bold text-lg">SCD Montpellier</p>
+                    <p class="text-sm text-rose-100 mt-2">Services Communs de Documentation</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/menu_de_navigation.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const toggles = document.querySelectorAll('.side-nav-toggle');
+            const navLinks = document.querySelectorAll('.side-nav-sublink');
+            const sections = document.querySelectorAll('main section[id]');
+
+            // --- SCRIPT 1: Gestion de l'accordéon au clic ---
+            toggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function (event) {
+                    
+                    const submenu = this.nextElementSibling;
+                    const icon = this.querySelector('.icon-toggle');
+
+                    if (submenu && submenu.classList.contains('side-nav-submenu')) {
+                        event.preventDefault(); 
+                        submenu.classList.toggle('hidden');
+                        this.classList.toggle('active');
+                        if (icon) {
+                            icon.classList.toggle('rotate-90');
+                        }
+                    }
+                });
+            });
+
+            // --- SCRIPT 2: Scroll Spy (Code original conservé si besoin, bien que moins utile sur cette page sans sections) ---
+            
+            // --- SCRIPT 3: MODIFIÉ - SUPPRESSION DE L'OUVERTURE PAR DÉFAUT ---
+            /* Le bloc ci-dessous qui ouvrait le 3ème menu (Formation) a été désactivé
+               pour respecter ta demande de menu replié.
+            */
+            /*
+            if (!window.location.hash) {
+                const formationToggle = document.querySelectorAll('.side-nav-toggle')[2]; 
+                if(formationToggle) {
+                   // CODE DÉSACTIVÉ
+                }
+            }
+            */
+
+        });
+    </script>
+
+</body>
+</html>
