@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprunter et Rendre - SCD</title>
+
+    <link rel="stylesheet" href="css/menu_de_navigation.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+</head>
+
+<body class="bg-gray-50">
+    
+    <header id="custom-main-header">
+      <a class="logo-link" href="https://olivierscdum.github.io/maquette/">
+        <img src="images/library-logo3.png" alt="Logo de la bibliothèque">
+      </a>
+      <button class="burger-menu" id="burger-menu-trigger" aria-label="Ouvrir le menu">
+        <span class="burger-bar"></span><span class="burger-bar"></span><span class="burger-bar"></span>
+      </button>
+      <nav id="main-nav">
+        <ul>
+          <li class="mega-menu-item">
+            <a href="page-des-bus.html" class="mega-menu-trigger">Vos BU</a>
+            </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="w-full py-12 px-4 sm:px-6 lg:px-40">
+        <div class="lg:grid lg:grid-cols-5 lg:gap-8">
+
+            <aside class="lg:col-span-1 mb-12 lg:mb-0">
+                <nav id="side-nav" class="sticky top-24 space-y-2 bg-stone-200 rounded-lg p-4">
+                    <a href="page-des-bus.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">domain</span>
+                        <span>Les BUs</span>
+                    </a>
+                    <a href="page-services.html" class="side-nav-item bg-white shadow-sm text-rose-600 rounded-md">
+                        <span class="material-symbols-outlined">design_services</span>
+                        <span class="font-bold">Services en BU</span>
+                    </a>
+                    <a href="#" class="side-nav-item">
+                        <span class="material-symbols-outlined">collections_bookmark</span>
+                        <span>Ressources doc.</span>
+                    </a>
+                    <div>
+                        <button type="button" class="side-nav-toggle"> 
+                            <span class="flex items-center"><span class="material-symbols-outlined">school</span><span>Formation</span></span>
+                            <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                        </button>
+                        <div class="side-nav-submenu hidden"> 
+                            <a href="#" class="side-nav-sublink">Etudiants</a>
+                        </div>
+                    </div>
+                    <a href="#" class="side-nav-item">
+                        <span class="material-symbols-outlined">science</span>
+                        <span>Recherche</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <main class="lg:col-span-4 bg-white rounded-xl shadow-lg p-6 sm:p-8">
+                
+                <div class="border-b border-gray-200 pb-6 mb-8">
+                    <a href="page-services.html" class="text-sm text-gray-500 hover:text-rose-600 mb-2 inline-block">&larr; Retour aux services</a>
+                    <h1 class="text-3xl font-bold text-gray-800 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-4xl text-rose-600">swap_horiz</span>
+                        <span>Emprunter / Rendre des documents</span>
+                    </h1>
+                </div>
+
+                <div class="bg-rose-50 border-l-4 border-rose-600 p-4 mb-10 rounded-r-lg">
+                    <p class="text-gray-800 font-medium text-lg">
+                        L'inscription est automatique et gratuite. <br>
+                        Il vous suffit de présenter votre <span class="font-bold text-rose-600">carte étudiante</span> (CMS) pour emprunter.
+                    </p>
+                </div>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Comment ça marche ?</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    
+                    <div class="relative bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                        <div class="absolute -top-4 -left-4 w-10 h-10 bg-rose-600 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-md">1</div>
+                        <div class="flex justify-center mb-4">
+                            <span class="material-symbols-outlined text-6xl text-gray-300">badge</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-center mb-2">Je présente ma carte</h3>
+                        <p class="text-sm text-gray-600 text-center">
+                            Passez votre carte étudiante multiservices (CMS) sur les automates de prêt ou présentez-la à l'accueil.
+                        </p>
+                    </div>
+
+                    <div class="relative bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                        <div class="absolute -top-4 -left-4 w-10 h-10 bg-rose-600 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-md">2</div>
+                        <div class="flex justify-center mb-4">
+                            <span class="material-symbols-outlined text-6xl text-gray-300">touch_app</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-center mb-2">J'enregistre mes prêts</h3>
+                        <p class="text-sm text-gray-600 text-center">
+                            Utilisez les automates en libre-service disponibles dans toutes les BU pour scanner vos documents.
+                        </p>
+                    </div>
+
+                    <div class="relative bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                        <div class="absolute -top-4 -left-4 w-10 h-10 bg-rose-600 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-md">3</div>
+                        <div class="flex justify-center mb-4">
+                            <span class="material-symbols-outlined text-6xl text-gray-300">calendar_month</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-center mb-2">Je respecte la date</h3>
+                        <p class="text-sm text-gray-600 text-center">
+                            Vous recevrez un email de rappel avant la date limite de retour. Pensez à vérifier vos spams !
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-rose-600">library_books</span>
+                            Combien de documents ?
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-green-600 mt-0.5">check_circle</span>
+                                <div>
+                                    <span class="block font-bold text-gray-800">Licence & Master</span>
+                                    <span class="text-sm text-gray-600">Illimité pour 4 semaines</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-green-600 mt-0.5">check_circle</span>
+                                <div>
+                                    <span class="block font-bold text-gray-800">Doctorants & Enseignants</span>
+                                    <span class="text-sm text-gray-600">Illimité pour 1 an</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-green-600 mt-0.5">check_circle</span>
+                                <div>
+                                    <span class="block font-bold text-gray-800">Lecteurs extérieurs</span>
+                                    <span class="text-sm text-gray-600">10 documents pour 3 semaines</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-rose-600">update</span>
+                                Prolongation
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-4">
+                                Vous pouvez prolonger vos prêts <strong>1 fois</strong> via votre compte lecteur (si le document n'est pas réservé par un autre lecteur).
+                            </p>
+                            <a href="#" class="text-rose-600 font-bold text-sm hover:underline flex items-center">
+                                Accéder à mon compte lecteur <span class="material-symbols-outlined text-sm ml-1">open_in_new</span>
+                            </a>
+                        </div>
+
+                        <div class="mt-6 pt-6 border-t border-gray-200">
+                            <h4 class="font-bold text-gray-800 text-sm mb-1 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-orange-500 text-lg">warning</span>
+                                En cas de retard
+                            </h4>
+                            <p class="text-xs text-gray-500">
+                                Tout retard entraîne une suspension de prêt égale à la durée du retard.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-900 rounded-xl p-6 text-white shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <div class="bg-white/10 p-4 rounded-full">
+                        <span class="material-symbols-outlined text-4xl">local_shipping</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Le réseau est unique !</h3>
+                        <p class="text-indigo-100 text-sm leading-relaxed">
+                            Vous pouvez emprunter un livre dans une BU (ex: Médecine) et le rendre dans n'importe quelle autre BU du réseau (ex: Sciences ou Droit). Nos navettes s'occupent du reste !
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Questions fréquentes</h3>
+                    <div class="space-y-2">
+                        <details class="bg-white border border-gray-200 rounded-lg open:bg-gray-50 transition-all">
+                            <summary class="cursor-pointer p-4 font-medium text-gray-700 flex justify-between items-center list-none">
+                                J'ai perdu ma carte, comment faire ?
+                                <span class="material-symbols-outlined text-gray-400">expand_more</span>
+                            </summary>
+                            <div class="p-4 pt-0 text-sm text-gray-600">
+                                Présentez une pièce d'identité ou votre certificat de scolarité à l'accueil de la BU pour dépanner, mais pensez à refaire votre carte rapidement.
+                            </div>
+                        </details>
+                        <details class="bg-white border border-gray-200 rounded-lg open:bg-gray-50 transition-all">
+                            <summary class="cursor-pointer p-4 font-medium text-gray-700 flex justify-between items-center list-none">
+                                Puis-je emprunter sans ma carte ?
+                                <span class="material-symbols-outlined text-gray-400">expand_more</span>
+                            </summary>
+                            <div class="p-4 pt-0 text-sm text-gray-600">
+                                Exceptionnellement oui, sur présentation d'une pièce d'identité et de votre certificat de scolarité numérique via l'ENT.
+                            </div>
+                        </details>
+                         <details class="bg-white border border-gray-200 rounded-lg open:bg-gray-50 transition-all">
+                            <summary class="cursor-pointer p-4 font-medium text-gray-700 flex justify-between items-center list-none">
+                                Que faire si j'ai perdu un livre ?
+                                <span class="material-symbols-outlined text-gray-400">expand_more</span>
+                            </summary>
+                            <div class="p-4 pt-0 text-sm text-gray-600">
+                                Ne restez pas sans nouvelle ! Contactez-nous rapidement. En règle générale, il vous sera demandé de racheter l'ouvrage à l'identique.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <footer class="w-full bg-rose-600 text-white py-12 shadow-inner mt-12">
+        <div class="container max-w-7xl mx-auto px-4 text-center">
+             <p class="font-bold">SCD Montpellier</p>
+        </div>
+    </footer>
+    
+    <script src="js/menu_de_navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Script accordéon sidebar
+            const toggles = document.querySelectorAll('.side-nav-toggle');
+            toggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function (event) {
+                    const submenu = this.nextElementSibling;
+                    const icon = this.querySelector('.icon-toggle');
+                    if (submenu && submenu.classList.contains('side-nav-submenu')) {
+                        event.preventDefault(); 
+                        submenu.classList.toggle('hidden');
+                        this.classList.toggle('active');
+                        if (icon) icon.classList.toggle('rotate-90');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
