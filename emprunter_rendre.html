@@ -211,29 +211,35 @@
         </div>
     </div>
 
-    <footer class="w-full bg-rose-600 text-white py-12 shadow-inner mt-12">
-        <div class="container max-w-7xl mx-auto px-4 text-center">
-             <p class="font-bold">SCD Montpellier</p>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
     
-    <script>
-    // 1. On va chercher le fichier header.html
+   <script>
+    // --- 1. CHARGEMENT DU HEADER ---
     fetch('header.html')
         .then(response => {
+            if (!response.ok) throw new Error('Erreur chargement header');
             return response.text();
         })
         .then(data => {
-            // 2. On l'injecte dans la div
             document.getElementById('header-container').innerHTML = data;
 
-            // 3. IMPORTANT : On charge le script du menu APRÈS avoir chargé le HTML
-            // On crée une balise script dynamiquement
+            // IMPORTANT : On charge le script du menu UNIQUEMENT quand le header est là
             const script = document.createElement('script');
             script.src = 'js/menu_de_navigation.js'; 
             document.body.appendChild(script);
         })
-        .catch(error => console.error('Erreur lors du chargement du header:', error));
+        .catch(error => console.error('Problème Header:', error));
+
+    // --- 2. CHARGEMENT DU FOOTER ---
+    fetch('footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Erreur chargement footer');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(error => console.error('Problème Footer:', error));
 </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
