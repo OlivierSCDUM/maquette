@@ -24,251 +24,7 @@
     <!-- ============================================= -->
     <!--     HEADER (NE PAS MODIFIER)                  -->
     <!-- ============================================= -->
-        <header id="custom-main-header">
-      <a class="logo-link" href="https://olivierscdum.github.io/maquette/">
-        <!-- MODIFIÉ: Chemin relatif -->
-        <img src="images/library-logo3.png" alt="Logo de la bibliothèque">
-      </a>
-      <button class="burger-menu" id="burger-menu-trigger" aria-label="Ouvrir le menu">
-        <span class="burger-bar"></span>
-        <span class="burger-bar"></span>
-        <span class="burger-bar"></span>
-      </button>
-      <nav id="main-nav">
-        <ul>
-          <li class="mega-menu-item">
-            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-bu">
-              Vos BU
-            </button>
-            <!-- MODIFIÉ: Suppression du <div> container superflu -->
-            <div class="mega-menu-content w-full left-0" id="mega-menu-panel-bu">
-                <!-- La grille est maintenant le conteneur centré (grâce à menu_de_navigation.css) -->
-                <!-- NOUVELLE CLASSE: .grid-3-cols pour forcer l'espacement -->
-                <div class="mega-menu-grid grid-3-cols">
-                    <div class="mega-menu-column">
-                        <h4>Les bibliothèques</h4>
-                        <ul>
-                        <li><a href="#">Tous les BU</a></li>
-                        </ul>  
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Les Services</h4>
-                        <ul>
-                            <li><a href="#">Imprimer</a></li>
-                            <li><a href="#">Prêt entre bibliothèques</a></li>
-                            <li><a href="#">Tous les services</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Assistance</h4>
-                        <ul>
-                        <li><a href="https://ubib.libanswers.com/contactez-nous/">Une question ?</a></li>
-                        </ul>                   
-                </div>
-            </div>
-           </div>
-          
-          <!-- MODIFIÉ: Menu "Etudiants" -->
-          <li class="mega-menu-item">
-            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-etudiants">
-              Etudiants
-            </button>
-            <div class="mega-menu-content w-full left-0" id="mega-menu-panel-etudiants">
-                <!-- NOUVELLE CLASSE: .grid-4-cols -->
-                <div class="mega-menu-grid grid-4-cols">
-                    <div class="mega-menu-column">
-                        <h4>Etudier en BU</h4>
-                        <ul>
-                            <li><a href="#">Trouver un espace de travail</a></li>
-                            <li><a href="#">Salles de travail en groupes</a></li>
-                            <li><a href="#">Horaires des BU</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Trouver des documents</h4>
-                        <ul>
-                            <li><a href="https://olivierscdum.github.io/maquette/collections.html#discipline">Guide par discipline</a></li>
-                            <li><a href="#">Pour des recherches documentaires efficaces</a></li>
-                            <li><a href="#">Préparer un concours / une certification</a></li>
-                            <li><a href="#">Vous ne trouvez pas ?</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Rédiger un mémoire ou un travail universitaire</h4>
-                        <ul>
-                            <li><a href="#">Principes bibliographiques / normes de citations</a></li>
-                            <li><a href="#">Utiliser le logiciel Zotero</a></li>
-                            <li><a href="https://ubib.libanswers.com/form?queue_id=3266">Demande d'accompagnement</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Assistance / nous contacter</h4>
-                        <ul>
-                            <li><a href="https://ubib.libanswers.com/contactez-nous/">Une question ?</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-          </li>
-          
-          <li class="mega-menu-item">
-            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-doctorants">
-              Doctorants
-            </button>
-            <div class="mega-menu-content w-full left-0" id="mega-menu-panel-doctorants">
-                <!-- NOUVELLE CLASSE: .grid-5-cols -->
-                <div class="mega-menu-grid grid-5-cols">
-                    <div class="mega-menu-column">
-                        <h4>Trouver des documents</h4>
-                        <ul>
-                            <li><a href="#">Bases de données AZ ou par discipline</a></li>
-                            <li><a href="#">Trouver des thèses</a></li>
-                            <li><a href="#">Thèses d'exercices</a></li>
-                            <li><a href="#">Vous ne trouvez pas ?</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Préparer ma thèse</h4>
-                        <ul>
-                            <li><a href="https://olivierscdum.github.io/maquette/formation.html#formation-doctorants">Thèse de doctorat</a></li>
-                            <li><a href="https://olivierscdum.github.io/maquette/formation.html#formation-internes">Thèse d'exercice</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Gérer mes activités de chercheur</h4>
-                        <ul>
-                            <li><a href="#">Identité numéirque</a></li>
-                            <li><a href="#">Publier</a></li>
-                            <li><a href="#">Gérer mes données</a></li>
-                            <li><a href="#">Droit d'auteur / Plagiat</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Mes outils</h4>
-                        <ul>
-                            <li><a href="#">Click & read / Google scholar / Ophirofox</a></li>
-                            <li><a href="#">Revue de littérature</a></li>
-                            <li><a href="#">Zotero</a></li>
-                            <li><a href="#">ia académiques et TDM</a></li>
-                            <li><a href="https://themeta.news/">The Metanews</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Assistance / Nous contacter</h4>
-                        <ul>
-                            <li><a href="https://ubib.libanswers.com/contactez-nous/">Une question ?</a></li>
-                            <li><a href="#">Suggérer un achat</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-          </li>
-          
-          <!-- MODIFIÉ: Menu "Pour l'enseignement" -->
-          <li class="mega-menu-item">
-            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-enseignement">
-              Pour l'enseignement
-            </button>
-            <div class="mega-menu-content w-full left-0" id="mega-menu-panel-enseignement">
-                <!-- NOUVELLE CLASSE: .grid-4-cols -->
-                <div class="mega-menu-grid grid-4-cols">
-                    <div class="mega-menu-column">
-                        <h4>Pour vos enseignements</h4>
-                        <ul>
-                            <li><a href="#">Intégrer un lien vers un doc électronique depuis moodle</a></li>
-                            <li><a href="https://olivierscdum.github.io/maquette/formation.html#ens-enseignement">Référentiel compétence informationnelle</a></li>
-                            <li><a href="https://olivierscdum.github.io/maquette/formation.html#ens-formation-continue">Formation continue</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Pour vos étudiants</h4>
-                        <ul>
-                            <li><a href="https://olivierscdum.github.io/maquette/formation.html#ens-enseignement">Catalogue de formation du SCD</a></li>
-                            <li><a href="https://olivierscdum.github.io/maquette/formation.html#ens-enseignement">Ressources pédagogiques en libre accès</a></li>
-                            <li><a href="#">Intégrer Dumas pour mes étudiants</a></li>
-                            <li><a href="https://ubib.libanswers.com/form?queue_id=3266">Demander une formation pour mes étudiants</a></li>
-                            <li><a href="#">Transmettre une bibliographie</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Trouver des ressources documentaires</h4>
-                        <ul>
-                            <li><a href="#">Bases de données par discipline ou AZ</a></li>
-                            <li><a href="#">Vous ne trouvez pas un document / un article</a></li>
-                            
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Assistance</h4>
-                        <ul>
-                            <li><a href="https://ubib.libanswers.com/contactez-nous/">Une question ?</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-          </li>
-
-          <li class="mega-menu-item">
-            <button type="button" class="mega-menu-trigger" data-target-panel="mega-menu-panel-recherche">
-              Pour la recherche
-            </button>
-            <div class="mega-menu-content w-full left-0" id="mega-menu-panel-recherche">
-                <!-- La classe par défaut .mega-menu-grid (6 colonnes) est utilisée ici -->
-                <div class="mega-menu-grid grid-6-cols">
-                    <div class="mega-menu-column">
-                        <h4>Publier en accès ouvert</h4>
-                        <ul>
-                            <li><a href="#">Voies de publication</a></li>
-                            <li><a href="#">Déposer dans Hal</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Valoriser</h4>
-                        <ul>
-                            <li><a href="#">Identité Numérique</a></li>
-                            <li><a href="#">Production scientifiques de l'UM</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Gérer mes données</h4>
-                        <ul>
-                            <li><a href="#">Ecodor</a></li>
-                            <li><a href="#">Gérer ses données à l'UM</a></li>
-                            <li><a href="#">Cahiers de laboratoire électroniques</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Trouver des documents</h4>
-                        <ul>
-                            <li><a href="#">Bases de données par discipline ou base AZ</a></li>
-                            <li><a href="#">Revue de littérature</a></li>
-                            <li><a href="#">Construire une veille</a></li>
-                            <li><a href="#">Patrimoine écrit</a></li>
-                            <li><a href="#">Vous ne trouvez pas ?</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Vos outils</h4>
-                        <ul>
-                            <li><a href="#">Click & Read / Google scholar / ophirofox</a></li>
-                            <li><a href="#">Zotero</a></li>
-                            <li><a href="#">TDM avec nos abonnements</a></li>
-                            <li><a href="#">IA avec nos abonnements</a></li>
-                        </ul>
-                    </div>
-                    <div class="mega-menu-column">
-                        <h4>Assistance / accompagnement</h4>
-                        <ul>
-                            <li><a href="https://ecodor.libanswers.com/form?queue_id=3267">Contactez-nous</a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
+       <div id="header-container"></div>
     <!-- ============================================= -->
     <!--     FIN DU HEADER                             -->
     <!-- ============================================= -->
@@ -579,72 +335,40 @@
     <!-- ============================================= -->
     <!--     FOOTER (PLEINE LARGEUR)                   -->
     <!-- ============================================= -->
-    <footer class="w-full bg-rose-600 text-white py-12 shadow-inner">
-        <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-
-                <!-- Colonne 1: Logo & Adresse -->
-                <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                    <!-- Votre URL corrigée pour l'image -->
-                    <img src="https://upload.wikimedia.org/wikipedia/fr/archive/2/2d/20250730152353%21Logo_universit%C3%A9_montpellier.png" alt="Logo Université" class="h-16 mb-6 bg-white p-2 rounded-lg">
-                    <p class="text-sm text-rose-100">
-                        <strong>Service Commun de Documentation</strong><br>
-                        Adresse postale...<br>
-                        34000 Montpellier
-                    </p>
-                </div>
-
-                <!-- Colonne 2: Plan du site -->
-                <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                    <h4 class="text-lg font-semibold mb-4">Plan du site</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="footer-link">Vos BU</a></li>
-                        <li><a href="#" class="footer-link">Étudiants</a></li>
-                        <li><a href="#" class="footer-link">Doctorants</a></li>
-                        <li><a href="#" class="footer-link">Enseignement & Recherche</a></li>
-                        <li><a href="#" class="footer-link">Toutes les actualités</a></li>
-                    </ul>
-                </div>
-
-                <!-- Colonne 3: Appli & Réseaux -->
-                <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                    <h4 class="text-lg font-semibold mb-4">Suivez-nous</h4>
-                    
-                    <div class="flex flex-col sm:flex-row md:flex-col gap-3 mb-6">
-                        <a href="#" class="store-button" title="Télécharger sur l'App Store">
-                            <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
-                            <span class="store-text">
-                                <span class="store-text-small">Télécharger sur</span>
-                                <span class="store-text-large">App Store</span>
-                            </span>
-                        </a>
-                        <a href="#" class="store-button" title="Disponible sur Google Play">
-                            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34.3 0 24.1 10.5 24.1 23.5v465c0 13 10.2 23.5 22.9 23.5h.2c.5 0 1 .1 1.5.1L104.6 48l280.8-161.2L47 0zm435.2 225.4l-131.2-75.5L460.7 256l-131.2 75.5 131.2-75.5c1.7-1 2.7-2.7 2.7-4.5s-1-3.5-2.7-4.5zM104.6 464l280.8-161.2-60.1-60.1L104.6 464z"></path></svg>
-                            <span class="store-text">
-                                <span class="store-text-small">DISPONIBLE SUR</span>
-                                <span class="store-text-large">Google Play</span>
-                            </span>
-                        </a>
-                    </div>
-                    
-                    <div class="flex gap-6">
-                        <a href="#" class="social-icon-link" title="Suivez-nous sur X (Twitter)">
-                            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg>
-                        </a>
-                        <a href="#" class="social-icon-link" title="Suivez-nous sur Instagram">
-                            <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.3 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+   <div id="footer-container"></div>
     <!-- ============================================= -->
     <!--     FIN DU FOOTER                             -->
     <!-- ============================================= -->
     
     <!-- Script pour le menu (original) -->
-    <script src="js/menu_de_navigation.js"></script>
+    <script>
+    // --- 1. CHARGEMENT DU HEADER ---
+    fetch('header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Erreur chargement header');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+
+            // IMPORTANT : On charge le script du menu UNIQUEMENT quand le header est là
+            const script = document.createElement('script');
+            script.src = 'js/menu_de_navigation.js'; 
+            document.body.appendChild(script);
+        })
+        .catch(error => console.error('Problème Header:', error));
+
+    // --- 2. CHARGEMENT DU FOOTER ---
+    fetch('footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Erreur chargement footer');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(error => console.error('Problème Footer:', error));
+</script>
 
     <!-- 
       SCRIPT CORRIGÉ ET FINAL: Tous les scripts du menu latéral sont regroupés ici 
