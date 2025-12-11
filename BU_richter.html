@@ -12,17 +12,39 @@
 
     <style>
         .hours-table td { padding-bottom: 4px; }
-        /* Style pour les onglets actifs */
-        .tab-btn.active {
-            border-bottom: 3px solid #e11d48; /* Rose-600 */
-            color: #e11d48;
-            font-weight: bold;
+        
+        /* Design des Onglets Modernes */
+        .modern-tab-container {
+            background-color: #f3f4f6; /* Gray-100 */
+            padding: 0.5rem;
+            border-radius: 0.75rem; /* rounded-xl */
+            display: flex;
+            gap: 0.5rem;
         }
+
         .tab-btn {
-            color: #6b7280; /* Gray-500 */
+            flex: 1;
+            text-align: center;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 1.125rem; /* Text-lg */
+            font-weight: 600;
+            color: #4b5563; /* Gray-600 */
+            transition: all 0.2s ease-in-out;
+            border: none; /* Pas de bordure par défaut */
         }
+
         .tab-btn:hover {
-            color: #374151; /* Gray-700 */
+            background-color: #e5e7eb; /* Gray-200 */
+            color: #1f2937;
+        }
+
+        /* L'état Actif : Blanc + Ombre + Texte Rose */
+        .tab-btn.active {
+            background-color: #ffffff;
+            color: #e11d48; /* Rose-600 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transform: scale(1.02); /* Léger effet de zoom */
         }
     </style>
 </head>
@@ -85,14 +107,15 @@
                     </div>
                 </div>
 
-                <div class="border-b border-gray-200 sticky top-[80px] z-40 bg-white"> <nav class="-mb-px flex space-x-8 px-8 overflow-x-auto" aria-label="Tabs">
-                        <button class="tab-btn active whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors" data-target="tab-en-bref">
+                <div class="sticky top-[70px] z-40 bg-white p-4 border-b border-gray-100">
+                    <nav class="modern-tab-container" aria-label="Tabs">
+                        <button class="tab-btn active" data-target="tab-en-bref">
                             En Bref
                         </button>
-                        <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 border-transparent font-medium text-sm transition-colors" data-target="tab-collections">
+                        <button class="tab-btn" data-target="tab-collections">
                             Collections
                         </button>
-                        <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 border-transparent font-medium text-sm transition-colors" data-target="tab-services">
+                        <button class="tab-btn" data-target="tab-services">
                             Services Disponibles
                         </button>
                     </nav>
@@ -130,16 +153,15 @@
                                         <strong class="text-gray-800">Tramway :</strong> Lignes 1, 3 et 4 - Arrêt "Rives du Lez"
                                     </p>
                                     <div class="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">
-                                        [Carte Google Maps ici]
+                                        [Carte Google Maps]
                                     </div>
                                 </div>
                             </div>
 
                             <div class="space-y-8">
-                                
                                 <div>
                                     <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-rose-600">groups</span> Affluence en temps réel
+                                        <span class="material-symbols-outlined text-rose-600">groups</span> Affluence
                                     </h3>
                                     <div class="bg-white border border-gray-200 p-4 rounded-xl shadow-sm">
                                         <div class="flex items-center justify-between mb-2">
@@ -149,7 +171,6 @@
                                         <div class="w-full bg-gray-200 rounded-full h-2.5">
                                             <div class="bg-green-500 h-2.5 rounded-full" style="width: 25%"></div>
                                         </div>
-                                        <p class="text-xs text-gray-400 mt-2 text-right">Mise à jour il y a 5 min</p>
                                     </div>
                                 </div>
 
@@ -158,7 +179,7 @@
                                         <span class="material-symbols-outlined text-rose-600">apartment</span> Espaces
                                     </h3>
                                     <p class="text-gray-600 text-sm mb-4">
-                                        La BU offre 1200 places assises réparties sur 4 niveaux, dont 20 salles de travail en groupe réservables.
+                                        La BU offre 1200 places assises et 20 salles de travail en groupe.
                                     </p>
                                     <a href="#" class="inline-flex items-center gap-2 text-rose-600 font-bold border border-rose-600 rounded-lg px-4 py-2 hover:bg-rose-50 transition-colors">
                                         <span class="material-symbols-outlined">floor</span>
@@ -166,34 +187,23 @@
                                     </a>
                                 </div>
 
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div class="bg-gray-50 p-4 rounded-lg">
-                                        <h4 class="font-bold text-gray-800 flex items-center gap-2 mb-2">
-                                            <span class="material-symbols-outlined text-blue-600">accessible</span> Handicap
-                                        </h4>
-                                        <p class="text-xs text-gray-600">Ascenseurs, boucles magnétiques, postes adaptés.</p>
-                                    </div>
-                                    <div class="bg-gray-50 p-4 rounded-lg">
-                                        <h4 class="font-bold text-gray-800 flex items-center gap-2 mb-2">
-                                            <span class="material-symbols-outlined text-gray-600">mail</span> Contact
-                                        </h4>
-                                        <a href="mailto:bu-richter@umontpellier.fr" class="text-xs text-rose-600 hover:underline">bu-richter@umontpellier.fr</a><br>
-                                        <span class="text-xs text-gray-600">04 34 43 21 00</span>
-                                    </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800 flex items-center gap-2 mb-2">
+                                        <span class="material-symbols-outlined text-gray-600">mail</span> Contact
+                                    </h4>
+                                    <a href="mailto:bu-richter@umontpellier.fr" class="text-xs text-rose-600 hover:underline">bu-richter@umontpellier.fr</a><br>
+                                    <span class="text-xs text-gray-600">04 34 43 21 00</span>
                                 </div>
-
                             </div>
                         </div>
                     </div>
 
                     <div id="tab-collections" class="tab-content hidden animate-fade-in">
-                        
                         <div class="mb-8">
                             <h2 class="text-2xl font-bold text-gray-800 mb-4">Fonds documentaire</h2>
                             <p class="text-gray-600 leading-relaxed mb-6">
-                                La bibliothèque propose un fonds de référence en Droit, Science Politique, Économie et Gestion. Elle conserve également des collections patrimoniales et un fonds de préparation aux concours administratifs.
+                                La bibliothèque propose un fonds de référence en Droit, Science Politique, Économie et Gestion.
                             </p>
-                            
                             <div class="bg-gray-100 rounded-xl p-8 text-center border-2 border-dashed border-gray-300 mb-8">
                                 <span class="material-symbols-outlined text-5xl text-gray-300 mb-2">map</span>
                                 <p class="text-gray-500">Plan de localisation des collections par étage (Image)</p>
@@ -202,7 +212,6 @@
 
                         <h3 class="text-xl font-bold text-gray-800 mb-6">Accéder aux ressources par discipline</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            
                             <a href="#" class="group block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-rose-200 transition-all">
                                 <div class="flex items-start justify-between mb-4">
                                     <div class="bg-rose-100 p-3 rounded-full text-rose-600">
@@ -211,9 +220,8 @@
                                     <span class="material-symbols-outlined text-gray-300 group-hover:text-rose-600 transition-colors">arrow_forward</span>
                                 </div>
                                 <h4 class="text-lg font-bold text-gray-800 mb-2">Droit & Sciences Politiques</h4>
-                                <p class="text-sm text-gray-600">Bases de données (Dalloz, Lexis...), codes, jurisprudence et manuels.</p>
+                                <p class="text-sm text-gray-600">Bases de données (Dalloz...), codes, jurisprudence.</p>
                             </a>
-
                             <a href="#" class="group block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-rose-200 transition-all">
                                 <div class="flex items-start justify-between mb-4">
                                     <div class="bg-blue-100 p-3 rounded-full text-blue-600">
@@ -222,47 +230,110 @@
                                     <span class="material-symbols-outlined text-gray-300 group-hover:text-blue-600 transition-colors">arrow_forward</span>
                                 </div>
                                 <h4 class="text-lg font-bold text-gray-800 mb-2">Économie & Gestion</h4>
-                                <p class="text-sm text-gray-600">Revues spécialisées, statistiques (Statista), marketing et management.</p>
+                                <p class="text-sm text-gray-600">Revues, statistiques, marketing et management.</p>
                             </a>
-
                         </div>
                     </div>
 
                     <div id="tab-services" class="tab-content hidden animate-fade-in">
-                        <div class="bg-rose-50 border-l-4 border-rose-600 p-4 mb-8">
+                        <div class="bg-rose-50 border-l-4 border-rose-600 p-4 mb-8 rounded-r-lg">
                             <p class="text-gray-800 text-sm">
-                                Voici la liste des services spécifiquement disponibles à la <strong>BU Droit Économie Gestion</strong>.
+                                <span class="material-symbols-outlined text-sm align-middle mr-1">info</span>
+                                Cliquez sur un service pour obtenir plus de détails sur la procédure.
                             </p>
                         </div>
 
-                        <div class="overflow-x-auto">
+                        <div class="overflow-hidden border border-gray-200 rounded-xl">
                             <table class="w-full text-left border-collapse">
-                                <thead>
+                                <thead class="bg-gray-100">
                                     <tr>
-                                        <th class="py-4 px-6 bg-gray-50 font-bold uppercase text-xs text-gray-500 rounded-tl-lg">Service</th>
-                                        <th class="py-4 px-6 bg-gray-50 font-bold uppercase text-xs text-gray-500 text-center w-32 rounded-tr-lg">Disponibilité</th>
+                                        <th class="py-4 px-6 font-bold uppercase text-xs text-gray-600">Service</th>
+                                        <th class="py-4 px-6 font-bold uppercase text-xs text-gray-600 text-center w-32">État</th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-100">
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Emprunter / Rendre des documents</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Prolonger un document</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Réserver un document</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Faire venir un document (Navette)</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Demander un PEB</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Choisir son espace de travail (Affluences)</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Réserver une salle de travail</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
                                     
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-400">Emprunter un PC / une tablette</td><td class="text-center"><span class="material-symbols-outlined text-gray-300">block</span></td></tr>
-                                    
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Utiliser un PC en BU (Wifi/Fixe)</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Emprunter du petit matériel</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Imprimer, photocopier, scanner</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Demander un quitus</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Services pour les extérieurs</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Accessibilité et handicap</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
-                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Appli mobile</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                    <tr class="group hover:bg-rose-50 transition-colors cursor-pointer" onclick="window.location.href='#'">
+                                        <td class="py-4 px-6">
+                                            <a href="#" class="block text-gray-800 font-medium group-hover:text-rose-700">Emprunter / Rendre des documents</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="material-symbols-outlined text-green-600 align-middle">check_circle</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="group hover:bg-rose-50 transition-colors cursor-pointer" onclick="window.location.href='#'">
+                                        <td class="py-4 px-6">
+                                            <a href="#" class="block text-gray-800 font-medium group-hover:text-rose-700">Prolonger un document</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="material-symbols-outlined text-green-600 align-middle">check_circle</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="group hover:bg-rose-50 transition-colors cursor-pointer" onclick="window.location.href='#'">
+                                        <td class="py-4 px-6">
+                                            <a href="#" class="block text-gray-800 font-medium group-hover:text-rose-700">Réserver un document</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="material-symbols-outlined text-green-600 align-middle">check_circle</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="group hover:bg-rose-50 transition-colors cursor-pointer" onclick="window.location.href='#'">
+                                        <td class="py-4 px-6">
+                                            <a href="#" class="block text-gray-800 font-medium group-hover:text-rose-700">Faire venir un document (Navette)</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="material-symbols-outlined text-green-600 align-middle">check_circle</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="group hover:bg-rose-50 transition-colors cursor-pointer" onclick="window.location.href='#'">
+                                        <td class="py-4 px-6">
+                                            <a href="#" class="block text-gray-800 font-medium group-hover:text-rose-700">Demander un PEB</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="material-symbols-outlined text-green-600 align-middle">check_circle</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="group hover:bg-rose-50 transition-colors cursor-pointer" onclick="window.location.href='#'">
+                                        <td class="py-4 px-6">
+                                            <a href="#" class="block text-gray-800 font-medium group-hover:text-rose-700">Choisir son espace (Affluences)</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="material-symbols-outlined text-green-600 align-middle">check_circle</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="bg-gray-50 opacity-60">
+                                        <td class="py-4 px-6 text-gray-500">
+                                            Emprunter un PC / une tablette
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="material-symbols-outlined text-gray-400 align-middle">cancel</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="group hover:bg-rose-50 transition-colors cursor-pointer" onclick="window.location.href='#'">
+                                        <td class="py-4 px-6">
+                                            <a href="#" class="block text-gray-800 font-medium group-hover:text-rose-700">Imprimer, photocopier, scanner</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="material-symbols-outlined text-green-600 align-middle">check_circle</span>
+                                        </td>
+                                    </tr>
+
                                 </tbody>
                             </table>
+                        </div>
+
+                        <div class="mt-8 text-center">
+                            <a href="page-services.html" class="inline-flex items-center gap-2 bg-rose-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-rose-700 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                                <span class="material-symbols-outlined">grid_view</span>
+                                Voir tous les services du réseau
+                            </a>
                         </div>
                     </div>
 
@@ -274,18 +345,33 @@
     <div id="footer-container"></div>
     
     <script>
-        fetch('header.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-                const script = document.createElement('script');
-                script.src = 'js/menu_de_navigation.js';
-                document.body.appendChild(script);
-            });
+        fetch('header.html').then(res => res.text()).then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            const script = document.createElement('script');
+            script.src = 'js/menu_de_navigation.js';
+            document.body.appendChild(script);
+        });
         fetch('footer.html').then(res => res.text()).then(data => document.getElementById('footer-container').innerHTML = data);
-    </script>
 
+        // Script Onglets
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.add('hidden'));
+                    
+                    tab.classList.add('active');
+                    const targetId = tab.getAttribute('data-target');
+                    document.getElementById(targetId).classList.remove('hidden');
+                });
+            });
+        });
+    </script>
     <script>
+        // Script sidebar simple
         document.addEventListener('DOMContentLoaded', function () {
             const toggles = document.querySelectorAll('.side-nav-toggle');
             toggles.forEach(function (toggle) {
@@ -298,26 +384,6 @@
                         this.classList.toggle('active');
                         if (icon) icon.classList.toggle('rotate-90');
                     }
-                });
-            });
-        });
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const tabs = document.querySelectorAll('.tab-btn');
-            const contents = document.querySelectorAll('.tab-content');
-
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    // 1. Désactiver tous les onglets
-                    tabs.forEach(t => t.classList.remove('active'));
-                    contents.forEach(c => c.classList.add('hidden'));
-                    
-                    // 2. Activer l'onglet cliqué
-                    tab.classList.add('active');
-                    const targetId = tab.getAttribute('data-target');
-                    document.getElementById(targetId).classList.remove('hidden');
                 });
             });
         });
