@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BU Droit Économie Gestion - SCD</title>
+
+    <link rel="stylesheet" href="css/menu_de_navigation.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <style>
+        .hours-table td { padding-bottom: 4px; }
+        /* Style pour les onglets actifs */
+        .tab-btn.active {
+            border-bottom: 3px solid #e11d48; /* Rose-600 */
+            color: #e11d48;
+            font-weight: bold;
+        }
+        .tab-btn {
+            color: #6b7280; /* Gray-500 */
+        }
+        .tab-btn:hover {
+            color: #374151; /* Gray-700 */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    
+    <div id="header-container" class="sticky top-0 z-50 w-full bg-white shadow-sm"></div>
+
+    <div class="w-full py-12 px-4 sm:px-6 lg:px-40">
+        <div class="lg:grid lg:grid-cols-5 lg:gap-8">
+
+            <aside class="lg:col-span-1 mb-12 lg:mb-0">
+                <nav id="side-nav" class="sticky top-24 space-y-2 bg-stone-200 rounded-lg p-4">
+                    
+                    <a href="page-des-bus.html" class="side-nav-item bg-white shadow-sm text-rose-600 rounded-md">
+                        <span class="material-symbols-outlined">domain</span>
+                        <span class="font-bold">Les BUs</span>
+                    </a>
+
+                    <a href="page-services.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">design_services</span>
+                        <span>Services en BU</span>
+                    </a>
+
+                    <a href="https://olivierscdum.github.io/maquette/collections.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">collections_bookmark</span>
+                        <span>Ressources doc.</span>
+                    </a>
+
+                    <div>
+                        <button type="button" class="side-nav-toggle"> 
+                            <span class="flex items-center"><span class="material-symbols-outlined">school</span><span>Formation</span></span>
+                            <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                        </button>
+                        <div class="side-nav-submenu hidden"> 
+                            <a href="#" class="side-nav-sublink">Etudiants</a>
+                            <a href="#" class="side-nav-sublink">Doctorants</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="side-nav-item">
+                        <span class="material-symbols-outlined">science</span>
+                        <span>Recherche</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <main class="lg:col-span-4 bg-white rounded-xl shadow-lg overflow-hidden">
+                
+                <div class="relative h-64 md:h-80">
+                    <img src="https://innovationbibliothequeuniversitaire.wordpress.com/wp-content/uploads/2017/05/463130-projet-lilliad-a-l-universite-lille-1-hall-central-auer-weber-vise-580x310.jpg" 
+                         alt="Intérieur BU Richter" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-8">
+                        <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded w-fit mb-2 uppercase tracking-wide">Ouvert actuellement</span>
+                        <h1 class="text-3xl md:text-4xl font-bold text-white mb-1">BU Droit Économie Gestion</h1>
+                        <p class="text-gray-200 text-lg flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">location_on</span> Campus Richter
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border-b border-gray-200 sticky top-[80px] z-40 bg-white"> <nav class="-mb-px flex space-x-8 px-8 overflow-x-auto" aria-label="Tabs">
+                        <button class="tab-btn active whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors" data-target="tab-en-bref">
+                            En Bref
+                        </button>
+                        <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 border-transparent font-medium text-sm transition-colors" data-target="tab-collections">
+                            Collections
+                        </button>
+                        <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 border-transparent font-medium text-sm transition-colors" data-target="tab-services">
+                            Services Disponibles
+                        </button>
+                    </nav>
+                </div>
+
+                <div class="p-6 sm:p-8">
+
+                    <div id="tab-en-bref" class="tab-content block animate-fade-in">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                            
+                            <div class="space-y-8">
+                                <div class="bg-rose-50 rounded-xl p-6">
+                                    <h3 class="text-lg font-bold text-rose-800 mb-4 flex items-center gap-2">
+                                        <span class="material-symbols-outlined">schedule</span> Horaires
+                                    </h3>
+                                    <table class="w-full text-sm text-gray-700">
+                                        <tr class="border-b border-rose-100"><td class="py-2 font-semibold">Lundi</td><td class="text-right">8:00 - 22:30</td></tr>
+                                        <tr class="border-b border-rose-100"><td class="py-2 font-semibold">Mardi</td><td class="text-right">8:00 - 22:30</td></tr>
+                                        <tr class="border-b border-rose-100"><td class="py-2 font-semibold">Mercredi</td><td class="text-right">8:00 - 22:30</td></tr>
+                                        <tr class="border-b border-rose-100"><td class="py-2 font-semibold">Jeudi</td><td class="text-right">8:00 - 22:30</td></tr>
+                                        <tr class="border-b border-rose-100"><td class="py-2 font-semibold">Vendredi</td><td class="text-right">8:00 - 22:30</td></tr>
+                                        <tr><td class="py-2 text-gray-500">Samedi</td><td class="text-right text-gray-500">9:00 - 17:00</td></tr>
+                                    </table>
+                                </div>
+
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-rose-600">map</span> Accès
+                                    </h3>
+                                    <p class="text-gray-600 text-sm mb-4">
+                                        60 rue des États Généraux<br>
+                                        34965 Montpellier Cedex 2
+                                    </p>
+                                    <p class="text-sm text-gray-600 mb-4">
+                                        <strong class="text-gray-800">Tramway :</strong> Lignes 1, 3 et 4 - Arrêt "Rives du Lez"
+                                    </p>
+                                    <div class="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">
+                                        [Carte Google Maps ici]
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-8">
+                                
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-rose-600">groups</span> Affluence en temps réel
+                                    </h3>
+                                    <div class="bg-white border border-gray-200 p-4 rounded-xl shadow-sm">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-sm font-medium text-gray-600">Taux d'occupation</span>
+                                            <span class="text-sm font-bold text-green-600">Faible (25%)</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                            <div class="bg-green-500 h-2.5 rounded-full" style="width: 25%"></div>
+                                        </div>
+                                        <p class="text-xs text-gray-400 mt-2 text-right">Mise à jour il y a 5 min</p>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-rose-600">apartment</span> Espaces
+                                    </h3>
+                                    <p class="text-gray-600 text-sm mb-4">
+                                        La BU offre 1200 places assises réparties sur 4 niveaux, dont 20 salles de travail en groupe réservables.
+                                    </p>
+                                    <a href="#" class="inline-flex items-center gap-2 text-rose-600 font-bold border border-rose-600 rounded-lg px-4 py-2 hover:bg-rose-50 transition-colors">
+                                        <span class="material-symbols-outlined">floor</span>
+                                        Voir le plan des étages
+                                    </a>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h4 class="font-bold text-gray-800 flex items-center gap-2 mb-2">
+                                            <span class="material-symbols-outlined text-blue-600">accessible</span> Handicap
+                                        </h4>
+                                        <p class="text-xs text-gray-600">Ascenseurs, boucles magnétiques, postes adaptés.</p>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h4 class="font-bold text-gray-800 flex items-center gap-2 mb-2">
+                                            <span class="material-symbols-outlined text-gray-600">mail</span> Contact
+                                        </h4>
+                                        <a href="mailto:bu-richter@umontpellier.fr" class="text-xs text-rose-600 hover:underline">bu-richter@umontpellier.fr</a><br>
+                                        <span class="text-xs text-gray-600">04 34 43 21 00</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-collections" class="tab-content hidden animate-fade-in">
+                        
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4">Fonds documentaire</h2>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                La bibliothèque propose un fonds de référence en Droit, Science Politique, Économie et Gestion. Elle conserve également des collections patrimoniales et un fonds de préparation aux concours administratifs.
+                            </p>
+                            
+                            <div class="bg-gray-100 rounded-xl p-8 text-center border-2 border-dashed border-gray-300 mb-8">
+                                <span class="material-symbols-outlined text-5xl text-gray-300 mb-2">map</span>
+                                <p class="text-gray-500">Plan de localisation des collections par étage (Image)</p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Accéder aux ressources par discipline</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            
+                            <a href="#" class="group block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-rose-200 transition-all">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="bg-rose-100 p-3 rounded-full text-rose-600">
+                                        <span class="material-symbols-outlined text-2xl">gavel</span>
+                                    </div>
+                                    <span class="material-symbols-outlined text-gray-300 group-hover:text-rose-600 transition-colors">arrow_forward</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-2">Droit & Sciences Politiques</h4>
+                                <p class="text-sm text-gray-600">Bases de données (Dalloz, Lexis...), codes, jurisprudence et manuels.</p>
+                            </a>
+
+                            <a href="#" class="group block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-rose-200 transition-all">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="bg-blue-100 p-3 rounded-full text-blue-600">
+                                        <span class="material-symbols-outlined text-2xl">trending_up</span>
+                                    </div>
+                                    <span class="material-symbols-outlined text-gray-300 group-hover:text-blue-600 transition-colors">arrow_forward</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-2">Économie & Gestion</h4>
+                                <p class="text-sm text-gray-600">Revues spécialisées, statistiques (Statista), marketing et management.</p>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div id="tab-services" class="tab-content hidden animate-fade-in">
+                        <div class="bg-rose-50 border-l-4 border-rose-600 p-4 mb-8">
+                            <p class="text-gray-800 text-sm">
+                                Voici la liste des services spécifiquement disponibles à la <strong>BU Droit Économie Gestion</strong>.
+                            </p>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr>
+                                        <th class="py-4 px-6 bg-gray-50 font-bold uppercase text-xs text-gray-500 rounded-tl-lg">Service</th>
+                                        <th class="py-4 px-6 bg-gray-50 font-bold uppercase text-xs text-gray-500 text-center w-32 rounded-tr-lg">Disponibilité</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-100">
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Emprunter / Rendre des documents</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Prolonger un document</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Réserver un document</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Faire venir un document (Navette)</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Demander un PEB</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Choisir son espace de travail (Affluences)</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Réserver une salle de travail</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                    
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-400">Emprunter un PC / une tablette</td><td class="text-center"><span class="material-symbols-outlined text-gray-300">block</span></td></tr>
+                                    
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Utiliser un PC en BU (Wifi/Fixe)</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Emprunter du petit matériel</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Imprimer, photocopier, scanner</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Demander un quitus</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Services pour les extérieurs</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Accessibilité et handicap</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                    <tr class="hover:bg-gray-50"><td class="py-3 px-6 text-gray-700">Appli mobile</td><td class="text-center"><span class="material-symbols-outlined text-green-600">check_circle</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+    
+    <script>
+        fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                const script = document.createElement('script');
+                script.src = 'js/menu_de_navigation.js';
+                document.body.appendChild(script);
+            });
+        fetch('footer.html').then(res => res.text()).then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggles = document.querySelectorAll('.side-nav-toggle');
+            toggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function (event) {
+                    const submenu = this.nextElementSibling;
+                    const icon = this.querySelector('.icon-toggle');
+                    if (submenu && submenu.classList.contains('side-nav-submenu')) {
+                        event.preventDefault(); 
+                        submenu.classList.toggle('hidden');
+                        this.classList.toggle('active');
+                        if (icon) icon.classList.toggle('rotate-90');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // 1. Désactiver tous les onglets
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.add('hidden'));
+                    
+                    // 2. Activer l'onglet cliqué
+                    tab.classList.add('active');
+                    const targetId = tab.getAttribute('data-target');
+                    document.getElementById(targetId).classList.remove('hidden');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
