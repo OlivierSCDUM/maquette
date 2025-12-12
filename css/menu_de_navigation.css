@@ -82,7 +82,7 @@
             cursor: pointer;
             background: none;
             border: none;
-            color: #ff5c5c; /* MODIFIÉ: Texte rouge */
+            color: #E11D48; /* MODIFIÉ: Texte rouge */
             font-size: 1em;
             font-weight: bold;
             font-family: inherit;
@@ -258,5 +258,6 @@
             /* Pas besoin de surcharger .mega-menu-column li a ici, il hérite déjà du style sombre */
         }
 /* Fin de test du header */
+
 
 
