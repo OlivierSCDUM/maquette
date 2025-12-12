@@ -10,7 +10,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1em 2em; 
             background-color: #f5f2ef; /* MODIFIÉ: Fond gris-beige plus clair */
             color: #ff5c5c; /* MODIFIÉ: Texte rouge par défaut */
             position: relative; 
@@ -237,3 +236,4 @@
             /* Pas besoin de surcharger .mega-menu-column li a ici, il hérite déjà du style sombre */
         }
 /* Fin de test du header */
+
