@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Missions & Engagements - SCD</title>
+
+    <link rel="stylesheet" href="css/menu_de_navigation.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <style>
+        /* Animation douce pour les chiffres */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    
+    <div id="header-container" class="sticky top-0 z-50 w-full bg-white shadow-sm"></div>
+
+    <div class="w-full py-12 px-4 sm:px-6 lg:px-40">
+        <div class="lg:grid lg:grid-cols-5 lg:gap-8">
+
+            <aside class="lg:col-span-1 mb-12 lg:mb-0">
+                <nav id="side-nav" class="sticky top-24 space-y-2 bg-stone-200 rounded-lg p-4">
+                    
+                    <a href="#" class="side-nav-item bg-white shadow-sm text-rose-600 rounded-md">
+                        <span class="material-symbols-outlined">info</span>
+                        <span class="font-bold">Nous connaître</span>
+                    </a>
+
+                    <a href="page-des-bus.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">domain</span>
+                        <span>Les BUs</span>
+                    </a>
+
+                    <a href="page-services.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">design_services</span>
+                        <span>Services en BU</span>
+                    </a>
+
+                    <a href="#" class="side-nav-item">
+                        <span class="material-symbols-outlined">collections_bookmark</span>
+                        <span>Ressources doc.</span>
+                    </a>
+
+                    <div>
+                        <button type="button" class="side-nav-toggle"> 
+                            <span class="flex items-center"><span class="material-symbols-outlined">school</span><span>Formation</span></span>
+                            <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                        </button>
+                        <div class="side-nav-submenu hidden"> 
+                            <a href="#" class="side-nav-sublink">Etudiants</a>
+                            <a href="#" class="side-nav-sublink">Doctorants</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="side-nav-item">
+                        <span class="material-symbols-outlined">science</span>
+                        <span>Recherche</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <main class="lg:col-span-4 bg-white rounded-xl shadow-lg overflow-hidden">
+                
+                <div class="relative bg-rose-900 text-white p-8 md:p-12 overflow-hidden">
+                    <div class="absolute inset-0 opacity-20">
+                        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover grayscale">
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <span class="uppercase tracking-widest text-xs font-bold text-rose-200 mb-2 block">Institutionnel</span>
+                        <h1 class="text-3xl md:text-5xl font-bold mb-4">Missions & Engagements</h1>
+                        <p class="text-rose-100 text-lg max-w-2xl">
+                            Le Service Commun de Documentation accompagne la réussite de la communauté universitaire par une offre de services innovante, inclusive et responsable.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="p-6 sm:p-10 space-y-16">
+
+                    <section>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-rose-600">equalizer</span>
+                            Le SCD en chiffres (2024)
+                        </h2>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            <div class="bg-rose-50 rounded-xl p-6 text-center animate-fade-up" style="animation-delay: 0.1s;">
+                                <span class="material-symbols-outlined text-4xl text-rose-400 mb-2">school</span>
+                                <div class="text-3xl md:text-4xl font-extrabold text-rose-600 mb-1">450+</div>
+                                <div class="text-sm font-medium text-gray-600">Heures de formation dispensées</div>
+                            </div>
+                            <div class="bg-white border border-gray-100 shadow-sm rounded-xl p-6 text-center animate-fade-up" style="animation-delay: 0.2s;">
+                                <span class="material-symbols-outlined text-4xl text-blue-400 mb-2">group</span>
+                                <div class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-1">1.8M</div>
+                                <div class="text-sm font-medium text-gray-600">Entrées en BU</div>
+                            </div>
+                            <div class="bg-white border border-gray-100 shadow-sm rounded-xl p-6 text-center animate-fade-up" style="animation-delay: 0.3s;">
+                                <span class="material-symbols-outlined text-4xl text-green-400 mb-2">library_books</span>
+                                <div class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-1">800k</div>
+                                <div class="text-sm font-medium text-gray-600">Documents physiques & numériques</div>
+                            </div>
+                            <div class="bg-white border border-gray-100 shadow-sm rounded-xl p-6 text-center animate-fade-up" style="animation-delay: 0.4s;">
+                                <span class="material-symbols-outlined text-4xl text-yellow-400 mb-2">thumb_up</span>
+                                <div class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-1">92%</div>
+                                <div class="text-sm font-medium text-gray-600">Taux de satisfaction usagers</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="bg-gray-900 rounded-2xl p-8 text-white relative overflow-hidden">
+                        <div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-rose-600 rounded-full blur-3xl opacity-20"></div>
+
+                        <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <div class="flex items-center gap-2 text-rose-400 font-bold mb-4 uppercase text-sm tracking-wider">
+                                    <span class="material-symbols-outlined text-lg">public</span> Engagement majeur
+                                </div>
+                                <h2 class="text-3xl font-bold mb-4">Science Ouverte</h2>
+                                <p class="text-gray-300 mb-6 leading-relaxed">
+                                    L'Université de Montpellier s'engage pour la libre diffusion des savoirs. Le SCD pilote cette stratégie visant à rendre la recherche scientifique plus transparente, collaborative et accessible à tous.
+                                </p>
+                                <div class="flex flex-wrap gap-4">
+                                    <a href="#" class="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors">
+                                        Découvrir nos engagements
+                                    </a>
+                                    <a href="#" class="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors">
+                                        <span class="material-symbols-outlined text-sm">bar_chart</span>
+                                        Voir le Baromètre UM
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                                <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-green-400">trending_up</span>
+                                    Baromètre Science Ouverte
+                                </h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="flex justify-between text-sm mb-1">
+                                            <span>Publications en accès ouvert</span>
+                                            <span class="font-bold">78%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-700 rounded-full h-2">
+                                            <div class="bg-green-400 h-2 rounded-full" style="width: 78%"></div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-gray-400 italic mt-2">
+                                        Progression constante depuis 2019. L'UM se positionne au-dessus de la moyenne nationale.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-8">Nos piliers d'intervention</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                            <div class="group bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all hover:border-purple-200">
+                                <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-2xl">verified</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Service Public +</h3>
+                                <p class="text-sm text-gray-600">
+                                    Engagés dans une démarche d'amélioration continue pour offrir un accueil et des services de qualité, certifiés et à l'écoute des usagers.
+                                </p>
+                            </div>
+
+                            <div class="group bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all hover:border-blue-200">
+                                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-2xl">menu_book</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Politique documentaire</h3>
+                                <p class="text-sm text-gray-600">
+                                    Acquérir, signaler et conserver des collections (papier et numériques) en adéquation avec les besoins de la formation et de la recherche.
+                                </p>
+                            </div>
+
+                            <div class="group bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all hover:border-green-200">
+                                <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-2xl">eco</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Démarche TEDS</h3>
+                                <p class="text-sm text-gray-600">
+                                    Transition Écologique pour un Développement Soutenable : réduction énergétique, tri des déchets et sensibilisation aux enjeux climatiques.
+                                </p>
+                            </div>
+
+                            <div class="group bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all hover:border-orange-200">
+                                <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-2xl">celebration</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Vie étudiante</h3>
+                                <p class="text-sm text-gray-600">
+                                    Amélioration des conditions de vie : horaires étendus (Nocturnes), prêt d'objets (plaids, casques), et événements culturels.
+                                </p>
+                            </div>
+
+                            <div class="group bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all hover:border-red-200">
+                                <div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-2xl">fact_check</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Esprit critique</h3>
+                                <p class="text-sm text-gray-600">
+                                    Lutte contre la désinformation et les fake news à travers des ateliers de méthodologie documentaire et d'évaluation des sources.
+                                </p>
+                            </div>
+
+                            <div class="group bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all hover:border-teal-200">
+                                <div class="w-12 h-12 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-2xl">accessible</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Accessibilité</h3>
+                                <p class="text-sm text-gray-600">
+                                    Des équipements adaptés (boucles magnétiques, téléagrandisseurs) et un accompagnement personnalisé pour les étudiants en situation de handicap.
+                                </p>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <section class="border-t border-gray-200 pt-10">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Transparence & Résultats</h2>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            
+                            <a href="#" class="flex items-start gap-4 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-gray-100 group">
+                                <div class="bg-gray-100 p-3 rounded-lg text-gray-600 group-hover:bg-rose-100 group-hover:text-rose-600 transition-colors">
+                                    <span class="material-symbols-outlined text-3xl">description</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-800 flex items-center gap-2">
+                                        Rapport d'activité annuel 2023
+                                        <span class="material-symbols-outlined text-sm text-gray-400">download</span>
+                                    </h3>
+                                    <p class="text-sm text-gray-500 mt-1">
+                                        Consultez le bilan complet de nos actions : budget, ressources humaines, projets et indicateurs de performance.
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="flex items-start gap-4 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-gray-100 group">
+                                <div class="bg-gray-100 p-3 rounded-lg text-gray-600 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
+                                    <span class="material-symbols-outlined text-3xl">poll</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-800 flex items-center gap-2">
+                                        Résultats de l'enquête LIBQUAL+
+                                        <span class="material-symbols-outlined text-sm text-gray-400">download</span>
+                                    </h3>
+                                    <p class="text-sm text-gray-500 mt-1">
+                                        Analyse détaillée des réponses des étudiants et personnels sur la qualité des services, des locaux et des collections.
+                                    </p>
+                                </div>
+                            </a>
+
+                        </div>
+                    </section>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+    
+    <script>
+        fetch('header.html').then(res => res.text()).then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            const script = document.createElement('script');
+            script.src = 'js/menu_de_navigation.js';
+            document.body.appendChild(script);
+        });
+        fetch('footer.html').then(res => res.text()).then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggles = document.querySelectorAll('.side-nav-toggle');
+            toggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function (event) {
+                    const submenu = this.nextElementSibling;
+                    const icon = this.querySelector('.icon-toggle');
+                    if (submenu && submenu.classList.contains('side-nav-submenu')) {
+                        event.preventDefault(); 
+                        submenu.classList.toggle('hidden');
+                        this.classList.toggle('active');
+                        if (icon) icon.classList.toggle('rotate-90');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
