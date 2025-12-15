@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vous ne trouvez pas ? - SCD</title>
+
+    <link rel="stylesheet" href="css/menu_de_navigation.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body class="bg-gray-50">
+    
+    <div id="header-container" class="sticky top-0 z-50 w-full bg-white shadow-sm"></div>
+
+    <div class="w-full py-12 px-4 sm:px-6 lg:px-40">
+        <div class="lg:grid lg:grid-cols-5 lg:gap-8">
+
+            <aside class="lg:col-span-1 mb-12 lg:mb-0">
+                <nav id="side-nav" class="sticky top-24 space-y-2 bg-stone-200 rounded-lg p-4">
+                    
+                    <a href="page-des-bus.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">domain</span>
+                        <span>Les BUs</span>
+                    </a>
+
+                    <a href="page-services.html" class="side-nav-item bg-white shadow-sm text-rose-600 rounded-md">
+                        <span class="material-symbols-outlined">design_services</span>
+                        <span class="font-bold">Services en BU</span>
+                    </a>
+
+                    <a href="https://olivierscdum.github.io/maquette/collections.html" class="side-nav-item">
+                        <span class="material-symbols-outlined">collections_bookmark</span>
+                        <span>Ressources doc.</span>
+                    </a>
+
+                    <div>
+                        <button type="button" class="side-nav-toggle"> 
+                            <span class="flex items-center"><span class="material-symbols-outlined">school</span><span>Formation</span></span>
+                            <span class="material-symbols-outlined icon-toggle">chevron_right</span>
+                        </button>
+                        <div class="side-nav-submenu hidden"> 
+                            <a href="#" class="side-nav-sublink">Etudiants</a>
+                            <a href="#" class="side-nav-sublink">Doctorants</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="side-nav-item">
+                        <span class="material-symbols-outlined">science</span>
+                        <span>Recherche</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <main class="lg:col-span-4 bg-white rounded-xl shadow-lg overflow-hidden p-6 sm:p-10">
+                
+                <div class="border-b border-gray-200 pb-6 mb-10">
+                    <a href="page-services.html" class="text-sm text-gray-500 hover:text-rose-600 mb-2 inline-flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm">arrow_back</span> Retour aux services
+                    </a>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-800 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-4xl text-rose-600">search_off</span>
+                        <span>Vous ne trouvez pas un document ?</span>
+                    </h1>
+                    <p class="text-gray-600 mt-4 text-lg">
+                        Pas de panique ! Si une ressource manque à l'appel, nous avons plusieurs solutions pour vous aider à l'obtenir.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                    <div class="flex flex-col h-full bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
+                        <div class="bg-emerald-50 p-6 text-center border-b border-emerald-100">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-white text-emerald-600 rounded-full shadow-sm mb-4 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-3xl">library_add</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-emerald-900">Suggestion d'achat</h2>
+                            <p class="text-sm text-emerald-700 font-medium mt-1">Pour enrichir nos rayons</p>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                Un livre important manque à notre collection ? Proposez-nous de l'acheter ! Si la demande est validée par nos bibliothécaires, nous l'acquérons pour la BU.
+                            </p>
+                            
+                            <div class="bg-gray-50 rounded-lg p-3 mb-6 flex items-start gap-3">
+                                <span class="material-symbols-outlined text-emerald-600 text-lg mt-0.5">hourglass_top</span>
+                                <div class="text-xs text-gray-500">
+                                    <strong>Délai de traitement :</strong><br>
+                                    Variable (commande + équipement). Vous serez prévenu dès sa mise en rayon.
+                                </div>
+                            </div>
+
+                            <a href="#" class="w-full inline-flex justify-center items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl transition-colors">
+                                Suggérer un achat
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col h-full bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
+                        <div class="bg-blue-50 p-6 text-center border-b border-blue-100">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-white text-blue-600 rounded-full shadow-sm mb-4 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-3xl">local_shipping</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-blue-900">Faire venir (PEB)</h2>
+                            <p class="text-sm text-blue-700 font-medium mt-1">Prêt Entre Bibliothèques</p>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                Le document existe dans une autre université en France ou en Europe ? Nous pouvons le faire venir jusqu'à votre BU via notre service de navette nationale.
+                            </p>
+                            
+                            <div class="bg-gray-50 rounded-lg p-3 mb-6 flex items-start gap-3">
+                                <span class="material-symbols-outlined text-orange-500 text-lg mt-0.5">euro</span>
+                                <div class="text-xs text-gray-500">
+                                    <strong>Service payant :</strong><br>
+                                    Participation aux frais de port (env. 6€).<br>
+                                    <em>Délai postal (1 à 2 semaines).</em>
+                                </div>
+                            </div>
+
+                            <a href="#" class="w-full inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl transition-colors">
+                                Formulaire P.E.B.
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col h-full bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
+                        <div class="bg-rose-50 p-6 text-center border-b border-rose-100">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-white text-rose-600 rounded-full shadow-sm mb-4 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-3xl">support_agent</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-rose-900">Aide à la recherche</h2>
+                            <p class="text-sm text-rose-700 font-medium mt-1">Accompagnement personnalisé</p>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                Vous avez un thème précis mais vous ne trouvez pas de sources pertinentes dans notre catalogue ? Nos bibliothécaires sont experts en recherche documentaire.
+                            </p>
+                            
+                            <div class="bg-gray-50 rounded-lg p-3 mb-6 flex items-start gap-3">
+                                <span class="material-symbols-outlined text-rose-500 text-lg mt-0.5">calendar_clock</span>
+                                <div class="text-xs text-gray-500">
+                                    <strong>Sur rendez-vous :</strong><br>
+                                    Séance individuelle de 30min à 1h pour débloquer votre recherche.
+                                </div>
+                            </div>
+
+                            <a href="https://ubib.libanswers.com/form?queue_id=3266" class="w-full inline-flex justify-center items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-4 rounded-xl transition-colors">
+                                Demander de l'aide
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-12 bg-gray-900 text-white rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-lg">
+                    <div class="bg-white/10 p-4 rounded-full">
+                        <span class="material-symbols-outlined text-4xl text-yellow-400">lightbulb</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2">Avez-vous pensé aux ressources numériques ?</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Avant de faire une demande, pensez à vérifier nos <strong>bases de données en ligne</strong>. Des milliers d'articles, d'ebooks et de revues sont accessibles 24h/24 depuis chez vous via votre ENT.
+                        </p>
+                        <a href="#" class="inline-block mt-4 text-yellow-400 font-bold hover:text-yellow-300 hover:underline text-sm">
+                            Accéder aux ressources numériques &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+    
+    <script>
+        // Injection Header/Footer et Menu
+        fetch('header.html').then(res => res.text()).then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            const script = document.createElement('script');
+            script.src = 'js/menu_de_navigation.js';
+            document.body.appendChild(script);
+        });
+        fetch('footer.html').then(res => res.text()).then(data => document.getElementById('footer-container').innerHTML = data);
+
+        // Sidebar script
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggles = document.querySelectorAll('.side-nav-toggle');
+            toggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function (event) {
+                    const submenu = this.nextElementSibling;
+                    const icon = this.querySelector('.icon-toggle');
+                    if (submenu && submenu.classList.contains('side-nav-submenu')) {
+                        event.preventDefault(); 
+                        submenu.classList.toggle('hidden');
+                        this.classList.toggle('active');
+                        if (icon) icon.classList.toggle('rotate-90');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
