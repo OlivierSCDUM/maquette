@@ -42,6 +42,50 @@
     }
 }
 
+/* 1. Le conteneur qui groupe Home + Logo */
+.header-brand {
+    display: flex;
+    align-items: center; /* Centre verticalement les deux éléments */
+    gap: 1.5rem; /* Espace entre la maison et le logo */
+}
+
+/* 2. Style de l'icône Home */
+.home-icon-link {
+    text-decoration: none;
+    line-height: 1; /* Évite d'ajouter de la hauteur inutile */
+    display: flex;
+}
+
+.home-icon-link .material-symbols-outlined {
+    /* Taille demandée (~75px) */
+    font-size: 75px; 
+    
+    /* Couleur Dark Gray */
+    color: #333333; 
+    
+    /* Transition douce pour le survol */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* 3. Effet au survol (Optionnel : devient rouge ou grossit un peu) */
+.home-icon-link:hover .material-symbols-outlined {
+    color: #ff5c5c; /* Passe en rouge au survol (cohérent avec votre charte) */
+    transform: scale(1.05);
+}
+
+/* --- RESPONSIVE MOBILE --- */
+/* Sur mobile, on réduit un peu la taille car 75px c'est énorme */
+@media (max-width: 768px) {
+    .home-icon-link .material-symbols-outlined {
+        font-size: 40px; /* Taille plus adaptée aux petits écrans */
+    }
+    
+    .header-brand {
+        gap: 0.8rem;
+    }
+}
+
+
         /* Ne s'applique qu'aux liens directs de la nav, pas au méga menu */
         #custom-main-header nav > ul > li > a {
             text-decoration: none;
@@ -261,6 +305,7 @@
             /* Pas besoin de surcharger .mega-menu-column li a ici, il hérite déjà du style sombre */
         }
 /* Fin de test du header */
+
 
 
 
