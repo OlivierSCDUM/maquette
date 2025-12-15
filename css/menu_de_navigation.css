@@ -25,8 +25,8 @@
 @media (min-width: 1024px) {
     #custom-main-header {
         /* On augmente significativement l'espace sur les côtés */
-        padding-left: 6rem;  /* environ 96px */
-        padding-right: 6rem;
+        padding-left: 5rem;  /* environ 96px */
+        padding-right: 5rem;
     }
 }
 
@@ -37,8 +37,8 @@
         padding-left: 15rem; /* environ 240px */
         padding-right: 15rem;
       /* Ajoutez ceci SI vous voulez changer la hauteur spécifiquement sur PC */
-        padding-top: 0.5rem; 
-        padding-bottom: 0.5rem;
+        padding-top: 0.1rem; 
+        padding-bottom: 0.1rem;
     }
 }
 
@@ -261,6 +261,7 @@
             /* Pas besoin de surcharger .mega-menu-column li a ici, il hérite déjà du style sombre */
         }
 /* Fin de test du header */
+
 
 
 
