@@ -17,8 +17,8 @@
     box-sizing: border-box;
 
     /* 1. Marge par défaut pour MOBILE (petit espace) */
-    padding: 1rem 1.5rem; 
-    /* 1rem haut/bas, 1.5rem gauche/droite */
+    padding: 0.5rem 1.5rem; 
+    /* 0.5rem haut/bas, 1.5rem gauche/droite */
 }
 
 /* 2. Marge pour ORDINATEURS PORTABLES (Écrans moyens > 1024px) */
@@ -36,6 +36,9 @@
         /* On augmente ENCORE plus pour centrer visuellement le contenu */
         padding-left: 15rem; /* environ 240px */
         padding-right: 15rem;
+      /* Ajoutez ceci SI vous voulez changer la hauteur spécifiquement sur PC */
+        padding-top: 0.5rem; 
+        padding-bottom: 0.5rem;
     }
 }
 
@@ -258,6 +261,7 @@
             /* Pas besoin de surcharger .mega-menu-column li a ici, il hérite déjà du style sombre */
         }
 /* Fin de test du header */
+
 
 
 
