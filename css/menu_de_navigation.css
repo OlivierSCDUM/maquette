@@ -42,6 +42,11 @@
     }
 }
 
+/* Ajoutez ceci à la fin de votre CSS */
+.icon-filled {
+    font-variation-settings: 'FILL' 1;
+}
+
 /* 1. Le conteneur qui groupe Home + Logo */
 .header-brand {
     display: flex;
@@ -305,6 +310,7 @@
             /* Pas besoin de surcharger .mega-menu-column li a ici, il hérite déjà du style sombre */
         }
 /* Fin de test du header */
+
 
 
 
