@@ -63,7 +63,7 @@
 
 .home-icon-link .material-symbols-outlined {
     /* Taille demandée (~75px) */
-    font-size: 75px; 
+    font-size: 60px; 
     
     /* Couleur Dark Gray */
     color: #333333; 
@@ -310,6 +310,7 @@
             /* Pas besoin de surcharger .mega-menu-column li a ici, il hérite déjà du style sombre */
         }
 /* Fin de test du header */
+
 
 
 
