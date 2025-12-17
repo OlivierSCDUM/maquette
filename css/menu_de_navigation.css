@@ -179,6 +179,17 @@
             border-bottom: 2px solid #ff5c5c; /* Liseré rouge */
             padding-bottom: 0.5em;
         }
+/* Force les liens dans les titres à ressembler aux titres normaux */
+#custom-main-header .mega-menu-column h4 a {
+    color: inherit;          /* Récupère la couleur du titre (noir/gris) */
+    text-decoration: none;   /* Supprime le soulignement */
+    font-weight: bold;       /* S'assure que ça reste gras */
+}
+
+/* Optionnel : Changement de couleur au survol (rouge) pour montrer que c'est cliquable */
+#custom-main-header .mega-menu-column h4 a:hover {
+    color: #ff5c5c; 
+}
 
         .mega-menu-column ul {
             list-style: none;
@@ -310,6 +321,7 @@
             /* Pas besoin de surcharger .mega-menu-column li a ici, il hérite déjà du style sombre */
         }
 /* Fin de test du header */
+
 
 
 
