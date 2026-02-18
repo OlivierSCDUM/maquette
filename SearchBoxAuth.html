@@ -1,0 +1,85 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Script that converts the query string into valid parameter -->
+<script type="text/javascript">
+var isConnected = false;
+var isLEConnected = false;
+
+function toggleConnection() {
+    isConnected = true;
+    isLEConnected = false;
+}
+
+function toggleLEConnection() {
+    isLEConnected = true;
+    isConnected = false;
+}
+
+function searchPrimo() {
+    // Search query with parameters
+    var query = document.getElementById("primoQueryTemp").value; 
+    var searchUrl = "https://catalogue.scdi-montpellier.fr/nde/search";
+    var params = [
+        "vid=33MON_INST:33UM_NDE",
+        "tab=Everything",
+        "search_scope=MyInst_and_CI",
+        "lang=fr",
+        "isSilent=false",
+        "query=" + encodeURIComponent(query)
+    ];    
+    searchUrl += "?" + params.join("&");
+    
+    if (isConnected) {
+        // Authentication parameters - UM
+        var authUrl = "https://catalogue.scdi-montpellier.fr/primaws/suprimaExtLogin?";
+        var authParams = [
+            "authenticationProfile=UM",
+            "idpCode=UM",
+            "auth=SAML",
+            "institution=33MON_INST",
+            "vid=33MON_INST:33UM_NDE",
+            "target-url=" + encodeURIComponent(searchUrl)
+        ]; 
+        // Authentication url
+        window.location.href = authUrl + authParams.join("&");
+    } else if (isLEConnected) {
+        // Authentication parameters - L-E
+        var authUrl = "https://catalogue.scdi-montpellier.fr/primaws/suprimaExtLogin?";
+        var authParams = [
+            "authenticationProfile=IPT",
+            "idpCode=IPT",
+            "auth=CAS",
+            "institution=33MON_INST",
+            "vid=33MON_INST:33UM_NDE",
+            "target-url=" + encodeURIComponent(searchUrl)
+        ]; 
+        // Authentication url
+        window.location.href = authUrl + authParams.join("&");
+    } else {
+        // Direct search without authentication
+        window.location.href = searchUrl;
+    }
+}
+</script>
+
+</head>
+<body>
+<!-- Connexion -->
+<input type="button" value="Connexion UM" onclick="toggleConnection(); window.open('https://cas.umontpellier.fr/pre-otp/login', '_blank')" style="height: 22px; font-size: 12px; font-weight: bold; background: #DE6E17; color: #ffffff; border: 1px solid; margin-right: 5px;">
+
+<input type="button" value="Deconnexion" onclick="window.open('https://cas.umontpellier.fr/pre-otp/logout', '_blank')" style="height: 22px; font-size: 12px; font-weight: bold; background: #DE6E17; color: #ffffff; border: 1px solid; margin-right: 5px;">
+
+<br>
+
+<input type="button" value="Connexion L-E" onclick="toggleLEConnection(); window.open('https://cas-le.scdi-montpellier.fr/cas/login', '_blank')" style="height: 22px; font-size: 12px; font-weight: bold; background: #DE6E17; color: #ffffff; border: 1px solid; margin-right: 5px;">
+
+<input type="button" value="Deconnexion" onclick="window.open('https://cas-le.scdi-montpellier.fr/cas/logout', '_blank')" style="height: 22px; font-size: 12px; font-weight: bold; background: #DE6E17; color: #ffffff; border: 1px solid; margin-right: 5px;">
+
+<p><b>Search for</b></p>
+<form id="simple" name="searchForm" method="get" target="_self">
+<input type="text" id="primoQueryTemp" value="" size="35">
+<!-- Search Button -->
+<input id="go" title="Search" onclick="searchPrimo()" type="button" value="Search" alt="Search" style="height: 22px; font-size: 12px; font-weight: bold; background: #DE6E17; color: #ffffff; border: 1px solid;">
+</form>
+</body>
+</html>
